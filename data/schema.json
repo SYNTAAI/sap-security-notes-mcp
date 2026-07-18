@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAP Security Notes Metadata Catalog",
+  "type": "object",
+  "required": ["catalog_meta", "notes"],
+  "additionalProperties": false,
+  "properties": {
+    "catalog_meta": {
+      "type": "object",
+      "required": [
+        "catalog_version",
+        "note_count",
+        "coverage_start",
+        "coverage_end",
+        "source_statement",
+        "kev_snapshot_version",
+        "kev_snapshot_fetched"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "catalog_version": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note_count": { "type": "integer", "minimum": 1 },
+        "coverage_start": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+        "coverage_end": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+        "source_statement": { "type": "string", "minLength": 1 },
+        "kev_snapshot_version": { "type": ["string", "null"] },
+        "kev_snapshot_fetched": { "type": ["string", "null"] }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/note" }
+    }
+  },
+  "definitions": {
+    "note": {
+      "type": "object",
+      "required": [
+        "note_number",
+        "title",
+        "cve_ids",
+        "cvss_score",
+        "cvss_vector",
+        "priority",
+        "priority_raw",
+        "category",
+        "component",
+        "release_month",
+        "released_on",
+        "first_released_on",
+        "is_update",
+        "kev_listed",
+        "kev_date_added",
+        "note_url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "note_number": { "type": "string", "pattern": "^\\d{6,8}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "cve_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^CVE-\\d{4}-\\d{4,7}$" }
+        },
+        "multiple_cves": { "type": "boolean" },
+        "cvss_score": { "type": ["number", "null"], "minimum": 0.1, "maximum": 10.0 },
+        "cvss_vector": { "type": ["string", "null"] },
+        "cvss_vector_malformed": { "type": "boolean" },
+        "priority": { "enum": ["HotNews", "High", "Medium", "Low"] },
+        "priority_raw": { "type": "string" },
+        "category": { "type": ["string", "null"] },
+        "component": { "type": "string", "minLength": 1 },
+        "release_month": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+        "released_on": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "first_released_on": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "is_update": { "type": "boolean" },
+        "kev_listed": { "type": "boolean" },
+        "kev_date_added": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note_url": { "type": "string", "pattern": "^https://me\\.sap\\.com/notes/\\d+$" }
+      }
+    }
+  }
+}

@@ -1,0 +1,2292 @@
+{
+ "catalog_meta": {
+  "catalog_version": "2026-07-18",
+  "note_count": 114,
+  "coverage_start": "2026-01",
+  "coverage_end": "2026-07",
+  "source_statement": "Metadata from SAP Security Patch Day publications; exploitation data from CISA KEV",
+  "kev_snapshot_version": "2026.07.16",
+  "kev_snapshot_fetched": "2026-07-18"
+ },
+ "notes": [
+  {
+   "note_number": "3773304",
+   "title": "Remote Code Execution vulnerability in SAP Change and Transport System Attach Tool (ctsattach)",
+   "cve_ids": [
+    "CVE-2026-58233"
+   ],
+   "cvss_score": 7.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:L",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-CTS-TMS-PLS",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3773304"
+  },
+  {
+   "note_number": "3763800",
+   "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
+   "cve_ids": [],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3763800",
+   "multiple_cves": true
+  },
+  {
+   "note_number": "3758101",
+   "title": "Multiple vulnerabilities in Apache Camel within SAP Integration Suite (Edge Integration Cell)",
+   "cve_ids": [
+    "CVE-2026-40860"
+   ],
+   "cvss_score": 8.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "LOD-HCI-PI-CON-SOAP",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3758101"
+  },
+  {
+   "note_number": "3754659",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Application Server ABAP (applications based on Business Server Pages)",
+   "cve_ids": [
+    "CVE-2026-44760"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-BSP",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3754659"
+  },
+  {
+   "note_number": "3753495",
+   "title": "Insecure Sample Credentials in SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2026-44761"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Documentation error",
+   "component": "CEC-SCC-COM-BC-OCC",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3753495"
+  },
+  {
+   "note_number": "3748227",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Application Server Java(Configuration Wizard)",
+   "cve_ids": [
+    "CVE-2026-44752"
+   ],
+   "cvss_score": 8.2,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-INS-CTC-RT",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3748227"
+  },
+  {
+   "note_number": "3747367",
+   "title": "Memory Corruption vulnerability in SAP NetWeaver Application Server ABAP",
+   "cve_ids": [
+    "CVE-2026-44747"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-FES-ITS",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3747367",
+   "cvss_vector_malformed": true
+  },
+  {
+   "note_number": "3746678",
+   "title": "Cross Site Scripting (XSS) vulnerability in SAP NetWeaver Enterprise Portal",
+   "cve_ids": [
+    "CVE-2026-44759"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "EP-PIN-AI-SRA",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3746678"
+  },
+  {
+   "note_number": "3741519",
+   "title": "Open Redirect vulnerability in SAP Approuter",
+   "cve_ids": [
+    "CVE-2026-44745"
+   ],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-CP-APR",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3741519"
+  },
+  {
+   "note_number": "3732522",
+   "title": "- Information Disclosure vulnerability in SAP HANA Extended Application Services classic model (User Self Service)",
+   "cve_ids": [
+    "CVE-2026-44753"
+   ],
+   "cvss_score": 3.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "HAN-AS-XS",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3732522"
+  },
+  {
+   "note_number": "3727078",
+   "title": "Directory Traversal vulnerability in SAP NetWeaver Application Server Java (Web Container)",
+   "cve_ids": [
+    "CVE-2026-40128"
+   ],
+   "cvss_score": 9.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-JAS-WEB",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-06-09",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3727078"
+  },
+  {
+   "note_number": "3726899",
+   "title": "Potential vulnerability in Apache Log4j library used by SAP NetWeaver AS Java",
+   "cve_ids": [
+    "CVE-2025-68161"
+   ],
+   "cvss_score": 3.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BC-JAS-SEC-UME",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-06-09",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3726899"
+  },
+  {
+   "note_number": "3720138",
+   "title": "HTTP Request Smuggling in SAP Approuter",
+   "cve_ids": [
+    "CVE-2026-27690"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-XS-APR",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3720138"
+  },
+  {
+   "note_number": "3713902",
+   "title": "Missing Authorization check in SAP S/4 HANA (Create Single Payment)",
+   "cve_ids": [
+    "CVE-2026-44770"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FI-FIO-AP-PAY",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3713902"
+  },
+  {
+   "note_number": "3692165",
+   "title": "DLL Hijacking vulnerability in SAProuter on Microsoft Windows",
+   "cve_ids": [
+    "CVE-2026-0487"
+   ],
+   "cvss_score": 8.4,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-CST-NI",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3692165"
+  },
+  {
+   "note_number": "3682699",
+   "title": "Path Traversal Vulnerability in SAP Fiori (launchpad)",
+   "cve_ids": [
+    "CVE-2026-24315"
+   ],
+   "cvss_score": 4.2,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-FLP-FE-COR",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-06-09",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3682699"
+  },
+  {
+   "note_number": "3537373",
+   "title": "SQL Injection vulnerability in SAP S/4HANA Project Management (PPM-PRO)",
+   "cve_ids": [
+    "CVE-2026-44769"
+   ],
+   "cvss_score": 5.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PPM-PRO",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3537373"
+  },
+  {
+   "note_number": "3515598",
+   "title": "Missing Authorization check in SAP S/4HANA (Draft operation)",
+   "cve_ids": [
+    "CVE-2026-44771"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FIN-FSCM-CLM-COP",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3515598"
+  },
+  {
+   "note_number": "3155685",
+   "title": "Security misconfiguration in SAP CRM (WebClient UI)",
+   "cve_ids": [
+    "CVE-2026-44768"
+   ],
+   "cvss_score": 4.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-WUI-UI",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3155685"
+  },
+  {
+   "note_number": "3692004",
+   "title": "Open Redirect vulnerability in SAP NetWeaver Application Server ABAP",
+   "cve_ids": [
+    "CVE-2026-34257"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-FES-ITS",
+   "release_month": "2026-06",
+   "released_on": "2026-06-23",
+   "first_released_on": "2026-04-14",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3692004"
+  },
+  {
+   "note_number": "3751691",
+   "title": "SQL Injection vulnerability in SAP S/4HANA",
+   "cve_ids": [
+    "CVE-2026-44744"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-EPT-SSC",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3751691"
+  },
+  {
+   "note_number": "3748819",
+   "title": "Missing caller identification check-in for ODP Data Replication APIs",
+   "cve_ids": [
+    "CVE-2026-44754"
+   ],
+   "cvss_score": 6.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:N/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-BW-ODP",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3748819"
+  },
+  {
+   "note_number": "3748262",
+   "title": "Potential Spring Security vulnerability within SAP Commerce Cloud and SAP Data Hub",
+   "cve_ids": [
+    "CVE-2026-22732"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3748262"
+  },
+  {
+   "note_number": "3747484",
+   "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2026-29145"
+   ],
+   "cvss_score": 7.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3747484"
+  },
+  {
+   "note_number": "3746332",
+   "title": "XML Signature Wrapping in SAML Authentication in SAP NetWeaver AS ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-44748"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-SEC-LGN-SML",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3746332"
+  },
+  {
+   "note_number": "3735546",
+   "title": "Missing Authorization check in Application Server ABAP of SAP NetWeaver and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-44751"
+   ],
+   "cvss_score": 7.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-DWB-DIC-AC",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3735546"
+  },
+  {
+   "note_number": "3723655",
+   "title": "Reflected Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver AS Java (JDBC Test Servlet)",
+   "cve_ids": [
+    "CVE-2026-44746"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BW-BEX-UDI",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3723655"
+  },
+  {
+   "note_number": "3717897",
+   "title": "Memory Corruption vulnerability in Application Server ABAP of SAP NetWeaver and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-27671"
+   ],
+   "cvss_score": 9.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-MID-RFC",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3717897"
+  },
+  {
+   "note_number": "3715280",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP Wily Introscope Enterprise Manager",
+   "cve_ids": [
+    "CVE-2026-44757"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-DIA-WLY",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3715280"
+  },
+  {
+   "note_number": "3706000",
+   "title": "Security Misconfiguration vulnerability in SAP Business Objects",
+   "cve_ids": [
+    "CVE-2026-44743"
+   ],
+   "cvss_score": 3.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BI-BIP-CMC",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3706000"
+  },
+  {
+   "note_number": "3687096",
+   "title": "Email Spoofing vulnerability in SAP Business Objects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2026-44755"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-SEC",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3687096"
+  },
+  {
+   "note_number": "3673181",
+   "title": "Missing Authorization check in SAP MDG (Review Match Groups Application)",
+   "cve_ids": [
+    "CVE-2026-44750"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-MDG-CMP-BP",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "first_released_on": "2026-06-09",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3673181"
+  },
+  {
+   "note_number": "3732471",
+   "title": "OS Command Injection Vulnerability in SAP Forecasting & Replenishment",
+   "cve_ids": [
+    "CVE-2026-34259"
+   ],
+   "cvss_score": 8.2,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "SCM-FRE-FRP",
+   "release_month": "2026-05",
+   "released_on": "2026-05-26",
+   "first_released_on": "2026-05-12",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3732471"
+  },
+  {
+   "note_number": "3433366",
+   "title": "Information Disclosure vulnerability in SAP Gateway",
+   "cve_ids": [
+    "CVE-2026-44749"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "OPU-GW-V4",
+   "release_month": "2026-05",
+   "released_on": "2026-05-26",
+   "first_released_on": "2026-05-26",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3433366"
+  },
+  {
+   "note_number": "3747787",
+   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
+   "cve_ids": [],
+   "cvss_score": null,
+   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-XS-CDX-NJS",
+   "release_month": "2026-05",
+   "released_on": "2026-05-19",
+   "first_released_on": "2026-04-29",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3747787"
+  },
+  {
+   "note_number": "3733064",
+   "title": "Missing authentication check in SAP Commerce Cloud configuration",
+   "cve_ids": [
+    "CVE-2026-34263"
+   ],
+   "cvss_score": 9.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "CEC-SCC-CDM-BO-APP",
+   "release_month": "2026-05",
+   "released_on": "2026-05-15",
+   "first_released_on": "2026-05-12",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3733064"
+  },
+  {
+   "note_number": "3718508",
+   "title": "Missing Authorization Check in SAP Incentive and Commission Management",
+   "cve_ids": [
+    "CVE-2026-40134"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "ICM",
+   "release_month": "2026-05",
+   "released_on": "2026-05-13",
+   "first_released_on": "2026-05-12",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3718508"
+  },
+  {
+   "note_number": "3735359",
+   "title": "Code Injection vulnerability in SAP Application Server ABAP for SAP NetWeaver and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-40129"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-MID-ICF",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3735359"
+  },
+  {
+   "note_number": "3730019",
+   "title": "OS Command Injection vulnerability in SAP NetWeaver Application Server for ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-40135"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-ABA-SC",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3730019"
+  },
+  {
+   "note_number": "3728690",
+   "title": "Reflected Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Application Server ABAP (Applications based on Business Server Pages)",
+   "cve_ids": [
+    "CVE-2026-27682"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-BSP",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3728690"
+  },
+  {
+   "note_number": "3727717",
+   "title": "Cross-Site Scripting (XSS) vulnerability in Business Server Pages Application (TAF_APPLAUNCHER)",
+   "cve_ids": [
+    "CVE-2026-40137"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-TWB-CBT",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3727717",
+   "cvss_vector_malformed": true
+  },
+  {
+   "note_number": "3726962",
+   "title": "SQL Injection vulnerability in SAP HANA Deployment Infrastructure (HDI) deploy library",
+   "cve_ids": [
+    "CVE-2026-40131"
+   ],
+   "cvss_score": 3.4,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:L",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "HAN-DB-DI",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3726962"
+  },
+  {
+   "note_number": "3726583",
+   "title": "Content Spoofing vulnerability in SAPUI5 (Search UI)",
+   "cve_ids": [
+    "CVE-2026-34258"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "HAN-AS-INA-UI",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3726583"
+  },
+  {
+   "note_number": "3724838",
+   "title": "SQL injection vulnerability in SAP S/4HANA (SAP Enterprise Search for ABAP)",
+   "cve_ids": [
+    "CVE-2026-34260"
+   ],
+   "cvss_score": 9.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-EIM-ESH",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3724838"
+  },
+  {
+   "note_number": "3721959",
+   "title": "Missing Authorization Check in SAP Strategic Enterprise Management (BSP application Balanced Scorecard Wizard)",
+   "cve_ids": [
+    "CVE-2026-40132"
+   ],
+   "cvss_score": 5.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FIN-SEM-CPM-BSC",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3721959"
+  },
+  {
+   "note_number": "3718083",
+   "title": "Missing Authorization check in SAP S/4HANA Condition Maintenance",
+   "cve_ids": [
+    "CVE-2026-40133"
+   ],
+   "cvss_score": 6.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SD-MD-CM",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3718083"
+  },
+  {
+   "note_number": "3716450",
+   "title": "Potential Improper Certificate Validation in SAP Commerce Cloud (Apache Log4j)",
+   "cve_ids": [
+    "CVE-2025-68161"
+   ],
+   "cvss_score": 4.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3716450"
+  },
+  {
+   "note_number": "3713521",
+   "title": "Denial of service (DoS) in SAP Financial Consolidation",
+   "cve_ids": [
+    "CVE-2026-40136"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "EPM-BFC-PSI",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3713521"
+  },
+  {
+   "note_number": "3667593",
+   "title": "Cross Site Request Forgery (CSRF) in SAP BusinessObjects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2026-0502"
+   ],
+   "cvss_score": 5.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-INV",
+   "release_month": "2026-05",
+   "released_on": "2026-05-12",
+   "first_released_on": "2026-05-12",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3667593"
+  },
+  {
+   "note_number": "3680767",
+   "title": "Information Disclosure vulnerability in SAP Human Capital Management for SAP S/4HANA",
+   "cve_ids": [
+    "CVE-2026-34264"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PA-PA-XX",
+   "release_month": "2026-04",
+   "released_on": "2026-04-17",
+   "first_released_on": "2026-04-17",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3680767"
+  },
+  {
+   "note_number": "3731908",
+   "title": "Missing Authorization check in SAP ERP and SAP S/4 HANA (Private Cloud and On-Premise)",
+   "cve_ids": [
+    "CVE-2026-34256"
+   ],
+   "cvss_score": 7.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "CA-JVA-JVA",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3731908"
+  },
+  {
+   "note_number": "3730639",
+   "title": "Information Disclosure Vulnerability in SAP HANA Cockpit and HANA Database Explorer",
+   "cve_ids": [
+    "CVE-2026-34262"
+   ],
+   "cvss_score": 5.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "HAN-CPT-CPT2-DBX",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3730639"
+  },
+  {
+   "note_number": "3723097",
+   "title": "Code Injection vulnerability in SAP Landscape Transformation",
+   "cve_ids": [
+    "CVE-2026-27675"
+   ],
+   "cvss_score": 2.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:L/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "CA-LT-PCL",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3723097"
+  },
+  {
+   "note_number": "3719397",
+   "title": "Code Injection vulnerability in SAP NetWeaver Application Server Java (Web Dynpro Java)",
+   "cve_ids": [
+    "CVE-2026-27674"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-WD-JAV",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3719397"
+  },
+  {
+   "note_number": "3719353",
+   "title": "SQL Injection vulnerability in SAP Business Planning and Consolidation and SAP Business Warehouse",
+   "cve_ids": [
+    "CVE-2026-27681"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "EPM-BPC-NW-SQE",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3719353"
+  },
+  {
+   "note_number": "3716767",
+   "title": "Missing Authorization check in SAP S/4HANA Frontend OData Service (Manage Reference Structures)",
+   "cve_ids": [
+    "CVE-2026-27679"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PM-EQM-RS",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3716767"
+  },
+  {
+   "note_number": "3715177",
+   "title": "Missing Authorization check in SAP S/4HANA Backend OData Service (Manage Reference Structures)",
+   "cve_ids": [
+    "CVE-2026-27678"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PM-EQM-RS",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3715177"
+  },
+  {
+   "note_number": "3715097",
+   "title": "Missing Authorization check in SAP S/4HANA OData Service (Manage Reference Equipment)",
+   "cve_ids": [
+    "CVE-2026-27677"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PM-EQM-EQ",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3715097"
+  },
+  {
+   "note_number": "3711682",
+   "title": "Missing Authorization check in SAP S/4HANA OData Service (Manage Technical Object Structures)",
+   "cve_ids": [
+    "CVE-2026-27676"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PM-EQM-RS",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3711682"
+  },
+  {
+   "note_number": "3705094",
+   "title": "Missing Authorization check in SAP Business Analytics and SAP Content Management",
+   "cve_ids": [
+    "CVE-2026-34261"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PA-OS",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3705094"
+  },
+  {
+   "note_number": "3703813",
+   "title": "Missing Authorization Check in SAP S/4HANA (Private Cloud and On-Premise)",
+   "cve_ids": [
+    "CVE-2026-27673"
+   ],
+   "cvss_score": 4.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "IS-U-TO-MI",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3703813"
+  },
+  {
+   "note_number": "3703276",
+   "title": "Missing Authorization check in Material Master Application",
+   "cve_ids": [
+    "CVE-2026-27672"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SCM-BAS-INT-MD",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3703276"
+  },
+  {
+   "note_number": "3702191",
+   "title": "Insecure Session Management vulnerability in SAP BusinessObjects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2026-24318"
+   ],
+   "cvss_score": 4.2,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-INV",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3702191"
+  },
+  {
+   "note_number": "3698216",
+   "title": "Reflected cross site scripting vulnerability in SAP BusinessObjects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2026-27683"
+   ],
+   "cvss_score": 4.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-INV",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3698216"
+  },
+  {
+   "note_number": "3696239",
+   "title": "Denial of Service Vulnerability in SAP BusinessObjects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2025-64775"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-SEC",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3696239"
+  },
+  {
+   "note_number": "3665042",
+   "title": "CSS Injection vulnerability in SAP NetWeaver Application Server ABAP",
+   "cve_ids": [
+    "CVE-2026-27680"
+   ],
+   "cvss_score": 3.1,
+   "cvss_vector": "CVSS:/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BC-WD-UR",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-03-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3665042",
+   "cvss_vector_malformed": true
+  },
+  {
+   "note_number": "3645228",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP Supplier Relationship Management (SICF Handler in SRM Catalog)",
+   "cve_ids": [
+    "CVE-2026-0512"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SRM-EBP-CAT",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2026-04-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3645228"
+  },
+  {
+   "note_number": "3530544",
+   "title": "Missing Authorization check in SAP S4CORE (Manage Journal Entries)",
+   "cve_ids": [
+    "CVE-2025-42899"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FI-FIO-GL-TRA",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "first_released_on": "2025-11-11",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3530544"
+  },
+  {
+   "note_number": "3689080",
+   "title": "Server-Side Request Forgery (SSRF) in SAP NetWeaver Application Server for ABAP",
+   "cve_ids": [
+    "CVE-2026-24316"
+   ],
+   "cvss_score": 6.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-TWB-TST-ECA",
+   "release_month": "2026-03",
+   "released_on": "2026-03-24",
+   "first_released_on": "2026-03-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3689080"
+  },
+  {
+   "note_number": "3678282",
+   "title": "Denial of service (DOS) vulnerability in SAP BusinessObjects BI Platform",
+   "cve_ids": [
+    "CVE-2026-0485"
+   ],
+   "cvss_score": 7.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BI-BIP-SRV",
+   "release_month": "2026-03",
+   "released_on": "2026-03-24",
+   "first_released_on": "2026-02-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3678282"
+  },
+  {
+   "note_number": "3719502",
+   "title": "Denial of service (DOS) in SAP Supply Chain Management",
+   "cve_ids": [
+    "CVE-2026-27689"
+   ],
+   "cvss_score": 7.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "SCM-APO-INT-EXT",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3719502"
+  },
+  {
+   "note_number": "3714585",
+   "title": "Insecure Deserialization in SAP NetWeaver Enterprise Portal Administration",
+   "cve_ids": [
+    "CVE-2026-27685"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-PIN-PCD",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3714585"
+  },
+  {
+   "note_number": "3708457",
+   "title": "Insecure Storage Protection vulnerability in SAP Customer Checkout 2.0",
+   "cve_ids": [
+    "CVE-2026-24311"
+   ],
+   "cvss_score": 5.6,
+   "cvss_vector": "CVSS:3.0/AV:P/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "IS-SE-CCO",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3708457"
+  },
+  {
+   "note_number": "3707930",
+   "title": "Missing Authorization check in SAP Solution Tools Plug-In (ST-PI)",
+   "cve_ids": [
+    "CVE-2026-24313"
+   ],
+   "cvss_score": 5.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-SDD",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3707930"
+  },
+  {
+   "note_number": "3704740",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server for ABAP",
+   "cve_ids": [
+    "CVE-2026-27688"
+   ],
+   "cvss_score": 5.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-DB-SDB",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3704740"
+  },
+  {
+   "note_number": "3703856",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server for ABAP",
+   "cve_ids": [
+    "CVE-2026-24309"
+   ],
+   "cvss_score": 6.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-DB-ORA-CCM",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3703856"
+  },
+  {
+   "note_number": "3703385",
+   "title": "Missing Authorization check in SAP Business Warehouse (Service API)",
+   "cve_ids": [
+    "CVE-2026-27686"
+   ],
+   "cvss_score": 5.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-BW",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3703385"
+  },
+  {
+   "note_number": "3701020",
+   "title": "Missing Authorization check in SAP S/4HANA HCM Portugal and SAP ERP HCM Portugal",
+   "cve_ids": [
+    "CVE-2026-27687"
+   ],
+   "cvss_score": 5.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "PY-PT",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3701020"
+  },
+  {
+   "note_number": "3700960",
+   "title": "Denial of Service due to Outdated OpenSSL Version in SAP NetWeaver AS Java (Adobe Document Services)",
+   "cve_ids": [],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-SRV-FP",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3700960",
+   "multiple_cves": true
+  },
+  {
+   "note_number": "3699761",
+   "title": "DLL Hijacking vulnerability in SAP GUI for Windows with active GuiXT",
+   "cve_ids": [
+    "CVE-2026-24317"
+   ],
+   "cvss_score": 5.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-FES-GXT",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3699761"
+  },
+  {
+   "note_number": "3698553",
+   "title": "Code Injection vulnerability in SAP Quotation Management Insurance application (FS-QUO)",
+   "cve_ids": [
+    "CVE-2019-17571"
+   ],
+   "cvss_score": 9.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "FS-QUO",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3698553"
+  },
+  {
+   "note_number": "3697355",
+   "title": "SQL Injection Vulnerability in SAP NetWeaver (Feedback Notification)",
+   "cve_ids": [
+    "CVE-2026-27684"
+   ],
+   "cvss_score": 6.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:L",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-NO",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3697355"
+  },
+  {
+   "note_number": "3694383",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server for ABAP",
+   "cve_ids": [
+    "CVE-2026-24310"
+   ],
+   "cvss_score": 3.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BC-DB-INF",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3694383"
+  },
+  {
+   "note_number": "3693543",
+   "title": "DOM-based Cross-Site Scripting (XSS) Vulnerability in SAP Business One (Job Service)",
+   "cve_ids": [
+    "CVE-2026-0489"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SBO-CRO-SEC",
+   "release_month": "2026-03",
+   "released_on": "2026-03-10",
+   "first_released_on": "2026-03-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3693543"
+  },
+  {
+   "note_number": "3695912",
+   "title": "Denial of service (DOS) vulnerability in SAP BusinessObjects Business Intelligence Platform (AdminTools)",
+   "cve_ids": [
+    "CVE-2026-24324"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-SRV",
+   "release_month": "2026-02",
+   "released_on": "2026-02-24",
+   "first_released_on": "2026-02-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3695912"
+  },
+  {
+   "note_number": "3672622",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server ABAP and SAP S/4HANA",
+   "cve_ids": [
+    "CVE-2026-0484"
+   ],
+   "cvss_score": 6.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-DWB-CEX-CF",
+   "release_month": "2026-02",
+   "released_on": "2026-02-24",
+   "first_released_on": "2026-02-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3672622"
+  },
+  {
+   "note_number": "3646297",
+   "title": "Information Disclosure vulnerability in SAP S/4HANA (Manage Payment Media)",
+   "cve_ids": [
+    "CVE-2026-24314"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FI-FIO-AP-PAY",
+   "release_month": "2026-02",
+   "released_on": "2026-02-24",
+   "first_released_on": "2026-02-24",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3646297"
+  },
+  {
+   "note_number": "3396109",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Business Client for HTML",
+   "cve_ids": [
+    "CVE-2024-22128"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-FES-BUS",
+   "release_month": "2026-02",
+   "released_on": "2026-02-24",
+   "first_released_on": "2024-02-13",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3396109"
+  },
+  {
+   "note_number": "3697567",
+   "title": "XML Signature Wrapping in SAP NetWeaver AS ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-23687"
+   ],
+   "cvss_score": 8.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BC-SEC-WSS",
+   "release_month": "2026-02",
+   "released_on": "2026-02-13",
+   "first_released_on": "2026-02-10",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3697567"
+  },
+  {
+   "note_number": "3710111",
+   "title": "Missing authorization check in SAP Business Workflow",
+   "cve_ids": [
+    "CVE-2026-24312"
+   ],
+   "cvss_score": 5.2,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-BMT-WFM",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3710111"
+  },
+  {
+   "note_number": "3705882",
+   "title": "Missing Authorization check in SAP Solution Tools Plug-In (ST-PI)",
+   "cve_ids": [
+    "CVE-2026-24322"
+   ],
+   "cvss_score": 7.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "SV-SMG-SDD",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3705882"
+  },
+  {
+   "note_number": "3703092",
+   "title": "Denial of service (DOS) in SAP Supply Chain Management",
+   "cve_ids": [
+    "CVE-2026-23689"
+   ],
+   "cvss_score": 7.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "SCM-APO-CA-COP",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3703092"
+  },
+  {
+   "note_number": "3697256",
+   "title": "Cross Site Scripting (XSS) vulnerability in SAP BusinessObjects Enterprise (Central Management Console)",
+   "cve_ids": [
+    "CVE-2026-24325"
+   ],
+   "cvss_score": 4.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BI-BIP-CMC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3697256"
+  },
+  {
+   "note_number": "3697099",
+   "title": "Code Injection vulnerability in SAP CRM and SAP S/4HANA (Scripting Editor)",
+   "cve_ids": [
+    "CVE-2026-0488"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "CRM-IC-FRW",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3697099"
+  },
+  {
+   "note_number": "3692405",
+   "title": "Race Condition in SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2025-12383"
+   ],
+   "cvss_score": 7.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3692405"
+  },
+  {
+   "note_number": "3691645",
+   "title": "Missing Authorization Check in ABAP based SAP systems",
+   "cve_ids": [
+    "CVE-2026-0486"
+   ],
+   "cvss_score": 5.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-SDD",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3691645"
+  },
+  {
+   "note_number": "3689543",
+   "title": "Race condition vulnerability in SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2026-23684"
+   ],
+   "cvss_score": 5.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CEC-SCC-COM-BC-OCC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3689543"
+  },
+  {
+   "note_number": "3688319",
+   "title": "Open Redirection vulnerability in Business Server Pages Application (TAF_APPLAUNCHER)",
+   "cve_ids": [
+    "CVE-2026-24328"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-TWB-CBT",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3688319"
+  },
+  {
+   "note_number": "3687771",
+   "title": "Information Disclosure vulnerability in SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2026-24321"
+   ],
+   "cvss_score": 5.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CEC-SCC-COM-BC-OCC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3687771"
+  },
+  {
+   "note_number": "3687285",
+   "title": "Insecure Deserialization vulnerability in SAP NetWeaver (JMS service)",
+   "cve_ids": [
+    "CVE-2026-23685"
+   ],
+   "cvss_score": 4.4,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-JAS-JMS",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3687285"
+  },
+  {
+   "note_number": "3680416",
+   "title": "Missing Authorization check in a function module in SAP Support Tools Plug-In",
+   "cve_ids": [
+    "CVE-2026-23681"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SV-SMG-SDD",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3680416"
+  },
+  {
+   "note_number": "3680390",
+   "title": "Missing Authorization Check in SAP Strategic Enterprise Management (Balanced Scorecard in BSP Application)",
+   "cve_ids": [
+    "CVE-2026-24327"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FIN-SEM-CPM-BSC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3680390"
+  },
+  {
+   "note_number": "3679346",
+   "title": "Information Disclosure Vulnerability in SAP Business One (B1 Client Memory Dump Files)",
+   "cve_ids": [
+    "CVE-2026-24319"
+   ],
+   "cvss_score": 5.8,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "SBO-CRO-SEC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3679346"
+  },
+  {
+   "note_number": "3678417",
+   "title": "Multiple vulnerabilities in BSP Applications of SAP Document Management System",
+   "cve_ids": [
+    "CVE-2026-0505"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "CA-DMS-OP",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3678417"
+  },
+  {
+   "note_number": "3678313",
+   "title": "Memory Corruption vulnerability in SAP NetWeaver and ABAP Platform (Application Server ABAP)",
+   "cve_ids": [
+    "CVE-2026-24320"
+   ],
+   "cvss_score": 3.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BC-CST-IC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3678313"
+  },
+  {
+   "note_number": "3678009",
+   "title": "Missing authorization check in SAP S/4HANA Defense & Security (Disconnected Operations)",
+   "cve_ids": [
+    "CVE-2026-24326"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "IS-DFS-BIT",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3678009"
+  },
+  {
+   "note_number": "3674774",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-0509"
+   ],
+   "cvss_score": 9.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-MID-RFC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3674774"
+  },
+  {
+   "note_number": "3674246",
+   "title": "Open Redirect vulnerability in SAP BusinessObjects Business Intelligence Platform",
+   "cve_ids": [
+    "CVE-2026-0508"
+   ],
+   "cvss_score": 7.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:N",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BI-BIP-SEC",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3674246"
+  },
+  {
+   "note_number": "3673213",
+   "title": "CRLF Injection vulnerability in SAP NetWeaver Application Server Java",
+   "cve_ids": [
+    "CVE-2026-23686"
+   ],
+   "cvss_score": 3.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:N/I:L/A:N",
+   "priority": "Low",
+   "priority_raw": "Correction with low priority",
+   "category": "Program error",
+   "component": "BC-MID-CON-JCO",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3673213"
+  },
+  {
+   "note_number": "3654236",
+   "title": "Denial of service (DOS) in SAP BusinessObjects BI Platform",
+   "cve_ids": [
+    "CVE-2026-0490"
+   ],
+   "cvss_score": 7.5,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "BI-BIP-SRV",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3654236"
+  },
+  {
+   "note_number": "3503138",
+   "title": "Information Disclosure vulnerability in SAP NetWeaver Application Server ABAP (applications based on SAP GUI for HTML)",
+   "cve_ids": [
+    "CVE-2025-0059"
+   ],
+   "cvss_score": 6.0,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "BC-FES-WGU",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2025-01-14",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3503138"
+  },
+  {
+   "note_number": "3215823",
+   "title": "Missing Authorization check in SAP Fiori App (Manage Service Entry Sheets - Lean Services)",
+   "cve_ids": [
+    "CVE-2026-23688"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "MM-PUR-SVC-SES",
+   "release_month": "2026-02",
+   "released_on": "2026-02-10",
+   "first_released_on": "2026-02-10",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3215823"
+  },
+  {
+   "note_number": "3697979",
+   "title": "Code Injection vulnerability in SAP Landscape Transformation",
+   "cve_ids": [
+    "CVE-2026-0491"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "CA-DT-ANA",
+   "release_month": "2026-01",
+   "released_on": "2026-01-27",
+   "first_released_on": "2026-01-13",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3697979"
+  },
+  {
+   "note_number": "3122486",
+   "title": "Missing Authorization check in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "cve_ids": [
+    "CVE-2026-23683"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Correction of legal function",
+   "component": "FI-LOC-FI-RU",
+   "release_month": "2026-01",
+   "released_on": "2026-01-27",
+   "first_released_on": "2026-01-27",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3122486"
+  }
+ ]
+}

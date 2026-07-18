@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+      - name: Validate catalog against schema
+        run: |
+          python - <<'EOF'
+          import json, jsonschema
+          schema = json.load(open("data/schema.json"))
+          catalog = json.load(open("data/notes_catalog.json"))
+          jsonschema.Draft7Validator(schema).validate(catalog)
+          print(f"catalog OK: {catalog['catalog_meta']['note_count']} notes")
+          EOF
+      - name: Run tests
+        run: pytest -v

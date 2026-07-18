@@ -1,0 +1,111 @@
+{
+ "catalog_meta": {
+  "catalog_version": "2026-07-18",
+  "note_count": 5,
+  "coverage_start": "2026-05",
+  "coverage_end": "2026-07",
+  "source_statement": "TEST FIXTURE \u2014 subset of real catalog records; one KEV flag is synthetic for testing",
+  "kev_snapshot_version": "test",
+  "kev_snapshot_fetched": "2026-07-18"
+ },
+ "notes": [
+  {
+   "note_number": "3727078",
+   "title": "Directory Traversal vulnerability in SAP NetWeaver Application Server Java (Web Container)",
+   "cve_ids": [
+    "CVE-2026-40128"
+   ],
+   "cvss_score": 9.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-JAS-WEB",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-06-09",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3727078"
+  },
+  {
+   "note_number": "3515598",
+   "title": "Missing Authorization check in SAP S/4HANA (Draft operation)",
+   "cve_ids": [
+    "CVE-2026-44771"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Correction with medium priority",
+   "category": "Program error",
+   "component": "FIN-FSCM-CLM-COP",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": true,
+   "kev_date_added": "2026-07-15",
+   "note_url": "https://me.sap.com/notes/3515598"
+  },
+  {
+   "note_number": "3763800",
+   "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
+   "cve_ids": [],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "Correction with high priority",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3763800",
+   "multiple_cves": true
+  },
+  {
+   "note_number": "3747787",
+   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
+   "cve_ids": [],
+   "cvss_score": null,
+   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-XS-CDX-NJS",
+   "release_month": "2026-05",
+   "released_on": "2026-05-19",
+   "first_released_on": "2026-04-29",
+   "is_update": true,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3747787"
+  },
+  {
+   "note_number": "3747367",
+   "title": "Memory Corruption vulnerability in SAP NetWeaver Application Server ABAP",
+   "cve_ids": [
+    "CVE-2026-44747"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "HotNews",
+   "category": "Program error",
+   "component": "BC-FES-ITS",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "first_released_on": "2026-07-14",
+   "is_update": false,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "note_url": "https://me.sap.com/notes/3747367",
+   "cvss_vector_malformed": true
+  }
+ ]
+}

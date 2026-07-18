@@ -1,0 +1,16 @@
+# Input exports never go into the repo — only the derived catalog JSON does.
+input/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime state (OAuth store, login accounts, logs) — never committed
+.env
+data/oauth_clients.json
+data/oauth_tokens.json
+data/users.json
+data/query_log.jsonl
+*.log
