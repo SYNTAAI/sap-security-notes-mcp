@@ -1,0 +1,214 @@
+# Curated component-taxonomy mapping for check_component_exposure.
+#
+# Maps what users actually paste — software components (System -> Status) and
+# product/stack names (Maintenance Planner) — onto the SAP application
+# components this catalog is indexed by.
+#
+# Seeding discipline: entries come ONLY from (a) note-title evidence inside
+# data/notes_catalog.json (note numbers cited) or (b) SAP component-hierarchy
+# knowledge, and every entry carries a rationale. Anything we could not map
+# with confidence is NOT mapped — it is listed under `unmapped:` at the bottom
+# for human review. An incomplete mapping with zero wrong entries is the goal.
+#
+# Matching semantics: a prefix P covers application component C when C == P or
+# C startswith P + "-". excluded_prefixes are subtracted with the same rule.
+
+version: "2026-07-19"
+
+software_components:
+
+  SAP_BASIS:
+    description: "ABAP platform basis component"
+    app_component_prefixes: ["BC"]
+    excluded_prefixes:
+      - "BC-JAS"          # AS Java engine (notes 3687285/3726899/3727078 titled 'AS Java')
+      - "BC-XS"           # BTP/XSA/cloud (3720138 Approuter, 3747787 CAP/MTA)
+      - "BC-CP"           # BTP cloud platform (3741519 Approuter)
+      - "BC-WD-JAV"       # Web Dynpro Java — AS Java (3719397)
+      - "BC-INS-CTC"      # Configuration Wizard/CTC — AS Java (3748227 titled 'AS Java')
+      - "BC-MID-CON-JCO"  # JCo connector — AS Java (3673213 titled 'AS Java')
+      - "BC-PIN"          # Enterprise Portal PCD — AS Java (3714585 'Enterprise Portal Administration')
+      - "BC-SRV-FP"       # Adobe Document Services — AS Java (3700960 titled 'AS Java')
+      - "BC-FES-GXT"      # GuiXT — SAP GUI for Windows client add-on, a frontend install, not a server software component (3699761)
+      - "BC-BW"           # BW Service API / ODP — ships in SAP_BW (mapped there)
+    rationale: >
+      ABAP stack only. Catalog evidence: the remaining BC-* notes are titled
+      'SAP NetWeaver Application Server ABAP' / 'ABAP Platform', e.g. 3717897
+      (BC-MID-RFC), 3746332 (BC-SEC-LGN-SML SAML), 3773304 (BC-CTS transport
+      system), 3747367 (BC-FES-ITS integrated ITS), 3692165 (BC-CST-NI
+      SAProuter, ships with the kernel). Exclusions carve out AS Java,
+      BTP/XSA/cloud, frontend client software, and SAP_BW.
+
+  SAP_BW:
+    description: "SAP Business Warehouse (embedded on NetWeaver ABAP systems)"
+    app_component_prefixes: ["BC-BW"]
+    excluded_prefixes: []
+    rationale: >
+      Notes 3703385 ('SAP Business Warehouse (Service API)') and 3748819 (ODP
+      Data Replication APIs) sit under BC-BW; the BW Service API and ODP ship
+      in the SAP_BW software component. BW-BEX-UDI is deliberately NOT
+      included: note 3723655 is titled 'SAP NetWeaver AS Java (JDBC Test
+      Servlet)' — AS Java, see unmapped.
+
+  SAP_GWFND:
+    description: "SAP Gateway Foundation (OData)"
+    app_component_prefixes: ["OPU-GW"]
+    excluded_prefixes: []
+    rationale: >
+      Note 3433366 under OPU-GW-V4 is titled 'Information Disclosure
+      vulnerability in SAP Gateway'; SAP Gateway ships in SAP_GWFND.
+
+  SAP_UI:
+    description: "SAPUI5 / Fiori launchpad frontend (UI add-on / Fiori FES)"
+    app_component_prefixes: ["CA-FLP", "HAN-AS-INA-UI"]
+    excluded_prefixes: []
+    rationale: >
+      Note 3682699 under CA-FLP-FE-COR is titled 'Path Traversal Vulnerability
+      in SAP Fiori (launchpad)'; the Fiori launchpad frontend is delivered in
+      SAP_UI (Fiori frontend server). HAN-AS-INA-UI: note 3726583 is titled
+      'Content Spoofing vulnerability in SAPUI5 (Search UI)' — SAPUI5 is
+      delivered in SAP_UI (mapping approved by human review 2026-07-19
+      despite the HAN-* component family).
+
+  S4CORE:
+    description: "SAP S/4HANA core application component"
+    app_component_prefixes:
+      - "FI"        # 3713902/3646297/3530544/3122486 titled 'SAP S/4HANA' / 'SAP S4CORE' Fiori+GL apps
+      - "FIN-FSCM"  # 3515598 titled 'SAP S/4HANA (Draft operation)'
+      - "SD"        # 3718083 titled 'SAP S/4HANA Condition Maintenance'
+      - "PM"        # 3715097/3716767/3715177/3711682 titled 'SAP S/4HANA OData Service'
+      - "MM"        # 3215823 titled 'SAP Fiori App (Manage Service Entry Sheets)' — S/4 MM backend
+      - "CA-JVA"    # 3731908 titled 'SAP ERP and SAP S/4 HANA'
+      - "CA-EPT"    # 3751691 titled 'SQL Injection vulnerability in SAP S/4HANA'
+      - "CA-DMS"    # 3678417 Document Management System — DMS application content ships in S4CORE on S/4HANA
+      - "IS-U"      # 3703813 titled 'SAP S/4HANA (Private Cloud and On-Premise)'
+      - "PPM"       # 3537373 titled 'SAP S/4HANA Project Management (PPM-PRO)'
+    excluded_prefixes: []
+    rationale: >
+      S/4HANA functional areas; every prefix above is backed by at least one
+      catalog note whose title names SAP S/4HANA (note numbers cited inline).
+
+  S4FND:
+    description: "SAP S/4HANA foundation"
+    app_component_prefixes: ["CA-WUI"]
+    excluded_prefixes: []
+    rationale: >
+      Note 3155685 ('Security misconfiguration in SAP CRM (WebClient UI)'):
+      the WebClient UI framework (WEBCUIF) is contained in S4FND on S/4HANA.
+      Caveat: on a standalone SAP CRM system the same note applies via
+      WEBCUIF — confirm against the full note.
+
+  SAP_HR:
+    description: "SAP Human Capital Management (HCM)"
+    app_component_prefixes: ["PA", "PY"]
+    excluded_prefixes: []
+    rationale: >
+      HCM ships in SAP_HR/EA-HR (H4S4 on S/4HANA). Evidence: note 3680767
+      (PA-PA-XX) titled 'SAP Human Capital Management for SAP S/4HANA';
+      note 3701020 (PY-PT) titled 'SAP S/4HANA HCM Portugal and SAP ERP HCM
+      Portugal'. Entry approved by human review 2026-07-19.
+
+  SAP_ABA:
+    description: "Cross-application basis component"
+    app_component_prefixes: []
+    excluded_prefixes: []
+    rationale: >
+      Kept so product resolution (S/4HANA, ABAP Platform) can name it, but no
+      catalog note could be attributed to SAP_ABA with confidence yet — no
+      prefixes are curated. Items resolving only here are reported as
+      not assessed.
+
+  UIS4HOP1:
+    description: "SAP Fiori for SAP S/4HANA (on-premise UI apps)"
+    app_component_prefixes: []
+    excluded_prefixes: []
+    rationale: >
+      The catalog's Fiori-app notes carry backend components (FI-FIO-*,
+      MM-PUR-*), which are mapped to S4CORE; no note could be attributed to
+      the UIS4HOP1 UI deliverable itself with confidence — no prefixes yet.
+
+  ST-PI:
+    description: "SAP Solution Tools Plug-In"
+    app_component_prefixes: ["SV-SMG-SDD"]
+    excluded_prefixes: []
+    rationale: >
+      Notes 3707930, 3705882 and 3680416 are explicitly titled 'Missing
+      Authorization check in SAP Solution Tools Plug-In (ST-PI)'. Other
+      SV-SMG-* components are Solution Manager and are NOT included.
+
+  DMIS:
+    description: "SAP Landscape Transformation (SLT) add-on"
+    app_component_prefixes: ["CA-LT", "CA-DT-ANA"]
+    excluded_prefixes: []
+    rationale: >
+      Notes 3697979 (CA-DT-ANA) and 3723097 (CA-LT-PCL) are both titled 'Code
+      Injection vulnerability in SAP Landscape Transformation'; SLT ships in
+      the DMIS add-on.
+
+products:
+
+  "SAP S/4HANA":
+    aliases: ["S/4HANA", "S4HANA", "S/4 HANA", "S4 HANA"]
+    software_components: [S4CORE, S4FND, SAP_BASIS, SAP_ABA, SAP_GWFND, SAP_UI]
+    rationale: "On-premise/private-cloud S/4HANA stack: core + foundation + ABAP platform + Gateway + UI."
+
+  "ABAP PLATFORM":
+    aliases: ["ABAP PLATFORM"]
+    software_components: [SAP_BASIS, SAP_ABA, SAP_GWFND, SAP_UI]
+    rationale: "The ABAP platform stack underneath S/4HANA (no S4CORE/S4FND application layer)."
+
+  "SAP FIORI":
+    aliases: ["FIORI"]  # matches 'SAP FIORI FES', 'SAP FIORI FOR S/4HANA', etc.
+    software_components: [SAP_UI, UIS4HOP1, SAP_GWFND]
+    rationale: "Fiori frontend-server stack: UI runtime, S/4 UI apps, Gateway."
+
+# ---------------------------------------------------------------------------
+# Unmapped — application components in the catalog that are deliberately NOT
+# mapped to any software component. Human review welcome. Being listed here
+# NEVER implies safety: these notes remain fully reachable by application
+# component (direct/prefix matching).
+# ---------------------------------------------------------------------------
+unmapped:
+  - { component: BC-JAS-JMS,         reason: "AS Java stack — no single pasteable software component; query by application component" }
+  - { component: BC-JAS-SEC-UME,     reason: "AS Java stack" }
+  - { component: BC-JAS-WEB,         reason: "AS Java stack" }
+  - { component: BC-WD-JAV,          reason: "Web Dynpro Java — AS Java stack" }
+  - { component: BC-INS-CTC-RT,      reason: "Configuration Wizard — AS Java (note 3748227 title)" }
+  - { component: BC-MID-CON-JCO,     reason: "JCo connector — AS Java (note 3673213 title)" }
+  - { component: BC-PIN-PCD,         reason: "Enterprise Portal PCD — AS Java (note 3714585 title)" }
+  - { component: BC-SRV-FP,          reason: "Adobe Document Services — AS Java (note 3700960 title)" }
+  - { component: BW-BEX-UDI,         reason: "JDBC Test Servlet — AS Java (note 3723655 title)" }
+  - { component: EP-PIN-AI-SRA,      reason: "SAP NetWeaver Enterprise Portal — AS Java stack" }
+  - { component: BC-CP-APR,          reason: "SAP Approuter — BTP/cloud, not an on-premise software component" }
+  - { component: BC-XS-APR,          reason: "SAP Approuter — BTP/XSA/cloud" }
+  - { component: BC-XS-CDX-NJS,      reason: "CAP / MTA Build Tool — cloud tooling (npm), not an installed software component" }
+  - { component: BC-FES-GXT,         reason: "GuiXT — SAP GUI for Windows client add-on; frontend install, not a server software component" }
+  - { component: BI-BIP-CMC,         reason: "SAP BusinessObjects BI Platform — own product line" }
+  - { component: BI-BIP-INV,         reason: "SAP BusinessObjects BI Platform — own product line" }
+  - { component: BI-BIP-SEC,         reason: "SAP BusinessObjects BI Platform — own product line" }
+  - { component: BI-BIP-SRV,         reason: "SAP BusinessObjects BI Platform — own product line" }
+  - { component: CEC-SCC-CDM-BO-APP, reason: "SAP Commerce Cloud — own product line" }
+  - { component: CEC-SCC-COM-BC-OCC, reason: "SAP Commerce Cloud — own product line" }
+  - { component: CEC-SCC-PLA-PL,     reason: "SAP Commerce Cloud — own product line" }
+  - { component: HAN-AS-XS,          reason: "SAP HANA XS classic — HANA product line" }
+  - { component: HAN-CPT-CPT2-DBX,   reason: "SAP HANA Cockpit / Database Explorer — HANA product line" }
+  - { component: HAN-DB-DI,          reason: "SAP HANA HDI — HANA product line" }
+  - { component: SV-SMG-DIA-WLY,     reason: "Wily Introscope — Solution Manager landscape, own product" }
+  - { component: SV-SMG-TWB-CBT,     reason: "Solution Manager Test Workbench — Solution Manager, own product (SV-SMG-SDD is mapped to ST-PI because its note titles name ST-PI explicitly)" }
+  - { component: LOD-HCI-PI-CON-SOAP, reason: "SAP Integration Suite (Edge Integration Cell) — cloud service" }
+  - { component: SBO-CRO-SEC,        reason: "SAP Business One — own product line" }
+  - { component: IS-SE-CCO,          reason: "SAP Customer Checkout — own product" }
+  - { component: EPM-BFC-PSI,        reason: "SAP Financial Consolidation — own product" }
+  - { component: EPM-BPC-NW-SQE,     reason: "SAP BPC — add-on (CPMBPC), not mapped without evidence of the customer-visible software component" }
+  - { component: SCM-APO-CA-COP,     reason: "SAP SCM/APO — own product line" }
+  - { component: SCM-APO-INT-EXT,    reason: "SAP SCM/APO — own product line" }
+  - { component: SCM-BAS-INT-MD,     reason: "SAP SCM basis — own product line; note title ('Material Master Application') too generic to relocate" }
+  - { component: SCM-FRE-FRP,        reason: "SAP Forecasting & Replenishment — own product" }
+  - { component: SRM-EBP-CAT,        reason: "SAP SRM — own product line" }
+  - { component: FS-QUO,             reason: "Quotation Management Insurance — industry add-on" }
+  - { component: ICM,                reason: "Incentive and Commission Management — industry add-on (FS-ICM)" }
+  - { component: IS-DFS-BIT,         reason: "S/4HANA Defense & Security — industry solution, delivery software component uncertain" }
+  - { component: CA-MDG-CMP-BP,      reason: "Master Data Governance — foundation ships in S4FND, content in S4CORE; per-note attribution unclear" }
+  - { component: CA-NO,              reason: "Note 3697355 'SAP NetWeaver (Feedback Notification)' — delivery software component unclear" }
+  - { component: CRM-IC-FRW,         reason: "Note 3697099 applies to both standalone SAP CRM and S/4HANA Service — cannot attribute to one software component" }
+  - { component: FIN-SEM-CPM-BSC,    reason: "Strategic Enterprise Management (Balanced Scorecard) — legacy SEM add-on, delivery uncertain" }

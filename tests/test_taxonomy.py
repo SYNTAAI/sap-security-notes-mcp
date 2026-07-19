@@ -69,10 +69,16 @@ def test_classify_mixed_list(real_cat):
 # --------------------------------------------------------- mapping integrity
 
 @needs_mapping
-def test_every_catalog_component_mapped_or_unmapped(real_cat):
+def test_every_catalog_component_has_explicit_disposition(real_cat):
+    """CI gate for monthly catalog commits: every application component in
+    the catalog must have an explicit disposition in the mapping — mapped
+    (covered by a software component's prefixes), excluded (hit by an
+    excluded_prefix), or listed under unmapped. A new component with no
+    disposition fails CI, forcing a mapping review."""
     from catalog import _covers
     sw = real_cat.mapping["software_components"]
     unmapped = {u["component"] for u in real_cat.mapping["unmapped"]}
+    undispositioned = []
     for comp in real_cat.distinct_components():
         covered = [
             key for key, entry in sw.items()
@@ -81,9 +87,13 @@ def test_every_catalog_component_mapped_or_unmapped(real_cat):
             and not any(_covers(comp, x)
                         for x in entry.get("excluded_prefixes") or [])
         ]
-        assert covered or comp in unmapped, (
-            f"{comp} is neither mapped nor listed in unmapped"
+        excluded = any(
+            _covers(comp, x)
+            for entry in sw.values()
+            for x in entry.get("excluded_prefixes") or []
         )
+        if not (covered or excluded or comp in unmapped):
+            undispositioned.append(comp)
         # no component may be silently claimed by two software components
         assert len(covered) <= 1, (
             f"{comp} maps to multiple software components: {covered}"
@@ -92,6 +102,10 @@ def test_every_catalog_component_mapped_or_unmapped(real_cat):
         assert not (covered and comp in unmapped), (
             f"{comp} is both mapped ({covered}) and listed unmapped"
         )
+    assert undispositioned == [], (
+        "Components without an explicit disposition (map them, exclude "
+        f"them, or list them under unmapped): {undispositioned}"
+    )
 
 
 @needs_mapping
