@@ -14,10 +14,9 @@ Model Context Protocol (MCP).
   list, priority definitions
 - **4 Prompts** — Monthly patch briefing, exposure check, patch backlog
   prioritizer, CVE investigation
-- **OAuth 2.0** — PKCE and Dynamic Client Registration for the hosted
-  server
-- **stdio transport** — run it locally with no auth for Claude Desktop or
-  any MCP client
+- **No authentication required — public read-only data.**
+- **stdio transport** — run it locally with Claude Desktop or any MCP
+  client
 
 ## Example Interactions
 
@@ -110,7 +109,7 @@ what applies to me?"
 
 ### claude.ai (hosted)
 
-Add a custom connector with URL:
+Add a custom connector with URL (no login needed):
 
 ```
 https://notes.syntaai.com/mcp
@@ -138,13 +137,14 @@ cd sap-security-notes-mcp
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
-# Local stdio (no auth)
+# Local stdio
 MCP_TRANSPORT=stdio python server.py
 
-# HTTP without auth (development)
+# HTTP (this is how the hosted server runs — no authentication,
+# the catalog is public read-only data)
 MCP_NO_AUTH=1 PORT=8003 python server.py
 
-# HTTP with OAuth (production)
+# HTTP with OAuth (optional, if you self-host and want a login gate)
 PORT=8003 SYNTAAI_ISSUER_URL=https://your-host python server.py
 ```
 
