@@ -33,9 +33,12 @@ def test_unknown_component(cat):
 def test_exposure_check_all_unknown(cat):
     r = cat.component_exposure(["ZZ-FAKE", "XX-NOPE"])
     assert r["matched"] == []
-    assert set(r["no_notes_in_catalog"]["components"]) == {"ZZ-FAKE", "XX-NOPE"}
-    assert "does not mean no vulnerabilities exist" in (
-        r["no_notes_in_catalog"]["message"]
+    items = r["could_not_map_or_no_match"]["items"]
+    assert {i["input"] for i in items} == {"ZZ-FAKE", "XX-NOPE"}
+    for i in items:
+        assert "does not mean" in i["reason"]
+    assert "does not mean absence of vulnerability" in (
+        r["could_not_map_or_no_match"]["message"]
     )
 
 

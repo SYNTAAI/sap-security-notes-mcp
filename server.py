@@ -197,16 +197,27 @@ def lookup_cve(cve_id: str) -> dict:
 def check_component_exposure(
     components: list[str], since: str | None = None
 ) -> dict:
-    """Match a pasted list of SAP components against the catalog (exact +
-    prefix matching per component).
+    """Match a pasted list of SAP components against the catalog. Accepts
+    three input formats and classifies each item:
 
-    v1 is component-level only: version applicability is NOT assessed —
-    confirm against the full SAP note. Components with no catalog matches
-    are listed separately with the explicit caveat that this does not mean
-    no vulnerabilities exist for them.
+    - application components (BC-JAS-WEB, BI-BIP) — direct + prefix match
+    - software components from System → Status (SAP_BASIS, S4CORE, SAP_UI) —
+      resolved via a curated mapping to application-component prefixes
+    - product/stack names from Maintenance Planner ('SAP S/4HANA 2023',
+      'ABAP PLATFORM 2023') — resolved product → software components →
+      application-component prefixes
+
+    Every returned note carries a match_type (direct, prefix,
+    mapped_software_component, mapped_product) and results are grouped by
+    provenance; mapping-derived matches say so explicitly. Items that cannot
+    be classified or mapped land in an explicit 'not assessed' bucket — no
+    bucket ever implies safety.
+
+    Release years in product names are echoed back, but version
+    applicability is NOT assessed — confirm against the full SAP note.
 
     Args:
-        components: e.g. ['SAP_BASIS', 'BC-JAS-WEB', 'CEC-SCC'].
+        components: e.g. ['SAP_BASIS', 'BC-JAS-WEB', 'SAP S/4HANA 2023'].
         since: optional cutoff, 'YYYY-MM' or 'YYYY-MM-DD'.
     """
     return CATALOG.component_exposure(components, since)
@@ -355,25 +366,38 @@ def exposure_check(components: str = "") -> str:
     )
     if components:
         intro += (
-            f"The user provided these components: {components}\n"
-            "Parse them into a list and call check_component_exposure.\n\n"
+            f"The user provided this list: {components}\n"
+            "Parse it into items and call check_component_exposure.\n\n"
         )
     else:
         intro += (
-            "First ask the user to paste their component list. They can "
-            "find it in SAP GUI via System → Status → Component "
-            "information (component names like SAP_BASIS or BC-JAS-WEB).\n"
+            "First ask the user to paste their list. All three formats "
+            "work, mixed freely:\n"
+            "- Software components from SAP GUI: System → Status → "
+            "Component information (SAP_BASIS, S4CORE, SAP_UI, ...)\n"
+            "- Product/stack lines from Maintenance Planner "
+            "('SAP S/4HANA 2023', 'ABAP PLATFORM 2023', 'SAP FIORI FES')\n"
+            "- SAP application components (BC-JAS-WEB, BI-BIP, ...) — the "
+            "taxonomy this catalog is indexed by; each note's header "
+            "carries one\n"
             "Then call check_component_exposure with that list.\n\n"
         )
     return intro + (
         "Produce a prioritized report:\n"
-        "1. Components with matching notes, ordered by worst finding "
-        "(KEV-listed, then HotNews, then CVSS).\n"
-        "2. For each: note number, title, priority, CVSS, link.\n"
-        "3. Components with no catalog matches, stated honestly: no notes "
-        "in this catalog does NOT mean no vulnerabilities exist.\n"
-        "4. Repeat the version caveat prominently: matching is "
-        "component-level only — version applicability is not assessed, so "
+        "1. State how each pasted item was classified (application "
+        "component / software component / product) and how it was matched "
+        "— keep the tool's provenance labels: direct/prefix matches vs. "
+        "'matched via curated mapping (...)'. Mapping-derived results must "
+        "say they are mapping-derived.\n"
+        "2. Matched items ordered by worst finding (KEV-listed, then "
+        "HotNews, then CVSS); for each note: number, title, priority, "
+        "CVSS, link, match_type.\n"
+        "3. The 'not assessed' bucket, stated honestly: could not map or "
+        "no notes in this catalog — this does NOT mean no vulnerabilities "
+        "exist. Explain the taxonomy difference where relevant (software "
+        "components vs application components).\n"
+        "4. Echo any product release years ('your stack: S/4HANA 2023') "
+        "and repeat prominently: version applicability is not assessed — "
         "the user must confirm against each full SAP note."
         + _PROMPT_FOOTER
     )

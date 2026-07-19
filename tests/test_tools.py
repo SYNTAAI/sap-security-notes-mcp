@@ -82,12 +82,14 @@ def test_lookup_cve_found(cat):
 
 def test_component_exposure(cat):
     r = cat.component_exposure(["BC-JAS", "FIN-FSCM-CLM-COP", "ZZ-FAKE"])
-    matched = {m["component"]: m for m in r["matched"]}
+    matched = {m["input"]: m for m in r["matched"]}
     assert matched["BC-JAS"]["match_mode"] == "prefix"
     assert matched["FIN-FSCM-CLM-COP"]["match_mode"] == "exact"
-    assert r["no_notes_in_catalog"]["components"] == ["ZZ-FAKE"]
-    assert "does not mean no vulnerabilities exist" in (
-        r["no_notes_in_catalog"]["message"]
+    items = r["could_not_map_or_no_match"]["items"]
+    assert [i["input"] for i in items] == ["ZZ-FAKE"]
+    assert "does not mean" in items[0]["reason"]
+    assert "does not mean absence of vulnerability" in (
+        r["could_not_map_or_no_match"]["message"]
     )
     assert VERSION_CAVEAT in r["version_caveat"]
 

@@ -48,14 +48,18 @@ Model Context Protocol (MCP).
 
 ### Example 3: Component Exposure
 
-**User prompt:** "Here are my components: SAP_BASIS, BC-JAS-WEB, CEC-SCC —
-what applies to me?"
+**User prompt:** "Here is my stack: SAP S/4HANA 2023, SAP_BASIS,
+BC-JAS-WEB — what applies to me?"
 
 **What happens:**
-- Each component is matched against the catalog (exact + prefix matching,
-  so `CEC-SCC` also finds `CEC-SCC-PLA-PL`)
-- Returns matching notes prioritized by severity, plus an honest list of
-  components with no catalog matches
+- Each item is classified: application component (`BC-JAS-WEB`), software
+  component from System → Status (`SAP_BASIS`), or product/stack name from
+  Maintenance Planner (`SAP S/4HANA 2023`)
+- Application components match directly (exact + prefix); software
+  components and products resolve through a curated, rationale-documented
+  mapping to application-component prefixes
+- Returns matching notes grouped by provenance, plus an honest "not
+  assessed" bucket for anything that could not be classified or mapped
 - Always includes the caveat: version applicability is not assessed —
   confirm against the full SAP note
 
@@ -83,7 +87,7 @@ what applies to me?"
 |------|-------------|-------------|
 | `get_hot_news` | All HotNews notes, ranked by CVSS | Read-only |
 | `get_exploited_notes` | Notes with CISA-KEV-listed CVEs, with KEV dates | Read-only |
-| `check_component_exposure` | Match a pasted component list against the catalog | Read-only |
+| `check_component_exposure` | Match a pasted list (app components, software components, or product names) against the catalog | Read-only |
 
 ## Data Sources & Honesty
 
@@ -98,6 +102,18 @@ what applies to me?"
   tool ever fabricates a note, CVE, score, or date.
 - **Exploitation data** comes from the public CISA KEV feed; the snapshot
   version and fetch date are recorded in the catalog for reproducibility.
+- **Matching behavior & provenance labels.** The catalog is indexed by SAP
+  **application component** (the component in each note's header, e.g.
+  `BC-MID-RFC`). `check_component_exposure` also accepts **software
+  components** (System → Status, e.g. `SAP_BASIS`) and **product names**
+  (Maintenance Planner, e.g. "SAP S/4HANA 2023"), resolved through a
+  curated mapping (`data/component_mapping.yaml`) in which every entry
+  carries a rationale and anything uncertain is listed as unmapped rather
+  than guessed. Every returned note carries a `match_type` — `direct`,
+  `prefix`, `mapped_software_component`, or `mapped_product` — and
+  mapping-derived results are labeled as such ("Matched via curated
+  mapping (…) — mapping-derived, confirm applicability against the full
+  SAP note"). Release years in product names are echoed back only.
 - **Version caveat.** Component matching is component-level only; version
   applicability is not assessed. Always confirm against the full SAP note
   via your SAP support access.

@@ -11,7 +11,13 @@ Honesty rules enforced here:
 
 import json
 import os
+import re
 from pathlib import Path
+
+try:
+    import yaml
+except ImportError:  # mapping features degrade gracefully without PyYAML
+    yaml = None
 
 NULL_EVIDENCE = (
     "Absence from this catalog does not mean absence of vulnerability. "
@@ -26,16 +32,40 @@ VERSION_CAVEAT = (
 )
 
 DEFAULT_CATALOG_PATH = Path(__file__).parent / "data" / "notes_catalog.json"
+DEFAULT_MAPPING_PATH = Path(__file__).parent / "data" / "component_mapping.yaml"
+
+# SAP application components look like BC-MID-RFC / CA-FLP-FE-COR
+APP_COMPONENT_RE = re.compile(r"^[A-Z]{2,3}(-[A-Z0-9]+)+$")
+# Software components look like SAP_BASIS / S4CORE / UIS4HOP1 (no hyphen)
+SOFTWARE_COMPONENT_RE = re.compile(r"^[A-Z][A-Z0-9_]{2,}$")
+RELEASE_YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
+
+
+def _covers(component: str, prefix: str) -> bool:
+    """Prefix semantics used by the mapping: equal, or a '-' boundary."""
+    return component == prefix or component.startswith(prefix + "-")
 
 
 class Catalog:
-    def __init__(self, path: str | Path | None = None):
+    def __init__(
+        self,
+        path: str | Path | None = None,
+        mapping_path: str | Path | None = None,
+    ):
         self.path = Path(
             path or os.getenv("NOTES_CATALOG_PATH", DEFAULT_CATALOG_PATH)
         )
         raw = json.loads(self.path.read_text())
         self.meta: dict = raw["catalog_meta"]
         self.notes: list[dict] = raw["notes"]
+
+        self.mapping: dict | None = None
+        mp = Path(
+            mapping_path
+            or os.getenv("NOTES_COMPONENT_MAPPING_PATH", DEFAULT_MAPPING_PATH)
+        )
+        if yaml is not None and mp.exists():
+            self.mapping = yaml.safe_load(mp.read_text())
 
         self.by_number: dict[str, dict] = {}
         self.by_cve: dict[str, list[dict]] = {}
@@ -269,37 +299,312 @@ class Catalog:
             "note": NULL_EVIDENCE,
         }
 
+    # ----------------------------------------------------- taxonomy (v1.1/v2)
+
+    TAXONOMY_NOTE = (
+        "This catalog is indexed by SAP application component (e.g. "
+        "BC-MID-RFC) — the component shown in each SAP note's header. "
+        "Software components (System → Status, e.g. SAP_BASIS) and product "
+        "names (Maintenance Planner, e.g. 'SAP S/4HANA 2023') are different "
+        "taxonomies and are resolved via a curated mapping where one exists."
+    )
+
+    def classify_component_input(self, item: str) -> dict:
+        """Classify one pasted item: application_component, software_component,
+        product, or unknown."""
+        text = str(item).strip()
+        up = re.sub(r"\s+", " ", text.upper())
+        sw = (self.mapping or {}).get("software_components", {})
+
+        if up in sw:
+            return {"input": text, "type": "software_component", "key": up,
+                    "mapped": True}
+
+        if up in self.by_component or APP_COMPONENT_RE.match(up):
+            return {"input": text, "type": "application_component", "key": up}
+
+        product = self._match_product(up)
+        if product:
+            return {
+                "input": text, "type": "product", "key": product,
+                "mapped": True,
+                "releases": RELEASE_YEAR_RE.findall(up),
+            }
+
+        if SOFTWARE_COMPONENT_RE.match(up):
+            return {"input": text, "type": "software_component", "key": up,
+                    "mapped": False}
+
+        if " " in up:
+            return {"input": text, "type": "product", "key": None,
+                    "mapped": False,
+                    "releases": RELEASE_YEAR_RE.findall(up)}
+
+        return {"input": text, "type": "unknown", "key": None}
+
+    def _match_product(self, up: str) -> str | None:
+        """Match input text against product aliases. When several products
+        match (e.g. 'SAP FIORI FES FOR S/4HANA'), the alias appearing
+        earliest in the string wins."""
+        best = None  # (position, -alias_len, product_key)
+        for key, entry in (self.mapping or {}).get("products", {}).items():
+            for alias in [key] + list(entry.get("aliases", [])):
+                pos = up.find(alias.upper())
+                if pos >= 0:
+                    cand = (pos, -len(alias), key)
+                    if best is None or cand < best:
+                        best = cand
+        return best[2] if best else None
+
+    def _resolve_software_component(
+        self, sw_key: str, since: str | None
+    ) -> tuple[list[dict], list[str]]:
+        """Return (notes, effective_prefixes) for a mapped software component,
+        honoring excluded_prefixes."""
+        entry = self.mapping["software_components"][sw_key]
+        prefixes = entry.get("app_component_prefixes") or []
+        excluded = entry.get("excluded_prefixes") or []
+        hits = [
+            n for n in self.notes
+            if any(_covers(n["component"], p) for p in prefixes)
+            and not any(_covers(n["component"], x) for x in excluded)
+        ]
+        return self._filter_since(hits, since), prefixes
+
+    @staticmethod
+    def _dedup(notes: list[dict]) -> list[dict]:
+        seen, out = set(), []
+        for n in notes:
+            if n["note_number"] not in seen:
+                seen.add(n["note_number"])
+                out.append(n)
+        return out
+
     def component_exposure(
         self, components: list[str], since: str | None = None
     ) -> dict:
-        matched, unmatched = [], []
-        for comp in components:
-            comp = str(comp).strip()
-            if not comp:
+        matched, not_assessed, releases_noted = [], [], []
+        sw_map = (self.mapping or {}).get("software_components", {})
+        guidance_tail = (
+            " This does not mean no vulnerabilities exist for it. "
+            + self.TAXONOMY_NOTE
+        )
+
+        for raw_item in components:
+            item = str(raw_item).strip()
+            if not item:
                 continue
-            hits, mode = self._component_matches(comp)
-            hits = self._filter_since(hits, since)
-            if hits:
-                matched.append({
-                    "component": comp,
-                    "match_mode": mode,
-                    "result_count": len(hits),
-                    "notes": [self._brief(n) for n in self._sort_by_cvss(hits)],
+            cls = self.classify_component_input(item)
+            kind = cls["type"]
+
+            if kind == "application_component":
+                hits, mode = self._component_matches(cls["key"])
+                hits = self._filter_since(hits, since)
+                if hits:
+                    exact = {n["note_number"]
+                             for n in self.by_component.get(cls["key"], [])}
+                    matched.append({
+                        "input": item,
+                        "classification": "application_component",
+                        "match_mode": mode,
+                        "provenance": (
+                            f"Matched directly on application component "
+                            f"'{cls['key']}' ({mode} match)."
+                        ),
+                        "result_count": len(hits),
+                        "notes": [
+                            {**self._brief(n),
+                             "match_type": "direct"
+                             if n["note_number"] in exact else "prefix"}
+                            for n in self._sort_by_cvss(hits)
+                        ],
+                    })
+                else:
+                    not_assessed.append({
+                        "input": item,
+                        "classification": "application_component",
+                        "reason": (
+                            f"'{cls['key']}' is an application component but "
+                            "has no notes in this catalog."
+                            + " This does not mean no vulnerabilities exist "
+                            "for it."
+                        ),
+                    })
+
+            elif kind == "software_component" and cls["mapped"]:
+                hits, prefixes = self._resolve_software_component(
+                    cls["key"], since
+                )
+                explanation = (
+                    f"'{item}' is a software component; this catalog is "
+                    "indexed by application component. Resolved via curated "
+                    "mapping."
+                )
+                if not prefixes:
+                    not_assessed.append({
+                        "input": item,
+                        "classification": "software_component",
+                        "reason": (
+                            f"'{cls['key']}' is a known software component, "
+                            "but no application-component prefixes are "
+                            "curated for it yet — not assessed."
+                            + guidance_tail
+                        ),
+                    })
+                elif hits:
+                    prefix_desc = ", ".join(f"{p}-*" for p in prefixes)
+                    matched.append({
+                        "input": item,
+                        "classification": "software_component",
+                        "explanation": explanation,
+                        "resolved_via": f"{cls['key']} → {prefix_desc}",
+                        "provenance": (
+                            f"Matched via curated mapping ({cls['key']} → "
+                            f"{prefix_desc}) — mapping-derived, confirm "
+                            "applicability against the full SAP note."
+                        ),
+                        "result_count": len(hits),
+                        "notes": [
+                            {**self._brief(n),
+                             "match_type": "mapped_software_component"}
+                            for n in self._sort_by_cvss(hits)
+                        ],
+                    })
+                else:
+                    not_assessed.append({
+                        "input": item,
+                        "classification": "software_component",
+                        "reason": (
+                            f"'{cls['key']}' resolved via curated mapping, "
+                            "but no notes in this catalog match its "
+                            "application-component prefixes"
+                            + (f" since {since}" if since else "")
+                            + "." + guidance_tail
+                        ),
+                    })
+
+            elif kind == "software_component":
+                not_assessed.append({
+                    "input": item,
+                    "classification": "software_component",
+                    "reason": (
+                        f"'{cls['key']}' looks like a software component; "
+                        "this catalog is indexed by application component "
+                        "and no curated mapping exists for it yet — could "
+                        "not map, not assessed." + guidance_tail
+                    ),
                 })
+
+            elif kind == "product" and cls["mapped"]:
+                product = cls["key"]
+                entry = self.mapping["products"][product]
+                if cls.get("releases"):
+                    releases_noted.append(
+                        f"your stack: {product} {'/'.join(cls['releases'])} "
+                        "— release echoed only; version applicability is "
+                        "not assessed"
+                    )
+                all_hits, chain_parts = [], []
+                for sw_key in entry.get("software_components", []):
+                    if sw_key not in sw_map:
+                        continue
+                    hits, prefixes = self._resolve_software_component(
+                        sw_key, since
+                    )
+                    if prefixes:
+                        chain_parts.append(
+                            f"{sw_key} → "
+                            + ", ".join(f"{p}-*" for p in prefixes)
+                        )
+                    else:
+                        chain_parts.append(f"{sw_key} → (no prefixes curated)")
+                    all_hits.extend(hits)
+                all_hits = self._dedup(all_hits)
+                chain = (
+                    f"{product}"
+                    + (f" (release {'/'.join(cls['releases'])} echoed only)"
+                       if cls.get("releases") else "")
+                    + " → software components "
+                    + ", ".join(entry.get("software_components", []))
+                    + " → " + "; ".join(chain_parts)
+                )
+                if all_hits:
+                    matched.append({
+                        "input": item,
+                        "classification": "product",
+                        "explanation": (
+                            f"'{item}' is a product/stack name; resolved "
+                            "product → software components → application-"
+                            "component prefixes via curated mapping."
+                        ),
+                        "resolved_via": chain,
+                        "provenance": (
+                            f"Matched via curated mapping ({chain}) — "
+                            "mapping-derived, confirm applicability against "
+                            "the full SAP note."
+                        ),
+                        "result_count": len(all_hits),
+                        "notes": [
+                            {**self._brief(n), "match_type": "mapped_product"}
+                            for n in self._sort_by_cvss(all_hits)
+                        ],
+                    })
+                else:
+                    not_assessed.append({
+                        "input": item,
+                        "classification": "product",
+                        "reason": (
+                            f"'{item}' resolved via curated mapping "
+                            f"({chain}), but no catalog notes matched."
+                            + guidance_tail
+                        ),
+                    })
+
+            elif kind == "product":
+                not_assessed.append({
+                    "input": item,
+                    "classification": "product",
+                    "reason": (
+                        f"'{item}' looks like a product/stack name, but no "
+                        "curated product mapping matched — could not map, "
+                        "not assessed." + guidance_tail
+                    ),
+                })
+
             else:
-                unmatched.append(comp)
-        return {
+                not_assessed.append({
+                    "input": item,
+                    "classification": "unknown",
+                    "reason": (
+                        f"Could not classify '{item}' as an application "
+                        "component, software component, or product — could "
+                        "not map, not assessed." + guidance_tail
+                    ),
+                })
+
+        result = {
+            "taxonomy_note": self.TAXONOMY_NOTE,
             "matched": matched,
-            "no_notes_in_catalog": {
-                "components": unmatched,
+            "could_not_map_or_no_match": {
+                "items": not_assessed,
                 "message": (
-                    "No notes in this catalog for these components — this "
-                    "does not mean no vulnerabilities exist for them."
+                    "Items here were not assessed (no catalog match, or no "
+                    "curated mapping). No bucket in this response ever "
+                    "implies safety: absence from this catalog does not "
+                    "mean absence of vulnerability."
                 ),
             },
             "version_caveat": VERSION_CAVEAT,
             "note": NULL_EVIDENCE,
         }
+        if releases_noted:
+            result["releases_noted"] = releases_noted
+        if self.mapping is None:
+            result["mapping_status"] = (
+                "component_mapping.yaml not loaded — software-component and "
+                "product inputs were classified but not resolved."
+            )
+        return result
 
     def exploited_notes(self, since: str | None = None) -> dict:
         notes = self._filter_since(
