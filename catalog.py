@@ -380,10 +380,16 @@ class Catalog:
                 out.append(n)
         return out
 
+    S4HANA_HCM_HINT = (
+        "If this landscape runs HCM (SAP_HR / H4S4), add SAP_HR to your "
+        "list to include HR notes."
+    )
+
     def component_exposure(
         self, components: list[str], since: str | None = None
     ) -> dict:
         matched, not_assessed, releases_noted = [], [], []
+        hints: list[str] = []
         sw_map = (self.mapping or {}).get("software_components", {})
         guidance_tail = (
             " This does not mean no vulnerabilities exist for it. "
@@ -498,6 +504,9 @@ class Catalog:
             elif kind == "product" and cls["mapped"]:
                 product = cls["key"]
                 entry = self.mapping["products"][product]
+                if (product == "SAP S/4HANA"
+                        and self.S4HANA_HCM_HINT not in hints):
+                    hints.append(self.S4HANA_HCM_HINT)
                 if cls.get("releases"):
                     releases_noted.append(
                         f"your stack: {product} {'/'.join(cls['releases'])} "
@@ -599,6 +608,8 @@ class Catalog:
         }
         if releases_noted:
             result["releases_noted"] = releases_noted
+        if hints:
+            result["hints"] = hints
         if self.mapping is None:
             result["mapping_status"] = (
                 "component_mapping.yaml not loaded — software-component and "

@@ -164,6 +164,21 @@ def test_mohan_stack_paste_end_to_end(real_cat):
 
 
 @needs_mapping
+def test_s4hana_paste_gets_hcm_hint(real_cat):
+    r = real_cat.component_exposure(["S4HANA ON PREMISE 2023"])
+    assert r["hints"] == [
+        "If this landscape runs HCM (SAP_HR / H4S4), add SAP_HR to your "
+        "list to include HR notes."
+    ]
+    # hint appears once even with multiple S/4HANA items, and not for
+    # non-S/4HANA pastes
+    r = real_cat.component_exposure(["S4HANA 2023", "SAP S/4HANA 2022"])
+    assert len(r["hints"]) == 1
+    r = real_cat.component_exposure(["ABAP PLATFORM 2023", "SAP_BASIS"])
+    assert "hints" not in r
+
+
+@needs_mapping
 def test_software_component_provenance_label(real_cat):
     r = real_cat.component_exposure(["SAP_BASIS"])
     m = r["matched"][0]

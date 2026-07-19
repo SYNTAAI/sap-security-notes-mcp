@@ -398,7 +398,10 @@ def exposure_check(components: str = "") -> str:
         "components vs application components).\n"
         "4. Echo any product release years ('your stack: S/4HANA 2023') "
         "and repeat prominently: version applicability is not assessed — "
-        "the user must confirm against each full SAP note."
+        "the user must confirm against each full SAP note.\n"
+        "5. Relay any 'hints' the tool returns verbatim — e.g. for an "
+        "S/4HANA product paste: if the landscape runs HCM (SAP_HR / H4S4), "
+        "the user should add SAP_HR to their list to include HR notes."
         + _PROMPT_FOOTER
     )
 
