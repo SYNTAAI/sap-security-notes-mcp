@@ -148,3 +148,12 @@ def test_page_only_note_has_null_component(cat):
     r = cat.note_details("3687749")["note"]
     assert r["component"] is None
     assert r["affected"]
+
+
+def test_null_component_excluded_from_distinct_components(cat):
+    """A null-component note must never surface as a 'None' entry in the
+    component index/listing -- distinct_components() (and thus the
+    application-component mapping disposition gate) is simply out of
+    scope for it, not crashing on it or silently missing a real gap."""
+    assert None not in cat.distinct_components()
+    assert all(c is not None for c in cat.by_component)

@@ -109,6 +109,40 @@ def test_every_catalog_component_has_explicit_disposition(real_cat):
 
 
 @needs_mapping
+def test_disposition_gate_tolerates_null_component_notes(real_cat):
+    """Notes added from public pages with no legacy application component
+    (e.g. 3687749) have nothing for the app-component mapping gate to
+    dispose of -- they must be silently OUT OF SCOPE for that gate (never
+    a crash, never flagged as undispositioned), while remaining reachable
+    through their published affected[] data instead. This is the
+    disposition gate's actual valid-but-different resolution path for
+    such notes, not a gap in the check."""
+    note = real_cat.by_number["3687749"]
+    assert note["component"] is None
+
+    # distinct_components() -- the gate's iteration source -- must never
+    # surface None; a null component is not an "undispositioned component".
+    assert None not in real_cat.distinct_components()
+    assert note["affected"]  # component ledger, not app-component, but present
+    assert note["component"] not in real_cat.distinct_components()
+
+    # The gate itself must not crash and must not flag anything for this
+    # note (there's no app component name for it to fail to dispose of).
+    sw = real_cat.mapping["software_components"]
+    unmapped = {u["component"] for u in real_cat.mapping["unmapped"]}
+    for comp in real_cat.distinct_components():
+        assert comp is not None
+
+    # Its actual, valid disposition: reachable via published affected data.
+    aff_key = note["affected"][0]["software_component"]
+    assert any(n["note_number"] == "3687749"
+               for n in real_cat.by_software_component.get(aff_key, []))
+    r = real_cat.component_exposure([aff_key])
+    matched_nums = {n["note_number"] for m in r["matched"] for n in m["notes"]}
+    assert "3687749" in matched_nums
+
+
+@needs_mapping
 def test_every_mapping_entry_has_rationale(real_cat):
     for section in ("software_components", "products"):
         for key, entry in real_cat.mapping[section].items():
