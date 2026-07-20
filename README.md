@@ -102,6 +102,13 @@ BC-JAS-WEB — what applies to me?"
   tool ever fabricates a note, CVE, score, or date.
 - **Exploitation data** comes from the public CISA KEV feed; the snapshot
   version and fetch date are recorded in the catalog for reproducibility.
+- **Public-evidence date policy.** Exact release days ship only when
+  publicly evidenced without login: SAP Security Patch Day dates (stated
+  on the public support.sap.com Patch Day pages) or dates matching the
+  CVE's public NVD `published` date. Days that exist only in the
+  login-protected SAP export are shipped as `null`, with `release_month`
+  retained (each note's presence on its public month page is the evidence
+  for the month).
 - **Matching behavior & provenance labels.** The catalog is indexed by SAP
   **application component** (the component in each note's header, e.g.
   `BC-MID-RFC`). `check_component_exposure` also accepts **software

@@ -98,11 +98,17 @@ class Catalog:
             return since + "-01"
         return since[:10]
 
+    @staticmethod
+    def _effective_date(note: dict) -> str:
+        """released_on, or first-of-month when the exact day is not publicly
+        evidenced and therefore null (see catalog build policy)."""
+        return note["released_on"] or note["release_month"] + "-01"
+
     def _filter_since(self, notes: list[dict], since: str | None) -> list[dict]:
         cutoff = self._since_date(since)
         if not cutoff:
             return notes
-        return [n for n in notes if n["released_on"] >= cutoff]
+        return [n for n in notes if self._effective_date(n) >= cutoff]
 
     @staticmethod
     def _sort_by_cvss(notes: list[dict]) -> list[dict]:

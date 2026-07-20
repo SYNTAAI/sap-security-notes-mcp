@@ -48,6 +48,37 @@ EXPECTED_COLUMNS = [
     "Category", "Priority", "Released On", "First Released On", "Link",
 ]
 
+# --- Public-evidence date policy (audit 2026-07-20) -------------------------
+# Exact release DAYS ship only when publicly evidenced without login:
+#   (a) the date is SAP Security Patch Day (second Tuesday of the month,
+#       stated on the public support.sap.com Patch Day pages), or
+#   (b) the date equals the CVE's public NVD 'published' date (verified
+#       manually; listed below with the confirming CVE).
+# Otherwise the day exists only in the login-protected me.sap.com export, so
+# it is nulled; release_month still ships (each note's presence on its public
+# month page is the evidence for the month).
+NVD_CONFIRMED_DATES = {
+    "3433366": "2026-05-26",  # NVD published, CVE-2026-44749
+    "3646297": "2026-02-24",  # NVD published, CVE-2026-24314
+    "3122486": "2026-01-27",  # NVD published, CVE-2026-23683
+}
+
+
+def _is_patch_day(iso: str) -> bool:
+    """Second Tuesday of its month (SAP Security Patch Day)."""
+    d = datetime.strptime(iso, "%Y-%m-%d").date()
+    return d.weekday() == 1 and 8 <= d.day <= 14
+
+
+def public_date(note_number: str, iso: str | None) -> str | None:
+    """Return the date only if it is publicly evidenced; else None."""
+    if not iso:
+        return None
+    if _is_patch_day(iso) or NVD_CONFIRMED_DATES.get(note_number) == iso:
+        return iso
+    return None
+
+
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,7}")
 BRACKET_PREFIX_RE = re.compile(r"^\s*\[[^\]]*\]\s*")
 # A well-formed CVSS v3.x vector starts with an explicit version segment.
@@ -154,13 +185,25 @@ def build_records(xlsx_path: Path, kev_by_cve: dict) -> list[dict]:
         vector = clean_text(raw["CVSS Vector"]) if raw["CVSS Vector"] else None
         vector_malformed = bool(vector) and not CVSS_VECTOR_RE.match(vector)
 
-        released_on = to_iso_date(raw["Released On"])
-        first_released_on = to_iso_date(raw["First Released On"])
-        is_update = bool(
-            first_released_on and released_on and first_released_on < released_on
-        )
-
+        released_on_raw = to_iso_date(raw["Released On"])
+        first_released_raw = to_iso_date(raw["First Released On"])
         note_number = str(raw["Number"]).strip()
+
+        # is_update is derived from the raw dates when both days are public,
+        # otherwise from the (public) months only.
+        if first_released_raw and released_on_raw:
+            pub_r = public_date(note_number, released_on_raw)
+            pub_f = public_date(note_number, first_released_raw)
+            if pub_r and pub_f:
+                is_update = pub_f < pub_r
+            else:
+                is_update = first_released_raw[:7] < released_on_raw[:7]
+        else:
+            is_update = False
+
+        release_month = released_on_raw[:7]
+        released_on = public_date(note_number, released_on_raw)
+        first_released_on = public_date(note_number, first_released_raw)
         link = clean_text(raw["Link"]) if raw["Link"] else ""
         note_url = link or f"https://me.sap.com/notes/{note_number}"
 
@@ -178,7 +221,7 @@ def build_records(xlsx_path: Path, kev_by_cve: dict) -> list[dict]:
             "priority_raw": clean_text(raw["Priority"]),
             "category": clean_text(raw["Category"]) if raw["Category"] else None,
             "component": clean_text(raw["SAP Component"]),
-            "release_month": released_on[:7],
+            "release_month": release_month,
             "released_on": released_on,
             "first_released_on": first_released_on,
             "is_update": is_update,
@@ -214,7 +257,11 @@ def main() -> None:
     }
 
     records = build_records(xlsx_path, kev_by_cve)
-    records.sort(key=lambda r: (r["released_on"], r["note_number"]), reverse=True)
+    records.sort(
+        key=lambda r: (r["released_on"] or r["release_month"] + "-01",
+                       r["note_number"]),
+        reverse=True,
+    )
 
     months = sorted({r["release_month"] for r in records})
     # Catalog version is date-based, taken from the export filename
