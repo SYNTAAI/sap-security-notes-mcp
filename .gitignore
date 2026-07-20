@@ -13,4 +13,5 @@ data/oauth_clients.json
 data/oauth_tokens.json
 data/users.json
 data/query_log.jsonl
+logs/
 *.log

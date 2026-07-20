@@ -32,10 +32,20 @@ the duration of the request and is never stored or logged**.
   catalog and discarded
 - **No credentials for your systems** — OAuth 2.0 tokens authenticate you
   to this Service only, and are managed per-session
-- **No analytics or tracking** — no cookies, pixels, or tracking scripts
+- **No tracking** — no cookies, pixels, or tracking scripts
 - **No data shared with third parties** — your queries are never
   transmitted to any party other than the authenticated AI assistant
   session
+
+### Operational Usage Logging
+The hosted Service keeps a minimal operational log per tool call
+containing exactly three fields: a UTC timestamp, the tool name (e.g.
+`get_patch_day_summary`), and a SHA-256-hashed session identifier.
+**Tool arguments, request bodies, pasted component lists, and IP
+addresses are never logged.** Logs rotate daily and are used solely for
+service-health and aggregate usage statistics. Running the server
+yourself (stdio or self-hosted) writes such logs only on your own
+machine.
 
 ## Data Sources
 

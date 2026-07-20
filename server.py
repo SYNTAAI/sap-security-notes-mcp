@@ -463,6 +463,12 @@ if __name__ == "__main__":
         mcp.run(transport="stdio")
         raise SystemExit(0)
 
+    import hashlib
+    import json as _json
+    from datetime import datetime, timezone
+    from logging.handlers import TimedRotatingFileHandler
+    from pathlib import Path
+
     import anyio
     import uvicorn
     from starlette.routing import Route
@@ -483,10 +489,46 @@ if __name__ == "__main__":
         )
         app.state.oauth_provider = oauth_provider
 
-    # ---- Middleware: force public-client registration for PKCE-only clients.
-    # Some connectors register without token_endpoint_auth_method; the MCP SDK
-    # then defaults to "client_secret_post" and requires a secret the client
-    # never sends. Inject "none" (public client + PKCE) when omitted.
+    # ---- Usage logging (privacy-preserving; see PRIVACY.md) ----
+    # Per tool call: UTC timestamp, tool name, SHA-256-hashed session id.
+    # Tool arguments, request bodies and IP addresses are NEVER logged.
+    LOG_DIR = Path(__file__).parent / "logs"
+    LOG_DIR.mkdir(exist_ok=True)
+    usage_logger = logging.getLogger("notes-mcp.usage")
+    usage_logger.setLevel(logging.INFO)
+    usage_logger.propagate = False
+    _usage_handler = TimedRotatingFileHandler(
+        LOG_DIR / "usage.jsonl", when="midnight", backupCount=365, utc=True
+    )
+    _usage_handler.setFormatter(logging.Formatter("%(message)s"))
+    usage_logger.addHandler(_usage_handler)
+
+    def _log_tool_calls(raw: bytes, headers: dict) -> None:
+        """Extract tool names (only) from an MCP POST body and log them."""
+        try:
+            payload = _json.loads(raw)
+        except Exception:
+            return
+        session = (headers.get(b"mcp-session-id") or b"").decode()
+        session_hash = (
+            hashlib.sha256(session.encode()).hexdigest()[:16]
+            if session else None
+        )
+        for msg in payload if isinstance(payload, list) else [payload]:
+            if isinstance(msg, dict) and msg.get("method") == "tools/call":
+                tool = (msg.get("params") or {}).get("name", "?")
+                usage_logger.info(_json.dumps({
+                    "ts": datetime.now(timezone.utc).isoformat(
+                        timespec="seconds"),
+                    "tool": tool,
+                    "session": session_hash,
+                }))
+
+    # ---- Middleware:
+    # 1. POST /register — force public-client registration for PKCE-only
+    #    clients that omit token_endpoint_auth_method (OAuth mode).
+    # 2. POST /mcp — usage logging of tool names (body passed through
+    #    unchanged; arguments are never logged).
     from starlette.types import Receive, Scope, Send
     _inner_app = app
 
@@ -494,28 +536,33 @@ if __name__ == "__main__":
         if scope["type"] == "http":
             method = scope.get("method", "?")
             path = scope.get("path", "?")
-            if method == "POST" and path == "/register":
+            if method == "POST" and path in ("/register", "/mcp", "/mcp/"):
                 body_parts = []
-
-                async def reg_receive():
+                while True:
                     msg = await receive()
                     if msg.get("type") == "http.request":
                         body_parts.append(msg.get("body", b""))
-                    return msg
-
-                await reg_receive()
+                        if not msg.get("more_body"):
+                            break
+                    else:
+                        break
                 raw = b"".join(body_parts)
-                try:
-                    import json as _json
-                    payload = _json.loads(raw)
-                    if "token_endpoint_auth_method" not in payload:
-                        payload["token_endpoint_auth_method"] = "none"
-                        raw = _json.dumps(payload).encode()
-                        logger.info(
-                            "register: injected token_endpoint_auth_method="
-                            "none for %s", payload.get("client_name", "?"))
-                except Exception:
-                    pass  # not JSON — let the SDK produce the error
+                headers = dict(scope.get("headers", []))
+
+                if path == "/register":
+                    try:
+                        payload = _json.loads(raw)
+                        if "token_endpoint_auth_method" not in payload:
+                            payload["token_endpoint_auth_method"] = "none"
+                            raw = _json.dumps(payload).encode()
+                            logger.info(
+                                "register: injected token_endpoint_auth_"
+                                "method=none for %s",
+                                payload.get("client_name", "?"))
+                    except Exception:
+                        pass  # not JSON — let the SDK produce the error
+                else:
+                    _log_tool_calls(raw, headers)
 
                 body_sent = False
 
