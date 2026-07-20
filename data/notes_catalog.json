@@ -1,10 +1,10 @@
 {
  "catalog_meta": {
-  "catalog_version": "2026-07-18",
-  "note_count": 114,
+  "catalog_version": "2026-07-20",
+  "note_count": 130,
   "coverage_start": "2026-01",
   "coverage_end": "2026-07",
-  "source_statement": "Metadata from SAP Security Patch Day publications; exploitation data from CISA KEV",
+  "source_statement": "Metadata from SAP Security Patch Day publications (support.sap.com, public, no login required); exploitation data from CISA KEV",
   "kev_snapshot_version": "2026.07.16",
   "kev_snapshot_fetched": "2026-07-18"
  },
@@ -18,55 +18,107 @@
    "cvss_score": 7.6,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:L",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-CTS-TMS-PLS",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3773304",
+   "product_names": [
+    "SAP Change and Transport System Attach Tool (ctsattach)"
+   ],
+   "affected": [
+    {
+     "software_component": "CTS_UPLOAD_CLT",
+     "versions": [
+      "1"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3773304"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3763800",
    "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
-   "cve_ids": [],
+   "cve_ids": [
+    "CVE-2026-43512",
+    "CVE-2026-41293",
+    "CVE-2026-43515"
+   ],
    "cvss_score": 8.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "CEC-SCC-PLA-PL",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3763800",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3763800",
-   "multiple_cves": true
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3758101",
    "title": "Multiple vulnerabilities in Apache Camel within SAP Integration Suite (Edge Integration Cell)",
    "cve_ids": [
-    "CVE-2026-40860"
+    "CVE-2026-40860",
+    "CVE-2026-40453",
+    "CVE-2026-33454"
    ],
    "cvss_score": 8.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "LOD-HCI-PI-CON-SOAP",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3758101",
+   "product_names": [
+    "SAP Integration Suite (Edge Integration Cell)"
+   ],
+   "affected": [],
+   "versions_unparsed": "SAP Integration Suite (Edge Integration Cell) < 8.43.11",
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3758101"
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3754659",
@@ -77,16 +129,48 @@
    "cvss_score": 4.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-BSP",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3754659",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP (applications based on Business Server Pages)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816",
+      "918",
+      "919",
+      "920"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3754659"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3753495",
@@ -97,16 +181,38 @@
    "cvss_score": 9.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Documentation error",
    "component": "CEC-SCC-COM-BC-OCC",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3753495",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3753495"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3748227",
@@ -117,16 +223,31 @@
    "cvss_score": 8.2,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-INS-CTC-RT",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3748227",
+   "product_names": [
+    "SAP NetWeaver Application Server Java(Configuration Wizard)"
+   ],
+   "affected": [
+    {
+     "software_component": "LMCTC",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3748227"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3747367",
@@ -137,17 +258,25 @@
    "cvss_score": 9.9,
    "cvss_vector": "CVSS:/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-FES-ITS",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3747367",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP"
+   ],
+   "affected": [],
+   "versions_unparsed": "KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 7.22EXT, 7.53, KERNEL 7.22, 7.53. 7.54, 7.77, 7.89, 7.93, 9.16, 9.18, 9.19, 9.20",
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3747367",
-   "cvss_vector_malformed": true
+   "cvss_vector_malformed": true,
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3746678",
@@ -158,16 +287,31 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "EP-PIN-AI-SRA",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3746678",
+   "product_names": [
+    "SAP NetWeaver Enterprise Portal"
+   ],
+   "affected": [
+    {
+     "software_component": "EP-RUNTIME",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3746678"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3741519",
@@ -178,76 +322,59 @@
    "cvss_score": 8.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-CP-APR",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3741519",
+   "product_names": [
+    "SAP Approuter"
+   ],
+   "affected": [],
+   "versions_unparsed": "SAP Approuter node.js package < 21.2.0",
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3741519"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3732522",
-   "title": "- Information Disclosure vulnerability in SAP HANA Extended Application Services classic model (User Self Service)",
+   "title": "Information Disclosure vulnerability in SAP HANA Extended Application Services classic model (User Self Service)",
    "cve_ids": [
     "CVE-2026-44753"
    ],
    "cvss_score": 3.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "HAN-AS-XS",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
+   "note_url": "https://me.sap.com/notes/3732522",
+   "product_names": [
+    "SAP HANA Extended Application Services classic model (User Self Service)"
+   ],
+   "affected": [
+    {
+     "software_component": "HDB",
+     "versions": [
+      "2.00"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
    "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3732522"
-  },
-  {
-   "note_number": "3727078",
-   "title": "Directory Traversal vulnerability in SAP NetWeaver Application Server Java (Web Container)",
-   "cve_ids": [
-    "CVE-2026-40128"
-   ],
-   "cvss_score": 9.0,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "priority": "HotNews",
-   "priority_raw": "HotNews",
-   "category": "Program error",
-   "component": "BC-JAS-WEB",
-   "release_month": "2026-07",
-   "released_on": "2026-07-14",
-   "first_released_on": "2026-06-09",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3727078"
-  },
-  {
-   "note_number": "3726899",
-   "title": "Potential vulnerability in Apache Log4j library used by SAP NetWeaver AS Java",
-   "cve_ids": [
-    "CVE-2025-68161"
-   ],
-   "cvss_score": 3.3,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:N",
-   "priority": "Low",
-   "priority_raw": "Correction with low priority",
-   "category": "Program error",
-   "component": "BC-JAS-SEC-UME",
-   "release_month": "2026-07",
-   "released_on": "2026-07-14",
-   "first_released_on": "2026-06-09",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3726899"
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3720138",
@@ -258,16 +385,24 @@
    "cvss_score": 9.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-XS-APR",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3720138",
+   "product_names": [
+    "SAP Approuter"
+   ],
+   "affected": [],
+   "versions_unparsed": "SAP Approuter node.js package < 20.10.0",
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3720138"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3713902",
@@ -278,16 +413,38 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "FI-FIO-AP-PAY",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3713902",
+   "product_names": [
+    "SAP S/4 HANA (Create Single Payment)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3713902"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3692165",
@@ -298,36 +455,61 @@
    "cvss_score": 8.4,
    "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-CST-NI",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3692165"
-  },
-  {
-   "note_number": "3682699",
-   "title": "Path Traversal Vulnerability in SAP Fiori (launchpad)",
-   "cve_ids": [
-    "CVE-2026-24315"
+   "note_url": "https://me.sap.com/notes/3692165",
+   "product_names": [
+    "SAProuter on Microsoft Windows"
    ],
-   "cvss_score": 4.2,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "CA-FLP-FE-COR",
-   "release_month": "2026-07",
-   "released_on": "2026-07-14",
-   "first_released_on": "2026-06-09",
-   "is_update": true,
+   "affected": [
+    {
+     "software_component": "KRNL64NUC",
+     "versions": [
+      "7.22",
+      "7.22EXT"
+     ]
+    },
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.22",
+      "7.22EXT",
+      "7.53"
+     ]
+    },
+    {
+     "software_component": "SAP_ROUTER",
+     "versions": [
+      "7.53",
+      "7.54"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.22",
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "9.16",
+      "9.17",
+      "9.18"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3682699"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3537373",
@@ -338,16 +520,59 @@
    "cvss_score": 5.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PPM-PRO",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3537373",
+   "product_names": [
+    "SAP S/4HANA Project Management (PPM-PRO)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_APPL",
+     "versions": [
+      "600",
+      "602",
+      "603",
+      "604",
+      "605",
+      "606",
+      "617",
+      "618"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108"
+     ]
+    },
+    {
+     "software_component": "CPRXRPM",
+     "versions": [
+      "400",
+      "450_700",
+      "500_702",
+      "610_740"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3537373"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3515598",
@@ -358,16 +583,31 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "FIN-FSCM-CLM-COP",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3515598",
+   "product_names": [
+    "SAP S/4HANA (Draft operation)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "108"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3515598"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
    "note_number": "3155685",
@@ -378,16 +618,158 @@
    "cvss_score": 4.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CA-WUI-UI",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3155685",
+   "product_names": [
+    "SAP CRM (WebClient UI)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4FND",
+     "versions": [
+      "104",
+      "105",
+      "106"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3155685"
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
+  },
+  {
+   "note_number": "3727078",
+   "title": "Directory Traversal vulnerability in SAP NetWeaver Application Server Java (Web Container)",
+   "cve_ids": [
+    "CVE-2026-40128"
+   ],
+   "cvss_score": 9.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": "Program error",
+   "component": "BC-JAS-WEB",
+   "release_month": "2026-07",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3727078",
+   "product_names": [
+    "SAP NetWeaver Application Server Java (Web Container)"
+   ],
+   "affected": [
+    {
+     "software_component": "ENGINEAPI",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": true,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
+  },
+  {
+   "note_number": "3726899",
+   "title": "Potential vulnerability in Apache Log4j library used by SAP NetWeaver AS Java",
+   "cve_ids": [
+    "CVE-2025-68161"
+   ],
+   "cvss_score": 3.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:N",
+   "priority": "Low",
+   "priority_raw": "Low",
+   "category": "Program error",
+   "component": "BC-JAS-SEC-UME",
+   "release_month": "2026-07",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3726899",
+   "product_names": [
+    "SAP NetWeaver AS Java"
+   ],
+   "affected": [
+    {
+     "software_component": "SERVERCORE",
+     "versions": [
+      "7.50"
+     ]
+    },
+    {
+     "software_component": "CORE-TOOLS",
+     "versions": [
+      "7.50"
+     ]
+    },
+    {
+     "software_component": "J2EE-APPS",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": true,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
+  },
+  {
+   "note_number": "3682699",
+   "title": "Path Traversal Vulnerability in SAP Fiori (launchpad)",
+   "cve_ids": [
+    "CVE-2026-24315"
+   ],
+   "cvss_score": 4.2,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "CA-FLP-FE-COR",
+   "release_month": "2026-07",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3682699",
+   "product_names": [
+    "SAP Fiori (launchpad)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_UI",
+     "versions": [
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": true,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3751691",
@@ -398,16 +780,38 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CA-EPT-SSC",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3751691",
+   "product_names": [
+    "SAP S/4HANA"
+   ],
+   "affected": [
+    {
+     "software_component": "S4FND",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3751691"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3748819",
@@ -418,16 +822,50 @@
    "cvss_score": 6.6,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:N/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-BW-ODP",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3748819",
+   "product_names": [
+    "ODP Data Replication APIs"
+   ],
+   "affected": [
+    {
+     "software_component": "DW4CORE",
+     "versions": [
+      "200",
+      "300",
+      "400"
+     ]
+    },
+    {
+     "software_component": "PI_BASIS",
+     "versions": [
+      "2006_1_700",
+      "701",
+      "702",
+      "731",
+      "740"
+     ]
+    },
+    {
+     "software_component": "SAP_BW",
+     "versions": [
+      "750",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3748819"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3748262",
@@ -438,36 +876,95 @@
    "cvss_score": 9.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "CEC-SCC-PLA-PL",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3748262",
+   "product_names": [
+    "SAP Commerce Cloud and SAP Data Hub"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "HY_DHUB",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    },
+    {
+     "software_component": "DHUB_CLOUD",
+     "versions": [
+      "2211"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3748262"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3747484",
    "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
    "cve_ids": [
-    "CVE-2026-29145"
+    "CVE-2026-29145",
+    "CVE-2025-66614",
+    "CVE-2026-24734"
    ],
    "cvss_score": 7.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "CEC-SCC-PLA-PL",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3747484",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3747484"
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3746332",
@@ -478,16 +975,45 @@
    "cvss_score": 9.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-SEC-LGN-SML",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3746332",
+   "product_names": [
+    "SAP NetWeaver AS ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816",
+      "918",
+      "919"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3746332"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3735546",
@@ -498,16 +1024,45 @@
    "cvss_score": 7.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-DWB-DIC-AC",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3735546",
+   "product_names": [
+    "SAP NetWeaver AS ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3735546"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3723655",
@@ -518,16 +1073,31 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BW-BEX-UDI",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3723655",
+   "product_names": [
+    "SAP NetWeaver AS Java (JDBC Test Servlet)"
+   ],
+   "affected": [
+    {
+     "software_component": "BI_UDI",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3723655"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3717897",
@@ -538,16 +1108,54 @@
    "cvss_score": 9.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-MID-RFC",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3717897",
+   "product_names": [
+    "SAP NetWeaver AS ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "KRNL64NUC",
+     "versions": [
+      "7.22",
+      "7.22EXT"
+     ]
+    },
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.22",
+      "722EXT",
+      "7.53"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.22",
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "9.16",
+      "9.18",
+      "91.9"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3717897"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3715280",
@@ -558,16 +1166,31 @@
    "cvss_score": 4.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-DIA-WLY",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3715280",
+   "product_names": [
+    "SAP Wily Introscope Enterprise Manager"
+   ],
+   "affected": [
+    {
+     "software_component": "WILY_INTRO_ENTERPRISE",
+     "versions": [
+      "10.8"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3715280"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3706000",
@@ -578,16 +1201,33 @@
    "cvss_score": 3.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "BI-BIP-CMC",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3706000",
+   "product_names": [
+    "SAP Business Objects"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3706000"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3687096",
@@ -598,16 +1238,33 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-SEC",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3687096",
+   "product_names": [
+    "SAP Business Objects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3687096"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3673181",
@@ -618,16 +1275,44 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CA-MDG-CMP-BP",
    "release_month": "2026-06",
    "released_on": "2026-06-09",
-   "first_released_on": "2026-06-09",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3673181",
+   "product_names": [
+    "SAP MDG (Review Match Groups Application)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "108"
+     ]
+    },
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "916",
+      "917"
+     ]
+    },
+    {
+     "software_component": "SAP_ABA",
+     "versions": [
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3673181"
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3692004",
@@ -638,36 +1323,46 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-FES-ITS",
    "release_month": "2026-06",
    "released_on": null,
-   "first_released_on": "2026-04-14",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3692004"
-  },
-  {
-   "note_number": "3433366",
-   "title": "Information Disclosure vulnerability in SAP Gateway",
-   "cve_ids": [
-    "CVE-2026-44749"
+   "note_url": "https://me.sap.com/notes/3692004",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP"
    ],
-   "cvss_score": 4.3,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "OPU-GW-V4",
-   "release_month": "2026-05",
-   "released_on": "2026-05-26",
-   "first_released_on": "2026-05-26",
-   "is_update": false,
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3433366"
+   "is_update": true,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
   },
   {
    "note_number": "3735359",
@@ -678,16 +1373,41 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-MID-ICF",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3735359",
+   "product_names": [
+    "SAP Application Server ABAP for SAP NetWeaver and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3735359"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3730019",
@@ -698,16 +1418,45 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-ABA-SC",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3730019",
+   "product_names": [
+    "SAP NetWeaver Application Server for ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3730019"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3728690",
@@ -718,16 +1467,46 @@
    "cvss_score": 4.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-BSP",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3728690",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP (Applications based on Business Server Pages)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816",
+      "918"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3728690"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3727717",
@@ -738,17 +1517,33 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-TWB-CBT",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3727717",
+   "product_names": [
+    "Business Server Pages Application (TAF_APPLAUNCHER)"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3727717",
-   "cvss_vector_malformed": true
+   "cvss_vector_malformed": true,
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3726962",
@@ -759,16 +1554,31 @@
    "cvss_score": 3.4,
    "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:L",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "HAN-DB-DI",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3726962",
+   "product_names": [
+    "SAP HANA Deployment Infrastructure (HDI) deploy library"
+   ],
+   "affected": [
+    {
+     "software_component": "XS_HDI_DEPLOYER",
+     "versions": [
+      "1.00"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3726962"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3726583",
@@ -779,16 +1589,37 @@
    "cvss_score": 4.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "HAN-AS-INA-UI",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3726583",
+   "product_names": [
+    "SAPUI5 (Search UI)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAPUI5",
+     "versions": [
+      "1.108",
+      "1.120",
+      "1.136",
+      "1.142",
+      "1.71",
+      "1.84",
+      "1.96"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3726583"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3724838",
@@ -799,16 +1630,39 @@
    "cvss_score": 9.6,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-EIM-ESH",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3724838",
+   "product_names": [
+    "SAP S/4HANA (SAP Enterprise Search for ABAP)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3724838"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3721959",
@@ -819,16 +1673,38 @@
    "cvss_score": 5.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "FIN-SEM-CPM-BSC",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3721959",
+   "product_names": [
+    "SAP Strategic Enterprise Management (BSP application Balanced Scorecard Wizard)"
+   ],
+   "affected": [
+    {
+     "software_component": "SEM-BW",
+     "versions": [
+      "605",
+      "700",
+      "736",
+      "746",
+      "747",
+      "748",
+      "749",
+      "800"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3721959"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3718083",
@@ -839,16 +1715,38 @@
    "cvss_score": 6.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SD-MD-CM",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3718083",
+   "product_names": [
+    "SAP S/4HANA Condition Maintenance"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3718083"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3716450",
@@ -859,16 +1757,38 @@
    "cvss_score": 4.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CEC-SCC-PLA-PL",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3716450",
+   "product_names": [
+    "SAP Commerce Cloud (Apache Log4j)"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3716450"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3713521",
@@ -879,16 +1799,31 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "EPM-BFC-PSI",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3713521",
+   "product_names": [
+    "SAP Financial Consolidation"
+   ],
+   "affected": [
+    {
+     "software_component": "FINANCE",
+     "versions": [
+      "1010"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3713521"
+   "is_update": false,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3667593",
@@ -899,54 +1834,75 @@
    "cvss_score": 5.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-INV",
    "release_month": "2026-05",
    "released_on": "2026-05-12",
-   "first_released_on": "2026-05-12",
+   "note_url": "https://me.sap.com/notes/3667593",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
    "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3667593"
-  },
-  {
-   "note_number": "3747787",
-   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
-   "cve_ids": [],
-   "cvss_score": null,
-   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
-   "priority": "HotNews",
-   "priority_raw": "HotNews",
-   "category": "Program error",
-   "component": "BC-XS-CDX-NJS",
-   "release_month": "2026-05",
-   "released_on": null,
-   "first_released_on": null,
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3747787"
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3733064",
-   "title": "Missing authentication check in SAP Commerce Cloud configuration",
+   "title": "Missing authentication check in SAP Commerce cloud configuration",
    "cve_ids": [
     "CVE-2026-34263"
    ],
    "cvss_score": 9.6,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "CEC-SCC-CDM-BO-APP",
    "release_month": "2026-05",
    "released_on": null,
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3733064",
+   "product_names": [
+    "SAP Commerce cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3733064"
+   "is_update": true,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3732471",
@@ -957,16 +1913,34 @@
    "cvss_score": 8.2,
    "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "SCM-FRE-FRP",
    "release_month": "2026-05",
    "released_on": null,
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3732471",
+   "product_names": [
+    "SAP Forecasting & Replenishment"
+   ],
+   "affected": [
+    {
+     "software_component": "SCM",
+     "versions": [
+      "702",
+      "712",
+      "713",
+      "714"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3732471"
+   "is_update": true,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3718508",
@@ -977,16 +1951,103 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "ICM",
    "release_month": "2026-05",
    "released_on": null,
-   "first_released_on": "2026-05-12",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3718508",
+   "product_names": [
+    "SAP Incentive and Commission Management"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_APPL",
+     "versions": [
+      "618"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "EA-APPL",
+     "versions": [
+      "600",
+      "604",
+      "605",
+      "606",
+      "617"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3718508"
+   "is_update": true,
+   "first_released_on": "2026-05-12",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
+  },
+  {
+   "note_number": "3433366",
+   "title": "Information Disclosure vulnerability in SAP Gateway",
+   "cve_ids": [
+    "CVE-2026-44749"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "OPU-GW-V4",
+   "release_month": "2026-05",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3433366",
+   "product_names": [
+    "SAP Gateway"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_GWFND",
+     "versions": [
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758"
+     ]
+    },
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "795"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html"
+   ]
   },
   {
    "note_number": "3731908",
@@ -997,16 +2058,70 @@
    "cvss_score": 7.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "CA-JVA-JVA",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3731908",
+   "product_names": [
+    "SAP ERP and SAP S/4 HANA (Private Cloud and On-Premise)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_FIN",
+     "versions": [
+      "618",
+      "720",
+      "730"
+     ]
+    },
+    {
+     "software_component": "EA-FIN",
+     "versions": [
+      "617",
+      "700"
+     ]
+    },
+    {
+     "software_component": "SAPSCORE",
+     "versions": [
+      "135"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "EA-APPL",
+     "versions": [
+      "600",
+      "602",
+      "603",
+      "604",
+      "605",
+      "606"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3731908"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3730639",
@@ -1017,16 +2132,31 @@
    "cvss_score": 5.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "HAN-CPT-CPT2-DBX",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3730639",
+   "product_names": [
+    "SAP HANA Cockpit and HANA Database Explorer"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_HANA_COCKPIT",
+     "versions": [
+      "2.0"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3730639"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3723097",
@@ -1037,16 +2167,49 @@
    "cvss_score": 2.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:L/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "CA-LT-PCL",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3723097",
+   "product_names": [
+    "SAP Landscape Transformation"
+   ],
+   "affected": [
+    {
+     "software_component": "DMIS",
+     "versions": [
+      "2011_1_700",
+      "2011_1_710",
+      "2011_1_730",
+      "2011_1_731",
+      "2011_1_752",
+      "2020"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3723097"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3719397",
@@ -1057,16 +2220,31 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-WD-JAV",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3719397",
+   "product_names": [
+    "SAP NetWeaver Application Server Java (Web Dynpro Java)"
+   ],
+   "affected": [
+    {
+     "software_component": "WD-RUNTIME",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3719397"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3719353",
@@ -1077,16 +2255,51 @@
    "cvss_score": 9.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "EPM-BPC-NW-SQE",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3719353",
+   "product_names": [
+    "SAP Business Planning and Consolidation and SAP Business Warehouse"
+   ],
+   "affected": [
+    {
+     "software_component": "HANABPC",
+     "versions": [
+      "810"
+     ]
+    },
+    {
+     "software_component": "BPC4HANA",
+     "versions": [
+      "300"
+     ]
+    },
+    {
+     "software_component": "SAP_BW",
+     "versions": [
+      "750",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3719353"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3716767",
@@ -1097,16 +2310,31 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PM-EQM-RS",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3716767",
+   "product_names": [
+    "SAP S/4HANA Frontend OData Service (Manage Reference Structures)"
+   ],
+   "affected": [
+    {
+     "software_component": "UIS4H",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3716767"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3715177",
@@ -1117,16 +2345,31 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PM-EQM-RS",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3715177",
+   "product_names": [
+    "SAP S/4HANA Backend OData Service (Manage Reference Structures)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3715177"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3715097",
@@ -1137,16 +2380,31 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PM-EQM-EQ",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3715097",
+   "product_names": [
+    "SAP S/4HANA OData Service (Manage Reference Equipment)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3715097"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3711682",
@@ -1157,16 +2415,31 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PM-EQM-RS",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3711682",
+   "product_names": [
+    "SAP S/4HANA OData Service (Manage Technical Object Structures)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3711682"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3705094",
@@ -1177,16 +2450,41 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PA-OS",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3705094",
+   "product_names": [
+    "SAP Business Analytics and SAP Content Management"
+   ],
+   "affected": [
+    {
+     "software_component": "S4HCMRXX",
+     "versions": [
+      "100",
+      "101",
+      "102"
+     ]
+    },
+    {
+     "software_component": "SAP_HRRXX",
+     "versions": [
+      "600",
+      "604",
+      "608"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3705094"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3703813",
@@ -1197,16 +2495,44 @@
    "cvss_score": 4.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "IS-U-TO-MI",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3703813",
+   "product_names": [
+    "SAP S/4HANA (Private Cloud and On-Premise)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "FI-CA",
+     "versions": [
+      "606",
+      "616",
+      "617",
+      "618"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3703813"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3703276",
@@ -1217,16 +2543,49 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SCM-BAS-INT-MD",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3703276",
+   "product_names": [
+    "Material Master Application"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "SCM_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "712",
+      "713",
+      "714"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3703276"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3702191",
@@ -1237,16 +2596,33 @@
    "cvss_score": 4.2,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-INV",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3702191",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3702191"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3698216",
@@ -1257,16 +2633,33 @@
    "cvss_score": 4.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-INV",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3698216",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3698216"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3696239",
@@ -1277,77 +2670,33 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-SEC",
    "release_month": "2026-04",
    "released_on": "2026-04-14",
-   "first_released_on": "2026-04-14",
+   "note_url": "https://me.sap.com/notes/3696239",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
    "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3696239"
-  },
-  {
-   "note_number": "3665042",
-   "title": "CSS Injection vulnerability in SAP NetWeaver Application Server ABAP",
-   "cve_ids": [
-    "CVE-2026-27680"
-   ],
-   "cvss_score": 3.1,
-   "cvss_vector": "CVSS:/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-   "priority": "Low",
-   "priority_raw": "Correction with low priority",
-   "category": "Program error",
-   "component": "BC-WD-UR",
-   "release_month": "2026-04",
-   "released_on": "2026-04-14",
-   "first_released_on": "2026-03-10",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3665042",
-   "cvss_vector_malformed": true
-  },
-  {
-   "note_number": "3645228",
-   "title": "Cross-Site Scripting (XSS) vulnerability in SAP Supplier Relationship Management (SICF Handler in SRM Catalog)",
-   "cve_ids": [
-    "CVE-2026-0512"
-   ],
-   "cvss_score": 6.1,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "SRM-EBP-CAT",
-   "release_month": "2026-04",
-   "released_on": "2026-04-14",
    "first_released_on": "2026-04-14",
-   "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3645228"
-  },
-  {
-   "note_number": "3530544",
-   "title": "Missing Authorization check in SAP S4CORE (Manage Journal Entries)",
-   "cve_ids": [
-    "CVE-2025-42899"
-   ],
-   "cvss_score": 4.3,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "FI-FIO-GL-TRA",
-   "release_month": "2026-04",
-   "released_on": "2026-04-14",
-   "first_released_on": "2025-11-11",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3530544"
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3680767",
@@ -1358,16 +2707,178 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PA-PA-XX",
    "release_month": "2026-04",
-   "released_on": null,
-   "first_released_on": null,
-   "is_update": false,
+   "released_on": "2026-04-14",
+   "note_url": "https://me.sap.com/notes/3680767",
+   "product_names": [
+    "SAP Human Capital Management for SAP S/4HANA"
+   ],
+   "affected": [
+    {
+     "software_component": "S4HCMRXX",
+     "versions": [
+      "100",
+      "101",
+      "102"
+     ]
+    },
+    {
+     "software_component": "SAP_HRRXX",
+     "versions": [
+      "600",
+      "604",
+      "608"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3680767"
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
+  },
+  {
+   "note_number": "3665042",
+   "title": "CSS Injection vulnerability in SAP NetWeaver Application Server ABAP",
+   "cve_ids": [
+    "CVE-2026-27680"
+   ],
+   "cvss_score": 3.1,
+   "cvss_vector": "CVSS:/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Low",
+   "category": "Program error",
+   "component": "BC-WD-UR",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "note_url": "https://me.sap.com/notes/3665042",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_UI",
+     "versions": [
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "cvss_vector_malformed": true,
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
+  },
+  {
+   "note_number": "3645228",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP Supplier Relationship Management (SICF Handler in SRM Catalog)",
+   "cve_ids": [
+    "CVE-2026-0512"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "SRM-EBP-CAT",
+   "release_month": "2026-04",
+   "released_on": "2026-04-14",
+   "note_url": "https://me.sap.com/notes/3645228",
+   "product_names": [
+    "SAP Supplier Relationship Management (SICF Handler in SRM Catalog)"
+   ],
+   "affected": [
+    {
+     "software_component": "SRM_SERVER",
+     "versions": [
+      "702",
+      "713",
+      "714"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-04-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
+  },
+  {
+   "note_number": "3747787",
+   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
+   "cve_ids": [],
+   "cvss_score": null,
+   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": "Program error",
+   "component": "BC-XS-CDX-NJS",
+   "release_month": "2026-04",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3747787",
+   "product_names": [],
+   "affected": [],
+   "versions_unparsed": "SAP Cloud Application Programming Model & MTA Build Tool Package versions: cap-js/sqlite - v2.2.2, cap-js/postgres - v2.2.2, cap-js/db-service - v2.10.1, mbt 1.2.48",
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
+  },
+  {
+   "note_number": "3530544",
+   "title": "Missing Authorization check in SAP S4CORE (Manage Journal Entries)",
+   "cve_ids": [
+    "CVE-2025-42899"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "FI-FIO-GL-TRA",
+   "release_month": "2026-04",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3530544",
+   "product_names": [
+    "SAP S4CORE (Manage Journal Entries)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "104",
+      "105",
+      "106",
+      "107",
+      "108"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": true,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3719502",
@@ -1378,16 +2889,59 @@
    "cvss_score": 7.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "SCM-APO-INT-EXT",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3719502",
+   "product_names": [
+    "SAP Supply Chain Management"
+   ],
+   "affected": [
+    {
+     "software_component": "SCMAPO",
+     "versions": [
+      "713",
+      "714"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104"
+     ]
+    },
+    {
+     "software_component": "S4COREOP",
+     "versions": [
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "SCM",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "712"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3719502"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3714585",
@@ -1398,16 +2952,31 @@
    "cvss_score": 9.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-PIN-PCD",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3714585",
+   "product_names": [
+    "SAP NetWeaver Enterprise Portal Administration"
+   ],
+   "affected": [
+    {
+     "software_component": "EP-RUNTIME",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3714585"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3708457",
@@ -1418,16 +2987,31 @@
    "cvss_score": 5.6,
    "cvss_vector": "CVSS:3.0/AV:P/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "IS-SE-CCO",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3708457",
+   "product_names": [
+    "SAP Customer Checkout 2.0"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_CUSTOMER_CHECKOUT",
+     "versions": [
+      "2.0"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3708457"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3707930",
@@ -1438,16 +3022,34 @@
    "cvss_score": 5.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-SDD",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3707930",
+   "product_names": [
+    "SAP Solution Tools Plug-In (ST-PI)"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "2008_1_700",
+      "2008_1_710",
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3707930"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3704740",
@@ -1458,16 +3060,46 @@
    "cvss_score": 5.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-DB-SDB",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3704740",
+   "product_names": [
+    "SAP NetWeaver Application Server for ABAP"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "730",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3704740"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3703856",
@@ -1478,16 +3110,45 @@
    "cvss_score": 6.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-DB-ORA-CCM",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3703856",
+   "product_names": [
+    "SAP NetWeaver Application Server for ABAP"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3703856"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3703385",
@@ -1498,16 +3159,59 @@
    "cvss_score": 5.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-BW",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3703385",
+   "product_names": [
+    "SAP Business Warehouse (Service API)"
+   ],
+   "affected": [
+    {
+     "software_component": "DW4CORE",
+     "versions": [
+      "200",
+      "300",
+      "400"
+     ]
+    },
+    {
+     "software_component": "PI_BASIS",
+     "versions": [
+      "2006_1_700",
+      "701",
+      "702",
+      "730",
+      "731",
+      "740"
+     ]
+    },
+    {
+     "software_component": "SAP_BW",
+     "versions": [
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3703385"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3701020",
@@ -1518,35 +3222,78 @@
    "cvss_score": 5.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "PY-PT",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3701020",
+   "product_names": [
+    "SAP S/4HANA HCM Portugal and SAP ERP HCM Portugal"
+   ],
+   "affected": [
+    {
+     "software_component": "S4HCMCPT",
+     "versions": [
+      "100",
+      "101",
+      "102"
+     ]
+    },
+    {
+     "software_component": "SAP_HRCPT",
+     "versions": [
+      "600",
+      "604",
+      "608"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3701020"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3700960",
    "title": "Denial of Service due to Outdated OpenSSL Version in SAP NetWeaver AS Java (Adobe Document Services)",
-   "cve_ids": [],
+   "cve_ids": [
+    "CVE-2025-9230",
+    "CVE-2025-9232"
+   ],
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-SRV-FP",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3700960",
+   "product_names": [
+    "SAP NetWeaver AS Java (Adobe Document Services)"
+   ],
+   "affected": [
+    {
+     "software_component": "ADSSAP",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3700960",
-   "multiple_cves": true
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3699761",
@@ -1557,16 +3304,31 @@
    "cvss_score": 5.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-FES-GXT",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3699761",
+   "product_names": [
+    "SAP GUI for Windows with active GuiXT"
+   ],
+   "affected": [
+    {
+     "software_component": "BC-FES-GUI",
+     "versions": [
+      "8.00"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3699761"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3698553",
@@ -1577,16 +3339,31 @@
    "cvss_score": 9.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "FS-QUO",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3698553",
+   "product_names": [
+    "SAP Quotation Management Insurance application (FS-QUO)"
+   ],
+   "affected": [
+    {
+     "software_component": "FS-QUO",
+     "versions": [
+      "800"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3698553"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3697355",
@@ -1597,16 +3374,48 @@
    "cvss_score": 6.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:L",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CA-NO",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3697355",
+   "product_names": [
+    "SAP NetWeaver (Feedback Notification)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_ABA",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "75A",
+      "75B",
+      "75C",
+      "75D",
+      "75E",
+      "75F",
+      "75G",
+      "75H",
+      "75I",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3697355"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3694383",
@@ -1617,16 +3426,43 @@
    "cvss_score": 3.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "BC-DB-INF",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3694383",
+   "product_names": [
+    "SAP NetWeaver Application Server for ABAP"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3694383"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3693543",
@@ -1637,16 +3473,37 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SBO-CRO-SEC",
    "release_month": "2026-03",
    "released_on": "2026-03-10",
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3693543",
+   "product_names": [
+    "SAP Business One (Job Service)"
+   ],
+   "affected": [
+    {
+     "software_component": "B1_ON_HANA",
+     "versions": [
+      "10.0"
+     ]
+    },
+    {
+     "software_component": "SAP-M-BO",
+     "versions": [
+      "10.0"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3693543"
+   "is_update": false,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3689080",
@@ -1657,16 +3514,41 @@
    "cvss_score": 6.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-TWB-TST-ECA",
    "release_month": "2026-03",
    "released_on": null,
-   "first_released_on": "2026-03-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3689080",
+   "product_names": [
+    "SAP NetWeaver Application Server for ABAP"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "740",
+      "750",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816",
+      "918"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3689080"
+   "is_update": true,
+   "first_released_on": "2026-03-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3678282",
@@ -1677,36 +3559,34 @@
    "cvss_score": 7.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BI-BIP-SRV",
    "release_month": "2026-03",
    "released_on": null,
-   "first_released_on": "2026-02-10",
-   "is_update": true,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3678282"
-  },
-  {
-   "note_number": "3646297",
-   "title": "Information Disclosure vulnerability in SAP S/4HANA (Manage Payment Media)",
-   "cve_ids": [
-    "CVE-2026-24314"
+   "note_url": "https://me.sap.com/notes/3678282",
+   "product_names": [
+    "SAP BusinessObjects BI Platform"
    ],
-   "cvss_score": 4.3,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "FI-FIO-AP-PAY",
-   "release_month": "2026-02",
-   "released_on": "2026-02-24",
-   "first_released_on": "2026-02-24",
-   "is_update": false,
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3646297"
+   "is_update": true,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/march-2026.html"
+   ]
   },
   {
    "note_number": "3710111",
@@ -1717,16 +3597,38 @@
    "cvss_score": 5.2,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-BMT-WFM",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3710111",
+   "product_names": [
+    "SAP Business Workflow"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3710111"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3705882",
@@ -1737,16 +3639,34 @@
    "cvss_score": 7.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "SV-SMG-SDD",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3705882",
+   "product_names": [
+    "SAP Solution Tools Plug-In (ST-PI)"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "2008_1_700",
+      "2008_1_710",
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3705882"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3703092",
@@ -1757,16 +3677,41 @@
    "cvss_score": 7.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "SCM-APO-CA-COP",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3703092",
+   "product_names": [
+    "SAP Supply Chain Management"
+   ],
+   "affected": [
+    {
+     "software_component": "SCMAPO",
+     "versions": [
+      "713",
+      "714"
+     ]
+    },
+    {
+     "software_component": "SCM",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "712"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3703092"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3697256",
@@ -1777,16 +3722,33 @@
    "cvss_score": 4.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-CMC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3697256",
+   "product_names": [
+    "SAP BusinessObjects Enterprise (Central Management Console)"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3697256"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3697099",
@@ -1797,16 +3759,58 @@
    "cvss_score": 9.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "CRM-IC-FRW",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3697099",
+   "product_names": [
+    "SAP CRM and SAP S/4HANA (Scripting Editor)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4FND",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "SAP_ABA",
+     "versions": [
+      "700"
+     ]
+    },
+    {
+     "software_component": "WEBCUIF",
+     "versions": [
+      "700",
+      "701",
+      "730",
+      "731",
+      "746",
+      "747",
+      "748",
+      "800",
+      "801"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3697099"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3692405",
@@ -1817,16 +3821,38 @@
    "cvss_score": 7.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "CEC-SCC-PLA-PL",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3692405",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3692405"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3691645",
@@ -1837,16 +3863,34 @@
    "cvss_score": 5.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-SDD",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3691645",
+   "product_names": [
+    "ABAP based SAP systems"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "2005_1_700",
+      "2008_1_710",
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3691645"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3689543",
@@ -1857,16 +3901,38 @@
    "cvss_score": 5.9,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CEC-SCC-COM-BC-OCC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3689543",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3689543"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3688319",
@@ -1877,16 +3943,34 @@
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-TWB-CBT",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3688319",
+   "product_names": [
+    "Business Server Pages Application (TAF_APPLAUNCHER)"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "2008_1_700",
+      "2008_1_710",
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3688319"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3687771",
@@ -1897,16 +3981,38 @@
    "cvss_score": 5.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CEC-SCC-COM-BC-OCC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3687771",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3687771"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3687285",
@@ -1917,16 +4023,31 @@
    "cvss_score": 4.4,
    "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-JAS-JMS",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3687285",
+   "product_names": [
+    "SAP NetWeaver (JMS service)"
+   ],
+   "affected": [
+    {
+     "software_component": "J2EE-FRMW",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3687285"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3680416",
@@ -1937,16 +4058,34 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SV-SMG-SDD",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3680416",
+   "product_names": [
+    "SAP Support Tools Plug-In"
+   ],
+   "affected": [
+    {
+     "software_component": "ST-PI",
+     "versions": [
+      "2008_1_700",
+      "2008_1_710",
+      "740",
+      "758"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3680416"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3680390",
@@ -1957,16 +4096,42 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "FIN-SEM-CPM-BSC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3680390",
+   "product_names": [
+    "SAP Strategic Enterprise Management (Balanced Scorecard in BSP Application)"
+   ],
+   "affected": [
+    {
+     "software_component": "SEM-BW",
+     "versions": [
+      "600",
+      "700",
+      "602",
+      "603",
+      "604",
+      "605",
+      "634",
+      "736",
+      "746",
+      "747",
+      "748",
+      "800"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3680390"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3679346",
@@ -1977,36 +4142,99 @@
    "cvss_score": 5.8,
    "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "SBO-CRO-SEC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3679346",
+   "product_names": [
+    "SAP Business One (B1 Client Memory Dump Files)"
+   ],
+   "affected": [
+    {
+     "software_component": "B1_ON_HANA",
+     "versions": [
+      "10.0"
+     ]
+    },
+    {
+     "software_component": "SAP-M-BO",
+     "versions": [
+      "10.0"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3679346"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3678417",
    "title": "Multiple vulnerabilities in BSP Applications of SAP Document Management System",
    "cve_ids": [
-    "CVE-2026-0505"
+    "CVE-2026-0505",
+    "CVE-2026-24323"
    ],
    "cvss_score": 6.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "CA-DMS-OP",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3678417",
+   "product_names": [
+    "SAP Document Management System"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_APPL",
+     "versions": [
+      "618"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "EA-APPL",
+     "versions": [
+      "600",
+      "602",
+      "603",
+      "604",
+      "605",
+      "606",
+      "617"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3678417"
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3678313",
@@ -2017,16 +4245,56 @@
    "cvss_score": 3.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "BC-CST-IC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3678313",
+   "product_names": [
+    "SAP NetWeaver and ABAP Platform (Application Server ABAP)"
+   ],
+   "affected": [
+    {
+     "software_component": "KRNL64NUC",
+     "versions": [
+      "7.22",
+      "7.22EXT"
+     ]
+    },
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.22",
+      "7.22EXT",
+      "7.53",
+      "8.04"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.22",
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "8.04",
+      "9.16",
+      "9.17",
+      "9.18"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3678313"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3678009",
@@ -2037,16 +4305,49 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "IS-DFS-BIT",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3678009",
+   "product_names": [
+    "SAP S/4HANA Defense & Security (Disconnected Operations)"
+   ],
+   "affected": [
+    {
+     "software_component": "EA-DFPS",
+     "versions": [
+      "600",
+      "603",
+      "604",
+      "605",
+      "606",
+      "616",
+      "617",
+      "618",
+      "619",
+      "800",
+      "801",
+      "802",
+      "803",
+      "804",
+      "805",
+      "806",
+      "807",
+      "808",
+      "809"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3678009"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3674774",
@@ -2057,16 +4358,54 @@
    "cvss_score": 9.6,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-MID-RFC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3674774",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "KRNL64NUC",
+     "versions": [
+      "7.22",
+      "7.22EXT"
+     ]
+    },
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.22",
+      "7.22EXT",
+      "7.53"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.22",
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "9.16",
+      "9.18",
+      "9.19"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3674774"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3674246",
@@ -2077,16 +4416,33 @@
    "cvss_score": 7.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:N",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BI-BIP-SEC",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3674246",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3674246"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3673213",
@@ -2097,16 +4453,31 @@
    "cvss_score": 3.4,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:N/I:L/A:N",
    "priority": "Low",
-   "priority_raw": "Correction with low priority",
+   "priority_raw": "Low",
    "category": "Program error",
    "component": "BC-MID-CON-JCO",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3673213",
+   "product_names": [
+    "SAP NetWeaver Application Server Java"
+   ],
+   "affected": [
+    {
+     "software_component": "LMNWABASICAPPS",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3673213"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3654236",
@@ -2117,36 +4488,33 @@
    "cvss_score": 7.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BI-BIP-SRV",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3654236"
-  },
-  {
-   "note_number": "3503138",
-   "title": "Information Disclosure vulnerability in SAP NetWeaver Application Server ABAP (applications based on SAP GUI for HTML)",
-   "cve_ids": [
-    "CVE-2025-0059"
+   "note_url": "https://me.sap.com/notes/3654236",
+   "product_names": [
+    "SAP BusinessObjects BI Platform"
    ],
-   "cvss_score": 6.0,
-   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
-   "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Program error",
-   "component": "BC-FES-WGU",
-   "release_month": "2026-02",
-   "released_on": "2026-02-10",
-   "first_released_on": "2025-01-14",
-   "is_update": true,
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3503138"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3215823",
@@ -2157,16 +4525,36 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "MM-PUR-SVC-SES",
    "release_month": "2026-02",
    "released_on": "2026-02-10",
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3215823",
+   "product_names": [
+    "SAP Fiori App (Manage Service Entry Sheets - Lean Services)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3215823"
+   "is_update": false,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3697567",
@@ -2177,16 +4565,48 @@
    "cvss_score": 8.8,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
    "priority": "High",
-   "priority_raw": "Correction with high priority",
+   "priority_raw": "High",
    "category": "Program error",
    "component": "BC-SEC-WSS",
    "release_month": "2026-02",
    "released_on": null,
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3697567",
+   "product_names": [
+    "SAP NetWeaver AS ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "804",
+      "916",
+      "917",
+      "918"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3697567"
+   "is_update": true,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3695912",
@@ -2197,16 +4617,33 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BI-BIP-SRV",
    "release_month": "2026-02",
    "released_on": null,
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3695912",
+   "product_names": [
+    "SAP BusinessObjects Business Intelligence Platform (AdminTools)"
+   ],
+   "affected": [
+    {
+     "software_component": "ENTERPRISE",
+     "versions": [
+      "430",
+      "2025",
+      "2027"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3695912"
+   "is_update": true,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3672622",
@@ -2217,16 +4654,138 @@
    "cvss_score": 6.5,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-DWB-CEX-CF",
    "release_month": "2026-02",
    "released_on": null,
-   "first_released_on": "2026-02-10",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3672622",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP and SAP S/4HANA"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3672622"
+   "is_update": true,
+   "first_released_on": "2026-02-10",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
+  },
+  {
+   "note_number": "3646297",
+   "title": "Information Disclosure vulnerability in SAP S/4HANA (Manage Payment Media)",
+   "cve_ids": [
+    "CVE-2026-24314"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "FI-FIO-AP-PAY",
+   "release_month": "2026-02",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3646297",
+   "product_names": [
+    "S/4HANA (Manage Payment Media)"
+   ],
+   "affected": [
+    {
+     "software_component": "UIAPFI70",
+     "versions": [
+      "600",
+      "700",
+      "800",
+      "900",
+      "901",
+      "902"
+     ]
+    },
+    {
+     "software_component": "UIS4H",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
+  },
+  {
+   "note_number": "3503138",
+   "title": "Information Disclosure vulnerability in SAP NetWeaver Application Server ABAP (applications based on SAP GUI for HTML)",
+   "cve_ids": [
+    "CVE-2025-0059"
+   ],
+   "cvss_score": 6.0,
+   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Program error",
+   "component": "BC-FES-WGU",
+   "release_month": "2026-02",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3503138",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP (applications based on SAP GUI for HTML)"
+   ],
+   "affected": [
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.53"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "9.12",
+      "9.14"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": true,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
    "note_number": "3396109",
@@ -2237,36 +4796,767 @@
    "cvss_score": 4.7,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "BC-FES-BUS",
    "release_month": "2026-02",
    "released_on": null,
-   "first_released_on": "2024-02-13",
-   "is_update": true,
+   "note_url": "https://me.sap.com/notes/3396109",
+   "product_names": [
+    "SAP NWBC for HTML"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_UI",
+     "versions": [
+      "754",
+      "755",
+      "756",
+      "757"
+     ]
+    },
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3396109"
+   "is_update": true,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/february-2026.html"
+   ]
   },
   {
-   "note_number": "3122486",
-   "title": "Missing Authorization check in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "note_number": "3694242",
+   "title": "Code Injection vulnerability in SAP S/4HANA (Private Cloud and On-Premise)",
    "cve_ids": [
-    "CVE-2026-23683"
+    "CVE-2026-0498"
+   ],
+   "cvss_score": 9.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3694242",
+   "product_names": [
+    "SAP S/4HANA (Private Cloud and On-Premise)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3691059",
+   "title": "Privilege escalation vulnerability in SAP HANA database",
+   "cve_ids": [
+    "CVE-2026-0492"
+   ],
+   "cvss_score": 8.8,
+   "cvss_vector": null,
+   "priority": "High",
+   "priority_raw": "High",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3691059",
+   "product_names": [
+    "SAP HANA database"
+   ],
+   "affected": [
+    {
+     "software_component": "HDB",
+     "versions": [
+      "2.00"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3688703",
+   "title": "Missing Authorization check in SAP NetWeaver Application Server ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-0506"
+   ],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "High",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3688703",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3687749",
+   "title": "SQL Injection Vulnerability in SAP S/4HANA Private Cloud and On-Premise (Financials \u2013 General Ledger)",
+   "cve_ids": [
+    "CVE-2026-0501"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3687749",
+   "product_names": [
+    "SAP S/4HANA Private Cloud and On-Premise (Financials \u2013 General Ledger)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3687372",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Enterprise Portal",
+   "cve_ids": [
+    "CVE-2026-0499"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3687372",
+   "product_names": [
+    "SAP NetWeaver Enterprise Portal"
+   ],
+   "affected": [
+    {
+     "software_component": "EP-RUNTIME",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3681523",
+   "title": "Missing Authorization check in SAP ERP Central Component and SAP S/4HANA (SAP EHS Management)",
+   "cve_ids": [
+    "CVE-2026-0503"
+   ],
+   "cvss_score": 6.4,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3681523",
+   "product_names": [
+    "SAP ERP Central Component and SAP S/4HANA (SAP EHS Management)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_APPL",
+     "versions": [
+      "618"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "EA-APPL",
+     "versions": [
+      "605",
+      "606",
+      "617"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3677111",
+   "title": "Missing Authorization check in Business Server Pages Application (",
+   "cve_ids": [
+    "CVE-2026-0497"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": null,
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3677111",
+   "product_names": [
+    "Designer Web UI) Product - Business Server Pages Application (Product Designer Web UI)"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_APPL",
+     "versions": [
+      "618"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "EA-APPL",
+     "versions": [
+      "600",
+      "602",
+      "603",
+      "604",
+      "605",
+      "606",
+      "617"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3675151",
+   "title": "OS Command Injection vulnerability in SAP Application Server for ABAP and SAP NetWeaver RFCSDK",
+   "cve_ids": [
+    "CVE-2026-0507"
+   ],
+   "cvss_score": 8.4,
+   "cvss_vector": null,
+   "priority": "High",
+   "priority_raw": "High",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3675151",
+   "product_names": [
+    "SAP Application Server for ABAP and SAP NetWeaver RFCSDK"
+   ],
+   "affected": [
+    {
+     "software_component": "KRNL64UC",
+     "versions": [
+      "7.53"
+     ]
+    },
+    {
+     "software_component": "NWRFCSDK",
+     "versions": [
+      "7.50"
+     ]
+    },
+    {
+     "software_component": "KERNEL",
+     "versions": [
+      "7.53",
+      "7.54",
+      "7.77",
+      "7.89",
+      "7.93",
+      "9.16"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3668679",
+   "title": "Remote code execution in SAP Wily Introscope Enterprise Manager (WorkStation)",
+   "cve_ids": [
+    "CVE-2026-0500"
+   ],
+   "cvss_score": 9.6,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3668679",
+   "product_names": [
+    "SAP Wily Introscope Enterprise Manager (WorkStation)"
+   ],
+   "affected": [
+    {
+     "software_component": "WILY_INTRO_ENTERPRISE",
+     "versions": [
+      "10.8"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3666061",
+   "title": "Cross-Site Scripting (XSS) vulnerability in SAP Business Connector",
+   "cve_ids": [
+    "CVE-2026-0514"
+   ],
+   "cvss_score": 6.1,
+   "cvss_vector": null,
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3666061",
+   "product_names": [
+    "SAP Business Connector"
+   ],
+   "affected": [],
+   "versions_unparsed": "SAP BC 4.8",
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3657998",
+   "title": "Insufficient Input Handling in JNDI Operations of SAP Identity Management",
+   "cve_ids": [
+    "CVE-2026-0504"
+   ],
+   "cvss_score": 3.8,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N",
+   "priority": "Low",
+   "priority_raw": "Low",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3657998",
+   "product_names": [
+    "SAP Identity Management"
+   ],
+   "affected": [
+    {
+     "software_component": "IDM_CLM_REST_API",
+     "versions": [
+      "8.0"
+     ]
+    },
+    {
+     "software_component": "IDMIC",
+     "versions": [
+      "8.0"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3655229",
+   "title": "Cross-Site Request Forgery (CSRF) vulnerability in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "cve_ids": [
+    "CVE-2026-0493"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3655229",
+   "product_names": [
+    "SAP Fiori App (Intercompany Balance Reconciliation)"
+   ],
+   "affected": [
+    {
+     "software_component": "UIAPFI70",
+     "versions": [
+      "500",
+      "600",
+      "700",
+      "800",
+      "900",
+      "901",
+      "902"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    },
+    {
+     "software_component": "UIS4H",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3655227",
+   "title": "Information Disclosure vulnerability in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "cve_ids": [
+    "CVE-2026-0494"
    ],
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
-   "category": "Correction of legal function",
-   "component": "FI-LOC-FI-RU",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
    "release_month": "2026-01",
-   "released_on": "2026-01-27",
-   "first_released_on": "2026-01-27",
-   "is_update": false,
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3655227",
+   "product_names": [
+    "SAP Fiori App (Intercompany Balance Reconciliation)"
+   ],
+   "affected": [
+    {
+     "software_component": "UIAPFI70",
+     "versions": [
+      "500",
+      "600",
+      "700",
+      "800",
+      "900",
+      "901",
+      "902"
+     ]
+    },
+    {
+     "software_component": "UIS4H",
+     "versions": [
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3122486"
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3638716",
+   "title": "Open Redirect Vulnerability in SAP Supplier Relationship Management (SICF Handler in SRM Catalog)",
+   "cve_ids": [
+    "CVE-2026-0513"
+   ],
+   "cvss_score": 4.7,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3638716",
+   "product_names": [
+    "SAP Supplier Relationship Management (SICF Handler in SRM Catalog)"
+   ],
+   "affected": [
+    {
+     "software_component": "SRM_SERVER",
+     "versions": [
+      "700",
+      "701",
+      "702",
+      "713",
+      "714"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3593356",
+   "title": "Obsolete Encryption Algorithm Used in NW AS Java UME User Mapping",
+   "cve_ids": [
+    "CVE-2026-0510"
+   ],
+   "cvss_score": 3.0,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:N/A:N",
+   "priority": "Low",
+   "priority_raw": "Low",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3593356",
+   "product_names": [
+    "NW AS Java UME User Mapping"
+   ],
+   "affected": [
+    {
+     "software_component": "ENGINEAPI",
+     "versions": [
+      "7.50"
+     ]
+    },
+    {
+     "software_component": "SERVERCORE",
+     "versions": [
+      "7.50"
+     ]
+    },
+    {
+     "software_component": "UMEADMIN",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3565506",
+   "title": "Multiple vulnerabilities in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "cve_ids": [
+    "CVE-2026-0511",
+    "CVE-2026-0496",
+    "CVE-2026-0495"
+   ],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+   "priority": "High",
+   "priority_raw": "High",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3565506",
+   "product_names": [
+    "SAP Fiori App (Intercompany Balance Reconciliation)"
+   ],
+   "affected": [
+    {
+     "software_component": "UIAPFI70",
+     "versions": [
+      "500",
+      "600",
+      "700",
+      "800",
+      "900",
+      "901",
+      "902"
+     ]
+    },
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
   },
   {
    "note_number": "3697979",
@@ -2277,16 +5567,75 @@
    "cvss_score": 9.1,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "CA-DT-ANA",
    "release_month": "2026-01",
    "released_on": null,
-   "first_released_on": "2026-01-13",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3697979",
+   "product_names": [
+    "SAP Landscape Transformation"
+   ],
+   "affected": [
+    {
+     "software_component": "DMIS",
+     "versions": [
+      "2011_1_700",
+      "2011_1_710",
+      "2011_1_730",
+      "2011_1_731",
+      "2018_1_752",
+      "2020"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3697979"
+   "is_update": true,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
+  },
+  {
+   "note_number": "3122486",
+   "title": "Missing Authorization check in SAP Fiori App (Intercompany Balance Reconciliation)",
+   "cve_ids": [
+    "CVE-2026-23683"
+   ],
+   "cvss_score": 4.3,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "priority": "Medium",
+   "priority_raw": "Medium",
+   "category": "Correction of legal function",
+   "component": "FI-LOC-FI-RU",
+   "release_month": "2026-01",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3122486",
+   "product_names": [
+    "SAP Fiori App (Intercompany Balance Reconciliation)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
   }
  ]
 }

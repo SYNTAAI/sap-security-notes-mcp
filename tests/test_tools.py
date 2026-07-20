@@ -1,4 +1,6 @@
-"""Per-tool behavior tests against the mini fixture catalog."""
+"""Per-tool behavior tests against the mini fixture catalog (7 real v2.1
+records: 3727078, 3746332, 3763800, 3747787, 3515598, 3687749, 3747367;
+one KEV flag on 3515598 is synthetic for testing)."""
 
 from catalog import NULL_EVIDENCE, VERSION_CAVEAT
 
@@ -16,9 +18,9 @@ def test_patch_day_summary_default_latest(cat):
 
 
 def test_patch_day_summary_specific_month(cat):
-    s = cat.patch_day_summary("2026-05")
+    s = cat.patch_day_summary("2026-04")
     assert s["total_notes"] == 1
-    assert s["updated_notes"] == 1  # 3747787 is an update
+    assert s["updated_notes"] == 0  # 3747787 is not an update
 
 
 def test_search_ranked_by_cvss(cat):
@@ -29,8 +31,8 @@ def test_search_ranked_by_cvss(cat):
 
 def test_search_filters(cat):
     r = cat.search("", priority="HotNews", min_cvss=9.5)
-    assert [x["note_number"] for x in r["results"]] == ["3747367"]
-    r = cat.search("", month="2026-05")
+    assert {x["note_number"] for x in r["results"]} == {"3746332", "3747367", "3687749"}
+    r = cat.search("", month="2026-04")
     assert r["result_count"] == 1
 
 
@@ -59,7 +61,7 @@ def test_component_prefix_no_false_positives(cat):
     r = cat.notes_by_component("BC")
     comps = {x["component"] for x in r["results"]}
     assert all(c.startswith("BC-") for c in comps)
-    assert r["result_count"] == 3
+    assert r["result_count"] == 4
 
 
 def test_component_since_filter(cat):
@@ -69,8 +71,10 @@ def test_component_since_filter(cat):
 
 def test_hot_news(cat):
     r = cat.hot_news()
-    assert r["result_count"] == 3
+    assert r["result_count"] == 5
     r = cat.hot_news(since="2026-07-01")
+    # 3747787's released_on is null (day not public); effective date falls
+    # back to its release_month start, which is April - excluded by a July cutoff.
     assert r["result_count"] == 2
 
 
@@ -108,22 +112,22 @@ def test_exploited_notes_empty_is_honest(real_cat):
 
 
 def test_compare_months(cat):
-    r = cat.compare_months("2026-05", "2026-07")
+    r = cat.compare_months("2026-04", "2026-07")
     assert r["found"] is True
     assert r["delta"]["total_notes"] == 3
     assert r["delta"]["hot_news"] == 1
-    assert r["month_a"]["max_cvss"] is None  # only the unscored note in May
+    assert r["month_a"]["max_cvss"] is None  # only the unscored note in April
 
 
 def test_compare_months_unknown(cat):
-    r = cat.compare_months("2026-05", "2031-01")
+    r = cat.compare_months("2026-04", "2031-01")
     assert r["found"] is False
     assert "2031-01" in r["message"]
 
 
 def test_catalog_info(cat):
     r = cat.catalog_info()
-    assert r["catalog_meta"]["note_count"] == 5
+    assert r["catalog_meta"]["note_count"] == 7
     assert NULL_EVIDENCE == r["null_evidence_rule"]
 
 
@@ -134,4 +138,13 @@ def test_data_quality_flags(cat):
     assert malformed["cvss_vector_malformed"] is True
     multi = cat.note_details("3763800")["note"]
     assert multi["multiple_cves"] is True
-    assert multi["cve_ids"] == []
+    assert len(multi["cve_ids"]) == 3
+
+
+def test_page_only_note_has_null_component(cat):
+    """3687749 was added from public pages, not in the pre-v2.1 xlsx export
+    -- its legacy application component is honestly null, never fabricated,
+    but it's still reachable via its published affected[] data."""
+    r = cat.note_details("3687749")["note"]
+    assert r["component"] is None
+    assert r["affected"]

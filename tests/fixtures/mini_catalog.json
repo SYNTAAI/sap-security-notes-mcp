@@ -1,10 +1,10 @@
 {
  "catalog_meta": {
-  "catalog_version": "2026-07-18",
-  "note_count": 5,
-  "coverage_start": "2026-05",
+  "catalog_version": "2026-07-20",
+  "note_count": 7,
+  "coverage_start": "2026-01",
   "coverage_end": "2026-07",
-  "source_statement": "TEST FIXTURE \u2014 subset of real catalog records; one KEV flag is synthetic for testing",
+  "source_statement": "TEST FIXTURE \u2014 subset of real v2.1 catalog records; one KEV flag is synthetic for testing",
   "kev_snapshot_version": "test",
   "kev_snapshot_fetched": "2026-07-18"
  },
@@ -18,16 +18,150 @@
    "cvss_score": 9.0,
    "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-JAS-WEB",
    "release_month": "2026-07",
-   "released_on": "2026-07-14",
-   "first_released_on": "2026-06-09",
-   "is_update": true,
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3727078",
+   "product_names": [
+    "SAP NetWeaver Application Server Java (Web Container)"
+   ],
+   "affected": [
+    {
+     "software_component": "ENGINEAPI",
+     "versions": [
+      "7.50"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3727078"
+   "is_update": true,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html",
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
+  },
+  {
+   "note_number": "3746332",
+   "title": "XML Signature Wrapping in SAML Authentication in SAP NetWeaver AS ABAP and ABAP Platform",
+   "cve_ids": [
+    "CVE-2026-44748"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": "Program error",
+   "component": "BC-SEC-LGN-SML",
+   "release_month": "2026-06",
+   "released_on": "2026-06-09",
+   "note_url": "https://me.sap.com/notes/3746332",
+   "product_names": [
+    "SAP NetWeaver AS ABAP and ABAP Platform"
+   ],
+   "affected": [
+    {
+     "software_component": "SAP_BASIS",
+     "versions": [
+      "702",
+      "731",
+      "740",
+      "750",
+      "751",
+      "752",
+      "753",
+      "754",
+      "755",
+      "756",
+      "757",
+      "758",
+      "816",
+      "918",
+      "919"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": "2026-06-09",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html"
+   ]
+  },
+  {
+   "note_number": "3763800",
+   "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
+   "cve_ids": [
+    "CVE-2026-43512",
+    "CVE-2026-41293",
+    "CVE-2026-43515"
+   ],
+   "cvss_score": 8.1,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "priority": "High",
+   "priority_raw": "High",
+   "category": "Program error",
+   "component": "CEC-SCC-PLA-PL",
+   "release_month": "2026-07",
+   "released_on": "2026-07-14",
+   "note_url": "https://me.sap.com/notes/3763800",
+   "product_names": [
+    "SAP Commerce Cloud"
+   ],
+   "affected": [
+    {
+     "software_component": "HY_COM",
+     "versions": [
+      "2205"
+     ]
+    },
+    {
+     "software_component": "COM_CLOUD",
+     "versions": [
+      "2211",
+      "2211-JDK21"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
+   "kev_listed": false,
+   "kev_date_added": null,
+   "multiple_cves": true,
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
+  },
+  {
+   "note_number": "3747787",
+   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
+   "cve_ids": [],
+   "cvss_score": null,
+   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
+   "priority": "HotNews",
+   "priority_raw": "Critical",
+   "category": "Program error",
+   "component": "BC-XS-CDX-NJS",
+   "release_month": "2026-04",
+   "released_on": null,
+   "note_url": "https://me.sap.com/notes/3747787",
+   "product_names": [],
+   "affected": [],
+   "versions_unparsed": "SAP Cloud Application Programming Model & MTA Build Tool Package versions: cap-js/sqlite - v2.2.2, cap-js/postgres - v2.2.2, cap-js/db-service - v2.10.1, mbt 1.2.48",
+   "kev_listed": false,
+   "kev_date_added": null,
+   "is_update": false,
+   "first_released_on": null,
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/april-2026.html"
+   ]
   },
   {
    "note_number": "3515598",
@@ -38,53 +172,73 @@
    "cvss_score": 4.3,
    "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
    "priority": "Medium",
-   "priority_raw": "Correction with medium priority",
+   "priority_raw": "Medium",
    "category": "Program error",
    "component": "FIN-FSCM-CLM-COP",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3515598",
+   "product_names": [
+    "SAP S/4HANA (Draft operation)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "108"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": true,
    "kev_date_added": "2026-07-15",
-   "note_url": "https://me.sap.com/notes/3515598"
-  },
-  {
-   "note_number": "3763800",
-   "title": "Multiple vulnerabilities in Apache Tomcat within SAP Commerce Cloud",
-   "cve_ids": [],
-   "cvss_score": 8.1,
-   "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "priority": "High",
-   "priority_raw": "Correction with high priority",
-   "category": "Program error",
-   "component": "CEC-SCC-PLA-PL",
-   "release_month": "2026-07",
-   "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
    "is_update": false,
-   "kev_listed": false,
-   "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3763800",
-   "multiple_cves": true
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   },
   {
-   "note_number": "3747787",
-   "title": "Malicious open-source packages in SAP Cloud Application Programming Model & MTA Build Tool",
-   "cve_ids": [],
-   "cvss_score": null,
-   "cvss_vector": "CVSS:3.0/AV:/AC:/PR:/UI:/S:/C:/I:/A:",
+   "note_number": "3687749",
+   "title": "SQL Injection Vulnerability in SAP S/4HANA Private Cloud and On-Premise (Financials \u2013 General Ledger)",
+   "cve_ids": [
+    "CVE-2026-0501"
+   ],
+   "cvss_score": 9.9,
+   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
-   "category": "Program error",
-   "component": "BC-XS-CDX-NJS",
-   "release_month": "2026-05",
-   "released_on": null,
-   "first_released_on": null,
-   "is_update": true,
+   "priority_raw": "Critical",
+   "category": null,
+   "component": null,
+   "release_month": "2026-01",
+   "released_on": "2026-01-13",
+   "note_url": "https://me.sap.com/notes/3687749",
+   "product_names": [
+    "SAP S/4HANA Private Cloud and On-Premise (Financials \u2013 General Ledger)"
+   ],
+   "affected": [
+    {
+     "software_component": "S4CORE",
+     "versions": [
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109"
+     ]
+    }
+   ],
+   "versions_unparsed": null,
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3747787"
+   "is_update": false,
+   "first_released_on": "2026-01-13",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html"
+   ]
   },
   {
    "note_number": "3747367",
@@ -95,17 +249,25 @@
    "cvss_score": 9.9,
    "cvss_vector": "CVSS:/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "priority": "HotNews",
-   "priority_raw": "HotNews",
+   "priority_raw": "Critical",
    "category": "Program error",
    "component": "BC-FES-ITS",
    "release_month": "2026-07",
    "released_on": "2026-07-14",
-   "first_released_on": "2026-07-14",
-   "is_update": false,
+   "note_url": "https://me.sap.com/notes/3747367",
+   "product_names": [
+    "SAP NetWeaver Application Server ABAP"
+   ],
+   "affected": [],
+   "versions_unparsed": "KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 7.22EXT, 7.53, KERNEL 7.22, 7.53. 7.54, 7.77, 7.89, 7.93, 9.16, 9.18, 9.19, 9.20",
    "kev_listed": false,
    "kev_date_added": null,
-   "note_url": "https://me.sap.com/notes/3747367",
-   "cvss_vector_malformed": true
+   "cvss_vector_malformed": true,
+   "is_update": false,
+   "first_released_on": "2026-07-14",
+   "source_urls": [
+    "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html"
+   ]
   }
  ]
 }

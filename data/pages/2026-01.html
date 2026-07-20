@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="SAP security Patch Day Bulletin"/>
+
+    
+        <meta name="updated_timestamp" content="2026-01-29 05:49:20"/>
+    
+        <meta name="created_timestamp" content="2026-01-13 09:17:03"/>
+    
+        <meta name="sm_tech_ids" content="en,207430454709915121807807,208439490189093937281746"/>
+    
+
+    
+
+    <title>SAP Security Patch Day - January 2026</title>
+
+    
+        <link rel="icon" type="image/vnd.microsoft.icon" href="/etc/designs/support/favicon.ico"/>
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/etc/designs/support/favicon.ico"/>
+    
+    <script data-ui5-config type="application/json">
+        {
+            "theme": "sap_glow"
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.udex.services.sap.com/dds/design-tokens/latest/css/font-face.css"/>
+
+        
+    <link rel="apple-touch-icon" sizes="60x60" href="/etc/designs/support/clientlib-all/images/icons/apple-touch-icons/touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/etc/designs/support/clientlib-all/images/icons/apple-touch-icons/touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/etc/designs/support/clientlib-all/images/icons/apple-touch-icons/touch-icon-180x180.png"/>
+
+        
+
+    
+
+    
+    
+<link rel="stylesheet" href="/etc/designs/support/clientlib-vue-common.min.d1af125360bad59852a2da980fe45c22.css" type="text/css">
+
+
+
+
+    
+    
+<script src="/etc/designs/fiji-ui-v2/clientlib-bootstrap.min.ca7d520143e848d13a021c32aff920f8.js"></script>
+
+
+
+
+    <!-- Adobe Analytics JS API and JQuery/Bootstrap API MUST be located right after CSS includes -->
+    
+        
+    
+<script src="/etc/designs/support/clientlib-common.min.9ddc032ab8f50f2ead92180663f1c5c0.js"></script>
+<script src="/etc/designs/support/clientlib-adobe-analytics.min.9eb2586d36b60537f362da99e679d9a4.js"></script>
+
+
+
+
+        <script>
+            // Initialize 6Sense event listener and Analytics delete when all done
+            SUPPORT.MainNamespace.EDDLController.init6SenseAndAnalytics();
+
+            document.addEventListener('userInfoInitialized', function (event) {
+                const analyticsData = SUPPORT.MainNamespace.AnalyticsUtils.getAnalyticsData(event.detail);
+                const errorPageType = document.body.getAttribute('data-error-page-type');
+                if (errorPageType) {
+                    analyticsData.errorPageType = errorPageType;
+                }
+                SUPPORT.MainNamespace.EDDLController.initPageReadyAnalytics(analyticsData);
+            });
+        </script>
+
+        <script src="//www.sap.com/tmgr/ccc66c06b30b/e38fcdbbaf56/launch-aa5b671871e7.min.js"></script>
+    
+
+    
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
+            browser</a> to improve your experience.
+        </p>
+        <![endif]-->
+        <nav class="accessibility" aria-label="Skip to Content">
+            <strong>
+                <a href="#middle" tabindex="0" accesskey="S">Skip to Content</a>
+            </strong>
+        </nav>
+        
+    <div class="[ content-wrapper anchor-navigation_adaptive-menu  ]" style="position: relative;">
+        
+    <div class="header-wrapper"><!-- SDI include (path: /content/support/en_us/my-support/knowledge-base/security-notes-news/january-2026/_jcr_content/supportHeader.nocache.html/support/components/fixed/header, resourceType: support/components/fixed/header) -->
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<div id="dynamic_include_filter_div_478157"></div>
+<script type="text/javascript">
+jQuery.get("\/content\/support\/en_us\/my-support\/knowledge-base\/security-notes-news\/january-2026\/_jcr_content\/supportHeader.nocache.html\/support\/components\/fixed\/header", 
+	function(data) {
+		jQuery("#dynamic_include_filter_div_478157").replaceWith(data);
+	});
+</script>
+<noscript>Your browser does not support JavaScript. Some components may not be visible.</noscript>
+</div>
+
+    <div class="contactModuleWrapper">
+
+
+
+    
+
+    <button class="contact-module__btn" id="contactModuleBtn" data-cq-component="contact-module" type="button" aria-label="Contact Us">
+        Contact Us
+    </button>
+
+    <div class="contact-module__panel" id="contactModulePanel" role="dialog">
+        <span class="contact-module__panel-close" id="contactModuleClose">&#215;</span>
+        <article class="contact-module__panel-content">
+
+            <header class="contact-module__panel-header">
+                How you can contact us:
+                
+            </header>
+
+            <ul class="contact-module__panel-items">
+                
+
+    
+        
+
+    <li class="contact-module__panel-item" onclick="onBlockClick(event, this);">
+        <div class="contact-module__panel-link">
+            <div class="imageWrapper">
+
+
+    <div class="[ image-wrapper  ]">
+        <div data-cq-component="image" id="image-c8aeba0f-8637-436b-a927-3ce9a74cf98c">
+            
+                
+
+                
+                    <div data-fiji-ui-image-container data-alt="product icon" data-link-path="/content/support/en_us/contact-us.html#section_411324132" data-link-target="_self">
+
+                        <div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.mobile_small.jpg" data-media="(min-width: 1px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.mobile_portrait.jpg" data-media="(min-width: 320px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.mobile_landscape.jpg" data-media="(min-width: 321px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.tablet_portrait.jpg" data-media="(min-width: 481px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.tablet_landscape.jpg" data-media="(min-width: 769px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.desktop_hd.jpg" data-media="(min-width: 1025px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.desktop_full_hd.jpg" data-media="(min-width: 1367px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item0.v2adaptto.full_size.jpg" data-media="(min-width: -1px)"></div>
+
+                    </div>
+
+                    <script async>
+                        $(function() {
+                            var componentElement = document.getElementById("image-c8aeba0f-8637-436b-a927-3ce9a74cf98c");
+                            var enableLazyLoading = false;
+                            FIJI_UI.MainNamespace.ImageController.init(componentElement, enableLazyLoading);
+                        });
+                    </script>
+                
+            
+
+            
+        </div>
+    </div>
+</div>
+
+            <a href="/en/contact-us.html#section_411324132" onclick="event.preventDefault();">Product Related Assistance</a>
+            <p>Request product related support from SAP</p>
+        </div>
+    </li>
+
+    <script>
+        function onBlockClick(event, element) {
+            SUPPORT.MainNamespace.ContactUsController.onBlockClick(event, element);
+            SUPPORT.MainNamespace.EDDLController.trackActivityMapEvent(
+                "body|contact-us",
+                "Product Related Assistance",
+                "/content/support/en_us/contact-us.html#section_411324132"
+            );
+        }
+    </script>
+
+
+    
+        
+
+    <li class="contact-module__panel-item" onclick="onBlockClick(event, this);">
+        <div class="contact-module__panel-link">
+            <div class="imageWrapper">
+
+
+    <div class="[ image-wrapper  ]">
+        <div data-cq-component="image" id="image-b4551930-1c9f-4eaf-9b02-83e71169a373">
+            
+                
+
+                
+                    <div data-fiji-ui-image-container data-alt="contact icons" data-link-path="/content/support/en_us/contact-us.html#section_42886245" data-link-target="_self">
+
+                        <div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.mobile_small.jpg" data-media="(min-width: 1px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.mobile_portrait.jpg" data-media="(min-width: 320px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.mobile_landscape.jpg" data-media="(min-width: 321px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.tablet_portrait.jpg" data-media="(min-width: 481px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.tablet_landscape.jpg" data-media="(min-width: 769px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.desktop_hd.jpg" data-media="(min-width: 1025px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.desktop_full_hd.jpg" data-media="(min-width: 1367px)"></div>
+<div data-src="/en/_jcr_content/contactModule/features/item1.v2adaptto.full_size.jpg" data-media="(min-width: -1px)"></div>
+
+                    </div>
+
+                    <script async>
+                        $(function() {
+                            var componentElement = document.getElementById("image-b4551930-1c9f-4eaf-9b02-83e71169a373");
+                            var enableLazyLoading = false;
+                            FIJI_UI.MainNamespace.ImageController.init(componentElement, enableLazyLoading);
+                        });
+                    </script>
+                
+            
+
+            
+        </div>
+    </div>
+</div>
+
+            <a href="/en/contact-us.html#section_42886245" onclick="event.preventDefault();">Non-Product Related Assistance</a>
+            <p>Request for existing cases, user IDs, Portal navigation support and more</p>
+        </div>
+    </li>
+
+    <script>
+        function onBlockClick(event, element) {
+            SUPPORT.MainNamespace.ContactUsController.onBlockClick(event, element);
+            SUPPORT.MainNamespace.EDDLController.trackActivityMapEvent(
+                "body|contact-us",
+                "Non-Product Related Assistance",
+                "/content/support/en_us/contact-us.html#section_42886245"
+            );
+        }
+    </script>
+
+
+    
+
+
+            </ul>
+
+        </article>
+    </div>
+
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                SUPPORT.MainNamespace.ContactUsController.init();
+            });
+        </script>
+    
+
+</div>
+
+
+        
+    <div class="sectionContainerWrapper">
+
+
+    
+
+    <div data-cq-component="section-container" class="section-container" id="middle">
+        
+
+            
+                
+    <div id="secondary-navigation">
+        <div class="secondary-navigation__wrapper">
+            <div class="vue-root">
+                <community-secondary nav-tab-json="[]" breadcrumb-json="[{&quot;target&quot;:&quot;_self&quot;,&quot;path&quot;:&quot;/content/support/en_us.html&quot;,&quot;title&quot;:&quot;SAP Support Portal Home&quot;},{&quot;target&quot;:&quot;_self&quot;,&quot;path&quot;:&quot;/content/support/en_us/my-support.html&quot;,&quot;title&quot;:&quot;My Support&quot;},{&quot;target&quot;:&quot;_self&quot;,&quot;path&quot;:&quot;/content/support/en_us/my-support/knowledge-base.html&quot;,&quot;title&quot;:&quot;Knowledge Base&quot;},{&quot;target&quot;:&quot;_self&quot;,&quot;path&quot;:&quot;/content/support/en_us/my-support/knowledge-base/security-notes-news.html&quot;,&quot;title&quot;:&quot;SAP Security Notes \u0026 News&quot;},{&quot;target&quot;:&quot;_self&quot;,&quot;path&quot;:&quot;/content/support/en_us/my-support/knowledge-base/security-notes-news/january-2026.html&quot;,&quot;title&quot;:&quot;SAP Security Patch Day - January 2026&quot;}]" page-heading-json="SAP Security Patch Day - January 2026" nav-config="{&quot;navigationType&quot;:&quot;Anchor&quot;,&quot;anchorConfig&quot;:{&quot;hash&quot;:false,&quot;key&quot;:&quot;anchorId&quot;}}" breadcrumbs-min-count="3">
+                </community-secondary>
+            </div>
+        </div>
+    </div>
+
+            
+
+            
+
+            <script>
+                $(window).on("load", function () {
+                    FIJI_UI.MainNamespace.SectionContainerController.init();
+                });
+
+            </script>
+        
+
+        <section class="slides">
+            <div class="parsys"><div class="sectionWrapper section">
+
+
+
+    
+
+    
+
+    
+        
+    <main data-cq-component="section" class="[ slide   ]" id="section">
+
+        
+
+        
+
+        <div class="container">
+            <div class="parsys"><div class="headingWrapper section">
+
+
+    
+
+    
+        
+
+        
+        
+        
+        <h2 class='text-start content-width-large'>SAP Security Patch Day - January 2026</h2>
+    
+</div>
+<div class="textEditorWrapper section">
+
+<div class="text-editor content-alignment-start" data-cq-component="text-editor">
+    <div class="content-width-large">
+        <p>This post shares the information on security notes that remediate vulnerabilities discovered in SAP products. SAP strongly recommends that the customer visits the <a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news.html">Support Portal</a> and applies patches on priority to protect their SAP landscape.</p>
+<p>On 13<sup>th</sup> of January 2026, SAP security patch day saw the release of 17 new security notes. There are no updates to previously released patch day security notes.</p>
+
+    </div>
+</div></div>
+<div class="tableWrapper section">
+
+
+    
+
+    
+        
+        
+        
+        
+
+        <div data-cq-component="table" class="[ table  ]  table-responsive" id="fiji-ui-table-bdb2cd2f-a0a8-4045-8116-580339e490c3">
+            <table width="100%" cellspacing="0" cellpadding="1" border="1"><thead><tr><th width="10%"><p><b>Note#</b></p>
+</th><td width="70%"><p><b>Title</b></p>
+</td><td width="10%"><p><b>Priority</b></p>
+</td><td width="7%"><p><b>CVSS</b></p>
+</td></tr></thead>
+<tbody><tr><td width="10%"><p><a href="https://me.sap.com/notes/3687749">3687749</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0501">CVE-2026-0501</a>] <b>SQL Injection Vulnerability in SAP S/4HANA Private Cloud and On-Premise (Financials – General Ledger)</b></p>
+<p><u>Product</u> - SAP S/4HANA Private Cloud and On-Premise (Financials – General Ledger)<br />
+ Version(s) - S4CORE 102, 103, 104, 105, 106, 107, 108, 109</p>
+</td><td width="10%"><p>Critical</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H">9.9</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3668679">3668679</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0500">CVE-2026-0500</a>] <b>Remote code execution in SAP Wily Introscope Enterprise Manager (WorkStation)</b></p>
+<p><u>Product</u> - SAP Wily Introscope Enterprise Manager (WorkStation)<br />
+ Version(s) - WILY_INTRO_ENTERPRISE 10.8</p>
+</td><td width="10%"><p>Critical</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H">9.6</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3694242">3694242</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0498">CVE-2026-0498</a>] <b>Code Injection vulnerability in SAP S/4HANA (Private Cloud and On-Premise)</b></p>
+<p><u>Product</u> - SAP S/4HANA (Private Cloud and On-Premise)<br />
+ Version(s) - S4CORE 102, 103, 104, 105, 106, 107, 108, 109</p>
+</td><td width="10%"><p>Critical</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H">9.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3697979">3697979</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0491">CVE-2026-0491</a>] <b>Code Injection vulnerability in SAP Landscape Transformation</b></p>
+<p><u>Product</u> - SAP Landscape Transformation<br />
+ Version(s) - DMIS 2011_1_700, 2011_1_710, 2011_1_730, 2011_1_731, 2018_1_752, 2020</p>
+</td><td width="10%"><p>Critical</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H">9.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3691059">3691059</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0492">CVE-2026-0492</a>] <b>Privilege escalation vulnerability in SAP HANA database</b></p>
+<p><u>Product</u> - SAP HANA database<br />
+ Version(s) - HDB 2.00</p>
+</td><td width="10%"><p>High</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">8.8</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3675151">3675151</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0507">CVE-2026-0507</a>] <b>OS Command Injection vulnerability in SAP Application Server for ABAP and SAP NetWeaver RFCSDK</b></p>
+<p><u>Product</u> - SAP Application Server for ABAP and SAP NetWeaver RFCSDK<br />
+ Version(s) - KRNL64UC 7.53, NWRFCSDK 7.50, KERNEL 7.53, 7.54, 7.77, 7.89, 7.93, 9.16</p>
+</td><td width="10%"><p>High</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H">8.4</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3565506">3565506</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0511">CVE-2026-0511</a>] <b>Multiple vulnerabilities in SAP Fiori App (Intercompany Balance Reconciliation)</b></p>
+<p><b>Additional CVE - </b><a href="https://www.cve.org/CVERecord?id=CVE-2026-0496">CVE-2026-0496</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2026-0495">CVE-2026-0495</a></p>
+<p><u>Product</u> - SAP Fiori App (Intercompany Balance Reconciliation)<br />
+ Version(s) - UIAPFI70 500, 600, 700, 800, 900, 901, 902, S4CORE 102, 103, 104, 105, 106, 107, 108</p>
+</td><td width="10%"><p>High</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N">8.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3688703">3688703</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0506">CVE-2026-0506</a>] <b>Missing Authorization check in SAP NetWeaver Application Server ABAP and ABAP Platform</b></p>
+<p><u>Product</u> - SAP NetWeaver Application Server ABAP and ABAP Platform<br />
+ Version(s) - SAP_BASIS 700, SAP_BASIS 701, SAP_BASIS 702, SAP_BASIS 731, SAP_BASIS 740, SAP_BASIS 750, SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758, SAP_BASIS 816</p>
+</td><td width="10%"><p>High</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H">8.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3681523">3681523</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0503">CVE-2026-0503</a>] <b>Missing Authorization check in SAP ERP Central Component and SAP S/4HANA (SAP EHS Management)</b></p>
+<p><u>Product</u> - SAP ERP Central Component and SAP S/4HANA (SAP EHS Management)<br />
+ Version(s) - SAP_APPL 618, S4CORE 102, 103, 104, 105, 106, 107, 108, 109, EA-APPL 605, 606, 617</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N">6.4</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3687372">3687372</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0499">CVE-2026-0499</a>] <b>Cross-Site Scripting (XSS) vulnerability in SAP NetWeaver Enterprise Portal</b></p>
+<p><u>Product</u> - SAP NetWeaver Enterprise Portal<br />
+ Version(s) - EP-RUNTIME 7.50</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N">6.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3666061">3666061</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0514">CVE-2026-0514</a>] <b>Cross-Site Scripting (XSS) vulnerability in SAP Business Connector</b></p>
+<p><u>Product</u> - SAP Business Connector<br />
+ Version(s) - SAP BC 4.8</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N">6.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3638716">3638716</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0513">CVE-2026-0513</a>] <b>Open Redirect Vulnerability in SAP Supplier Relationship Management (SICF Handler in SRM Catalog)</b></p>
+<p><u>Product</u> - SAP Supplier Relationship Management (SICF Handler in SRM Catalog)<br />
+ Version(s) - SRM_SERVER 700, 701, 702, 713, 714</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N">4.7</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3655227">3655227</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0494">CVE-2026-0494</a>] <b>Information Disclosure vulnerability in SAP Fiori App (Intercompany Balance Reconciliation)</b></p>
+<p><u>Product</u> - SAP Fiori App (Intercompany Balance Reconciliation)<br />
+ Version(s) - UIAPFI70 500, 600, 700, 800, 900, 901, 902, UIS4H 109</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">4.3</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3655229">3655229</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0493">CVE-2026-0493</a>] <b>Cross-Site Request Forgery (CSRF) vulnerability in SAP Fiori App (Intercompany Balance Reconciliation)</b></p>
+<p><u>Product</u> - SAP Fiori App (Intercompany Balance Reconciliation)<br />
+ Version(s) - UIAPFI70 500, 600, 700, 800, 900, 901, 902, S4CORE 102, 103, 104, 105, 106, 107, 108, 109, UIS4H 109</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N">4.3</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3677111">3677111</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0497">CVE-2026-0497</a>] <b>Missing Authorization check in Business Server Pages Application (Product Designer Web UI)</b></p>
+<p><u>Product</u> - Business Server Pages Application (Product Designer Web UI)<br />
+ Version(s) - SAP_APPL 618, S4CORE 102, 103, 104, 105, 106, 107, 108, 109, EA-APPL 600, 602, 603, 604, 605, 606, 617</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">4.3</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3657998">3657998</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0504">CVE-2026-0504</a>] <b>Insufficient Input Handling in JNDI Operations of SAP Identity Management</b></p>
+<p><u>Product</u> - SAP Identity Management<br />
+ Version(s) - IDM_CLM_REST_API 8.0, IDMIC 8.0</p>
+</td><td width="10%"><p>Low</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N">3.8</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3593356">3593356</a></p>
+</td><td width="70%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0510">CVE-2026-0510</a>] <b>Obsolete Encryption Algorithm Used in NW AS Java UME User Mapping</b></p>
+<p><u>Product</u> - NW AS Java UME User Mapping<br />
+Version(s) - ENGINEAPI 7.50, SERVERCORE 7.50, UMEADMIN 7.50</p>
+</td><td width="10%"><p>Low</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:N/A:N">3.0</a></p>
+</td></tr></tbody></table>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                FIJI_UI.MainNamespace.TableController({
+                    tableDivId: "fiji-ui-table-bdb2cd2f-a0a8-4045-8116-580339e490c3",
+                    emptySearchResultMessage:"",
+                    info: false,
+                    lengthChange: false,
+                    ordering: false,
+                    paging: false,
+                    pageLength: 10,
+                    searching: false,
+                    rowsGroup: []
+                }).init();
+            });
+        </script>
+    
+</div>
+<div class="textEditorWrapper section">
+
+<div class="text-editor content-alignment-start" data-cq-component="text-editor">
+    <div class="content-width-large">
+        <p>1 new security note was released after the scheduled monthly patch day. Additionally, 1 previously released security note was updated.</p>
+
+    </div>
+</div></div>
+<div class="tableWrapper section">
+
+
+    
+
+    
+        
+        
+        
+        
+
+        <div data-cq-component="table" class="[ table  ]  table-responsive" id="fiji-ui-table-5453e449-8ec4-4417-a513-34e51675d391">
+            <table width="100%" cellspacing="0" cellpadding="1" border="1">
+<tbody><tr><td width="10%"><p><a href="https://me.sap.com/notes/3697979">3697979</a></p>
+</td><td width="71%"><p><b><i>Update to Security Note released on January 2026 Patch Day:</i></b></p>
+<p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-0491">CVE-2026-0491</a>] <b>Code Injection vulnerability in SAP Landscape Transformation</b></p>
+<p><u>Product</u> - SAP Landscape Transformation<br />
+Version(s) - DMIS 2011_1_700, 2011_1_710, 2011_1_730, 2011_1_731, 2018_1_752, 2020</p>
+</td><td width="10%"><p>Critical</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H">9.1</a></p>
+</td></tr><tr><td width="10%"><p><a href="https://me.sap.com/notes/3122486">3122486</a></p>
+</td><td width="71%"><p>[<a href="https://www.cve.org/CVERecord?id=CVE-2026-23683">CVE-2026-23683</a>] <b>Missing Authorization check in SAP Fiori App (Intercompany Balance Reconciliation)</b></p>
+<p><u>Product</u> - SAP Fiori App (Intercompany Balance Reconciliation)<br />
+Version(s) - S4CORE 102, 103, 104, 105, 106</p>
+</td><td width="10%"><p>Medium</p>
+</td><td width="7%"><p><a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">4.3</a></p>
+</td></tr></tbody></table>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                FIJI_UI.MainNamespace.TableController({
+                    tableDivId: "fiji-ui-table-5453e449-8ec4-4417-a513-34e51675d391",
+                    emptySearchResultMessage:"",
+                    info: false,
+                    lengthChange: false,
+                    ordering: false,
+                    paging: false,
+                    pageLength: 10,
+                    searching: false,
+                    rowsGroup: []
+                }).init();
+            });
+        </script>
+    
+</div>
+<div class="textEditorWrapper section">
+
+<div class="text-editor content-alignment-start" data-cq-component="text-editor">
+    <div class="content-width-large">
+        <p>To know more about the security researchers and research companies who have contributed for security patches of this month, visit <a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news/credits-for-security-researchers.html">here</a><u>.<br />
+</u>SAP is committed to delivering trustworthy products and cloud services. Secure configuration is essential to ensuring secure operation and data integrity. We have therefore documented security recommendations that are consolidated in <a href="https://www.sap.com/documents/2022/12/7616adbb-547e-0010-bca6-c68f7e60039b.html">this document</a> to help you configure the best security for your SAP portfolio.<br />
+Archived blogs from previous years are available <u><a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news/security-patch-day-archives.html">here</a></u>.<br />
+If you have any comments or feedback about this post, you can write to <u><a href="mailto:secure@sap.com">secure@sap.com</a></u>.</p>
+
+    </div>
+</div></div>
+
+</div>
+
+        </div>
+    </main>
+
+    
+
+    
+
+    <script>
+        $(document).ready(function () {
+            var sectionObj = {
+                "id": "section",
+                "slider": "false",
+                "backgroundType": "",
+                "backgroundColor": "",
+                "scrollSpeed": ""
+            };
+            if (false) {
+                sectionObj["sliderConfiguration"] = {};
+            }
+            FIJI_UI.MainNamespace.SectionController.initializeSection(sectionObj);
+        });
+    </script>
+</div>
+
+</div>
+
+        </section>
+    </div>
+</div>
+
+
+        
+    <div class="contentFeedback">
+    
+    <div class="vue-root" data-cq-component="content-feedback">
+        <content-feedback survey-language="EN" country-url="https://www.sap.com/etc/designs/sapdx/clientlib-ip-detection/js/getCountryCode.json">
+        </content-feedback>
+    </div>
+</div>
+
+    <div class="footer">
+
+
+
+
+
+    <div class="vue-root" id="ds-footer" role="contentinfo" aria-label="Footer">
+        <community-footer contact-us-link="/content/support/en_us/contact-us.html" social-links="[{&quot;name&quot;:&quot;facebook&quot;,&quot;iconUrl&quot;:&quot;https://cdn.udex.services.sap.com/dds/design-tokens/assets/icons/facebook.svg&quot;,&quot;url&quot;:&quot;https://www.facebook.com/SAP&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;name&quot;:&quot;youtube&quot;,&quot;iconUrl&quot;:&quot;https://cdn.udex.services.sap.com/dds/design-tokens/assets/icons/youtube.svg&quot;,&quot;url&quot;:&quot;https://www.youtube.com/user/SAPSupportInfo&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;name&quot;:&quot;linkedin&quot;,&quot;iconUrl&quot;:&quot;https://cdn.udex.services.sap.com/dds/design-tokens/assets/icons/linkedin.svg&quot;,&quot;url&quot;:&quot;https://www.linkedin.com/company/sap&quot;,&quot;target&quot;:&quot;_blank&quot;}]" quick-links="[{&quot;title&quot;:&quot;Get Support (SAP for Me login)&quot;,&quot;url&quot;:&quot;https://me.sap.com/getsupport&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;title&quot;:&quot;Products Documentation (Help Portal)&quot;,&quot;url&quot;:&quot;https://help.sap.com&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;SAP Community&quot;,&quot;url&quot;:&quot;https://community.sap.com/&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;My Trust Center&quot;,&quot;url&quot;:&quot;/content/support/en_us/my-support/trust-center.html&quot;,&quot;target&quot;:&quot;_self&quot;}]" trending-links="[{&quot;title&quot;:&quot;SAP Sapphire&quot;,&quot;url&quot;:&quot;//www.sap.com/events/sapphire.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;AI platform&quot;,&quot;url&quot;:&quot;//www.sap.com/products/ai-platform.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Artificial Intelligence&quot;,&quot;url&quot;:&quot;//www.sap.com/products/artificial-intelligence.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;RISE with SAP&quot;,&quot;url&quot;:&quot;//www.sap.com/products/erp/rise.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Midsize business solutions&quot;,&quot;url&quot;:&quot;//www.sap.com/products/erp/grow.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Sustainability&quot;,&quot;url&quot;:&quot;//www.sap.com/products/sustainability.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Partner ecosystem&quot;,&quot;url&quot;:&quot;https://partneredge.sap.com/en.html&quot;,&quot;target&quot;:&quot;_blank&quot;}]" about-links="[{&quot;title&quot;:&quot;Company information&quot;,&quot;url&quot;:&quot;//www.sap.com/about/company.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Worldwide directory&quot;,&quot;url&quot;:&quot;//www.sap.com/about/company/office-locations.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Investor Relations&quot;,&quot;url&quot;:&quot;https://www.sap.com/investors/en.html&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;title&quot;:&quot;Careers&quot;,&quot;url&quot;:&quot;https://jobs.sap.com/?utm_source\u003dCareerSite\u0026utm_campaign\u003dCorpSite_FT&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;News and press&quot;,&quot;url&quot;:&quot;https://news.sap.com/&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;title&quot;:&quot;Blogs and resources&quot;,&quot;url&quot;:&quot;https://www.sap.com/topics&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Events&quot;,&quot;url&quot;:&quot;//www.sap.com/events.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Customer stories&quot;,&quot;url&quot;:&quot;//www.sap.com/about/customer-stories.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Newsletter&quot;,&quot;url&quot;:&quot;//www.sap.com/dashboard/newsletters.html&quot;,&quot;target&quot;:&quot;_self&quot;}]" site-information-links="[{&quot;title&quot;:&quot;Terms of Use&quot;,&quot;url&quot;:&quot;https://support.sap.com/en/terms-of-use.html&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;title&quot;:&quot;Privacy&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/legal/privacy.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Copyright&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/legal/copyright.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Legal Disclosure&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/legal/impressum.html&quot;,&quot;target&quot;:&quot;_self&quot;},{&quot;title&quot;:&quot;Trademark&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/legal/trademark.html&quot;,&quot;target&quot;:&quot;_self&quot;}]">
+        </community-footer>
+    </div>
+
+</div>
+
+    <div class="alertBarWrapper">
+    
+    
+        
+    
+</div>
+
+
+    
+    <div class="truste">
+        <div id="teconsent"></div>
+    </div>
+
+    <script type="text/javascript">
+        function showCookie() {
+            $("#teconsent").removeClass("hidden-cookie");
+            $("#teconsent").addClass("show-cookie");
+        }
+
+        function hideCookie() {
+            $("#teconsent").removeClass("show-cookie");
+            $("#teconsent").addClass("hidden-cookie");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const element = document.getElementById('teconsent');
+
+            if (element) {
+                let counter = 0;
+                $("#teconsent").addClass("show-cookie");
+
+                const intervalFunction = setInterval(() => { // check exist footer and apply the cookie preferences DIGITAL-28382
+                    const linkExists = Array.from(element.children).some((el) =>
+                        (el.role == "link") || (el.tagName == "A"));
+                    counter++;
+                    if (linkExists) {
+                        window.trustyLinkExists = true;
+                    }
+                    if (linkExists && document.getElementById("udex-footer") && window.footerLoaded) {
+                        document.dispatchEvent(new Event('enableCookiePreferences'));
+                        hideCookie();
+                        document.addEventListener('openCookiePreferences', () => {
+                            $('#teconsent a').get(0).click();
+                            event.preventDefault();
+                        });
+                        clearInterval(intervalFunction);
+                    } else {
+                        showCookie();
+                    }
+
+                    if (counter > 60) {
+                        clearInterval(intervalFunction);
+                    }
+                }, 1000);
+            }
+
+        });
+    </script>
+
+    
+
+    </div>
+    
+
+
+	<script>
+			$(document).on('userInfoComponentInitialized', function() {
+				var arr = [{"oldLink":"https://go.support.sap.com/contactus/#/chat","newLink":"https://go.support.sap.com/contactus/redirect.html?redirect=contactus&paramters=%23chat"},{"oldLink":"https://go.support.sap.com/contactus/#/email","newLink":"https://go.support.sap.com/contactus/redirect.html?redirect=contactus&paramters=%23email"}];
+				SUPPORT.MainNamespace.linkTransformerController.transformLinks(arr);
+			});
+	</script>
+
+
+        
+
+    
+    
+<script src="/etc/designs/fiji-ui-v2/clientlib-all.min.35aa6e6b0be713c073ac850ac5dcfccc.js"></script>
+<script src="/etc/designs/support/clientlib-mutation-summary.min.a9f9736f45da5d1295ce36b369bb38f4.js"></script>
+<script src="/etc/designs/support/clientlib-mutation-observer.min.524d8c2737e924bc0010054e6d059278.js"></script>
+<script src="/etc/designs/support/clientlib-all.min.8949f737ec64840ee4c874e3a4683d18.js"></script>
+<script src="/etc/designs/support/clientlib-vue-all.min.d1ad7d39d31411b2c731ba8be7c8ff9a.js"></script>
+
+
+
+
+    
+        
+            
+    <div class="trackingCode">
+        
+        <script>
+            <!--/* TODO clean up after moving to Launch Analytics */-->
+            try {
+                // window.s comes from 3rd-party script, so this shouldn't be changed
+                let s = window.s || {};
+                <!--/* START CUSTOM CODING */-->
+                <!--/* (Any custom code should go in here) */-->
+                let idsContext = FIJI_UI.MainNamespace.IDSContext(
+                    "support",
+                    "SUPPORT_IDS_PROD"
+                );
+                if (!idsContext.isAnonymous()) {
+                    s.prop9 = 'logY';
+                }
+                idsContext.getUser("/bin/fiji/es/user", (responseUser) => {
+                    document.dispatchEvent(new CustomEvent('userInfoInitialized', {
+                        detail: responseUser
+                    }));
+                });
+                if ("" === "404") {
+                    s.pageType = 'errorPage';
+                }
+                <!--/* END CUSTOM CODING */-->
+            } catch (e) {}
+        </script>
+    </div>
+    <script type="text/javascript">_satellite.pageBottom();</script>
+
+        
+
+        
+    
+
+    </body>
+</html>

@@ -48,20 +48,26 @@ Model Context Protocol (MCP).
 
 ### Example 3: Component Exposure
 
-**User prompt:** "Here is my stack: SAP S/4HANA 2023, SAP_BASIS,
+**User prompt:** "Here is my stack: SAP S/4HANA 2023, SAP_BASIS 758,
 BC-JAS-WEB — what applies to me?"
 
 **What happens:**
 - Each item is classified: application component (`BC-JAS-WEB`), software
-  component from System → Status (`SAP_BASIS`), or product/stack name from
-  Maintenance Planner (`SAP S/4HANA 2023`)
-- Application components match directly (exact + prefix); software
-  components and products resolve through a curated, rationale-documented
-  mapping to application-component prefixes
+  component optionally with a version (`SAP_BASIS 758`), or product/stack
+  name from Maintenance Planner (`SAP S/4HANA 2023`)
+- Software components match primarily against SAP's own **published**
+  affected-component/version lists; a curated mapping fills in notes that
+  have no published list. Application components match directly
+  (exact + prefix)
+- A pasted version gets a tier per matched note:
+  1. **Affected version confirmed** — the version is in SAP's published list
+  2. **Component listed, your version not in the published list** — not
+     proof of safety, published lists can be summarized
+  3. **Component affected, version not assessed** — no version given, or
+     no published list to check (exact-string match only — never a range
+     or "close enough" inference)
 - Returns matching notes grouped by provenance, plus an honest "not
-  assessed" bucket for anything that could not be classified or mapped
-- Always includes the caveat: version applicability is not assessed —
-  confirm against the full SAP note
+  assessed" bucket for anything that could not be classified or matched
 
 **Tool used:** `check_component_exposure`
 
@@ -87,46 +93,67 @@ BC-JAS-WEB — what applies to me?"
 |------|-------------|-------------|
 | `get_hot_news` | All HotNews notes, ranked by CVSS | Read-only |
 | `get_exploited_notes` | Notes with CISA-KEV-listed CVEs, with KEV dates | Read-only |
-| `check_component_exposure` | Match a pasted list (app components, software components, or product names) against the catalog | Read-only |
+| `check_component_exposure` | Match a pasted list (app components, software components — optionally versioned — or product names) against the catalog | Read-only |
 
 ## Data Sources & Honesty
 
-- **Public metadata only.** The catalog holds note numbers, titles, CVSS
-  scores/vectors, CVE IDs, priorities, components, dates, and public note
-  URLs — built from SAP Security Patch Day publications. It never
-  contains SAP note body text or correction instructions.
+- **Canonical source: SAP's public Patch Day pages.** As of v2.1, the
+  catalog is built primarily from SAP's public, no-login Security Patch
+  Day pages (`support.sap.com/.../security-notes-news/<month>-<year>.html`),
+  not a private export. Each page publishes, per note: title (with CVE
+  prefix), CVE ID(s), priority, CVSS, the affected product name(s), and
+  the affected software-component/version list. Raw pages are cached in
+  `data/pages/` for reproducible rebuilds.
+- **Public metadata only.** The catalog never contains SAP note body text
+  or correction instructions — only what SAP already publishes openly:
+  note numbers, titles, CVSS scores/vectors, CVE IDs, priorities, affected
+  software components and their published version lists, dates, and
+  public note URLs.
 - **Coverage window is stated, not implied.** Current catalog:
   January 2026 – July 2026 (`get_catalog_info` always tells you exactly).
 - **Null-evidence rule.** Absence from this catalog does not mean absence
   of vulnerability. Every tool says so on every not-found answer, and no
-  tool ever fabricates a note, CVE, score, or date.
+  tool ever fabricates a note, CVE, score, date, or version.
 - **Exploitation data** comes from the public CISA KEV feed; the snapshot
   version and fetch date are recorded in the catalog for reproducibility.
 - **Public-evidence date policy.** Exact release days ship only when
-  publicly evidenced without login: SAP Security Patch Day dates (stated
-  on the public support.sap.com Patch Day pages) or dates matching the
-  CVE's public NVD `published` date. Days that exist only in the
-  login-protected SAP export are shipped as `null`, with `release_month`
-  retained (each note's presence on its public month page is the evidence
+  publicly evidenced without login: the page's own stated Patch Day date
+  for notes in its main table, or a date matching the CVE's public NVD
+  `published` date. Everything else ships as `null`, with `release_month`
+  retained (a note's presence on its public month page is the evidence
   for the month).
-- **Matching behavior & provenance labels.** The catalog is indexed by SAP
-  **application component** (the component in each note's header, e.g.
-  `BC-MID-RFC`). `check_component_exposure` also accepts **software
-  components** (System → Status, e.g. `SAP_BASIS`) and **product names**
-  (Maintenance Planner, e.g. "SAP S/4HANA 2023"), resolved through a
-  curated mapping (`data/component_mapping.yaml`) in which every entry
-  carries a rationale and anything uncertain is listed as unmapped rather
-  than guessed. Every returned note carries a `match_type` — `direct`,
-  `prefix`, `mapped_software_component`, or `mapped_product` — and
-  mapping-derived results are labeled as such ("Matched via curated
-  mapping (…) — mapping-derived, confirm applicability against the full
-  SAP note"). Release years in product names are echoed back only.
-- **Version caveat.** Component matching is component-level only; version
-  applicability is not assessed. Always confirm against the full SAP note
-  via your SAP support access.
-- **Monthly updates** on SAP Patch Tuesday (second Tuesday of the month).
+- **Version lists are exact and verbatim.** `affected[].versions` are kept
+  exactly as SAP published them — no numeric coercion, no range expansion,
+  no normalization (`758`, `75A`, `2008_1_700`, `10.0` are all real,
+  unmodified formats). A version line SAP publishes in a form the parser
+  can't parse cleanly (a typo, a "< X.Y.Z" threshold instead of a discrete
+  list, a component name containing a space) is kept verbatim in
+  `versions_unparsed` — never partially guessed.
+- **Matching behavior & provenance labels.** `check_component_exposure`
+  accepts application components (the legacy per-note header field, e.g.
+  `BC-MID-RFC` — not published by pages, so it's `null` for notes added
+  from pages only, never fabricated), software components (System →
+  Status, e.g. `SAP_BASIS`, optionally versioned like `SAP_BASIS 758`),
+  and product names (Maintenance Planner, e.g. "SAP S/4HANA 2023"). For a
+  software component, matching is **two-tier by provenance**: PRIMARY is
+  a direct, exact match against SAP's own published affected-component
+  list (`match_type: published_affected_list`); FALLBACK is a curated,
+  rationale-documented mapping (`data/component_mapping.yaml`) to
+  application-component prefixes, used only for notes with no published
+  list (`match_type: mapped_software_component`). Every match says which
+  it is. When a version is given, each matched note also gets an
+  exact-string-match tier (1 confirmed / 2 listed-but-version-mismatch /
+  3 not assessed) — never a range or "close enough" inference. Products
+  resolve through the same software-component chain; release years in
+  product names are echoed back only. Which support package level fixes
+  a note always requires the full SAP note.
+- **Monthly updates** on SAP Patch Tuesday: `scripts/monthly_update.py
+  <page-url>` fetches and caches the new page, rebuilds the catalog fresh
+  from every cached page, re-runs KEV, validates the schema, and runs a CI
+  gate requiring every application component to have an explicit mapping
+  disposition before the build is considered commit-ready.
 - **Community corrections welcome** — open a PR against
-  `data/notes_catalog.json`.
+  `data/notes_catalog.json` or `data/component_mapping.yaml`.
 
 ## Quick Start
 
@@ -171,12 +198,25 @@ MCP_NO_AUTH=1 PORT=8003 python server.py
 PORT=8003 SYNTAAI_ISSUER_URL=https://your-host python server.py
 ```
 
-Rebuilding the catalog from a fresh SAP export:
+Adding a new month once its Patch Day page is live:
 
 ```bash
 pip install -r requirements-dev.txt
-python scripts/build_catalog.py input/security-notes-result-YYYYMMDD.xlsx
+python scripts/monthly_update.py \
+  https://support.sap.com/en/my-support/knowledge-base/security-notes-news/<month>-<year>.html
 pytest
+```
+
+This fetches and caches the page, rebuilds the catalog from every cached
+page in `data/pages/` plus a fresh KEV pull, validates the schema, and
+runs the CI disposition gate (fails loudly if a new application component
+has no mapping decision in `data/component_mapping.yaml` yet).
+
+One-time historical rebuild from all cached pages (used to migrate off the
+original xlsx-derived catalog in v2.1):
+
+```bash
+python scripts/backfill_from_pages.py --offline
 ```
 
 ## License

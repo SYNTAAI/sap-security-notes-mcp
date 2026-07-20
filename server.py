@@ -217,23 +217,36 @@ def check_component_exposure(
     three input formats and classifies each item:
 
     - application components (BC-JAS-WEB, BI-BIP) — direct + prefix match
-    - software components from System → Status (SAP_BASIS, S4CORE, SAP_UI) —
-      resolved via a curated mapping to application-component prefixes
+    - software components from System → Status, optionally WITH a version
+      (SAP_BASIS, S4CORE, or 'SAP_BASIS 758') — matched primarily against
+      SAP's own published affected-software-component/version lists, with
+      the curated app-component mapping as fallback for notes that have
+      no published list
     - product/stack names from Maintenance Planner ('SAP S/4HANA 2023',
       'ABAP PLATFORM 2023') — resolved product → software components →
-      application-component prefixes
+      published/mapped components
 
     Every returned note carries a match_type (direct, prefix,
-    mapped_software_component, mapped_product) and results are grouped by
-    provenance; mapping-derived matches say so explicitly. Items that cannot
-    be classified or mapped land in an explicit 'not assessed' bucket — no
-    bucket ever implies safety.
+    published_affected_list, mapped_software_component, mapped_product).
+    When a software component is pasted WITH a version, each matched note
+    also gets a version-aware tier — EXACT STRING match only, never a
+    range or "close enough" inference:
+      1. Affected version confirmed — the version is in SAP's published list.
+      2. Component listed, your version not in the published list — not
+         proof of safety; published lists can be summarized, confirm
+         against the full note.
+      3. Component affected, version not assessed — no version was given,
+         or this note has no published version list to check against.
+    Which support package level actually fixes a note always requires the
+    full SAP note, on every tier.
 
-    Release years in product names are echoed back, but version
-    applicability is NOT assessed — confirm against the full SAP note.
+    Items that cannot be classified or matched land in an explicit
+    'not assessed' bucket — no bucket ever implies safety. Release years
+    in product names are echoed back only; version applicability there is
+    NOT assessed.
 
     Args:
-        components: e.g. ['SAP_BASIS', 'BC-JAS-WEB', 'SAP S/4HANA 2023'].
+        components: e.g. ['SAP_BASIS 758', 'BC-JAS-WEB', 'SAP S/4HANA 2023'].
         since: optional cutoff, 'YYYY-MM' or 'YYYY-MM-DD'.
     """
     return CATALOG.component_exposure(components, since)
@@ -312,8 +325,18 @@ def resource_latest_patch_day() -> str:
 
 @mcp.resource("catalog://components")
 def resource_components() -> str:
-    """Distinct SAP components in the catalog (helps query construction)."""
-    return "\n".join(CATALOG.distinct_components())
+    """Distinct application components AND published software components
+    in the catalog (helps query construction for get_notes_by_component
+    and check_component_exposure)."""
+    return (
+        "Application components (legacy taxonomy; use with "
+        "get_notes_by_component or check_component_exposure):\n"
+        + "\n".join(CATALOG.distinct_components())
+        + "\n\nSoftware components (SAP's own published affected-component "
+        "names, System → Status taxonomy; use with check_component_"
+        "exposure, optionally with a version, e.g. 'SAP_BASIS 758'):\n"
+        + "\n".join(CATALOG.distinct_software_components())
+    )
 
 
 @mcp.resource("catalog://priority-definitions")
@@ -388,34 +411,48 @@ def exposure_check(components: str = "") -> str:
     else:
         intro += (
             "First ask the user to paste their list. All three formats "
-            "work, mixed freely:\n"
+            "work, mixed freely, and software components may optionally "
+            "include a version (e.g. 'SAP_BASIS 758') for tiered version "
+            "matching:\n"
             "- Software components from SAP GUI: System → Status → "
-            "Component information (SAP_BASIS, S4CORE, SAP_UI, ...)\n"
+            "Component information (SAP_BASIS, S4CORE, SAP_UI, or "
+            "'SAP_BASIS 758' with a version)\n"
             "- Product/stack lines from Maintenance Planner "
             "('SAP S/4HANA 2023', 'ABAP PLATFORM 2023', 'SAP FIORI FES')\n"
             "- SAP application components (BC-JAS-WEB, BI-BIP, ...) — the "
-            "taxonomy this catalog is indexed by; each note's header "
-            "carries one\n"
+            "legacy taxonomy some notes carry; each note's header shows one "
+            "when available\n"
             "Then call check_component_exposure with that list.\n\n"
         )
     return intro + (
         "Produce a prioritized report:\n"
         "1. State how each pasted item was classified (application "
         "component / software component / product) and how it was matched "
-        "— keep the tool's provenance labels: direct/prefix matches vs. "
-        "'matched via curated mapping (...)'. Mapping-derived results must "
-        "say they are mapping-derived.\n"
-        "2. Matched items ordered by worst finding (KEV-listed, then "
-        "HotNews, then CVSS); for each note: number, title, priority, "
-        "CVSS, link, match_type.\n"
-        "3. The 'not assessed' bucket, stated honestly: could not map or "
+        "— keep the tool's provenance labels: direct/prefix, "
+        "'published_affected_list' (SAP's own published data — the "
+        "primary path for software components) vs 'matched via curated "
+        "mapping (...)' (mapping-derived fallback). Say explicitly which "
+        "is which.\n"
+        "2. If a software component carried a version, group by tier and "
+        "say so in these exact terms: Tier 1 'Affected version confirmed'; "
+        "Tier 2 'Component listed, your version not in the published "
+        "list' (not proof of safety — published lists can be summarized, "
+        "confirm against the full note); Tier 3 'Component affected, "
+        "version not assessed' (no version given, or no published list to "
+        "check). Never treat a version as affected because it's numerically "
+        "close to or below a listed one — exact string match only.\n"
+        "3. Matched items ordered by worst finding (KEV-listed, then "
+        "HotNews/tier 1, then CVSS); for each note: number, title, "
+        "priority, CVSS, link, match_type, tier if applicable.\n"
+        "4. The 'not assessed' bucket, stated honestly: could not map or "
         "no notes in this catalog — this does NOT mean no vulnerabilities "
-        "exist. Explain the taxonomy difference where relevant (software "
-        "components vs application components).\n"
-        "4. Echo any product release years ('your stack: S/4HANA 2023') "
-        "and repeat prominently: version applicability is not assessed — "
-        "the user must confirm against each full SAP note.\n"
-        "5. Relay any 'hints' the tool returns verbatim — e.g. for an "
+        "exist. Explain the taxonomy difference where relevant.\n"
+        "5. Echo any product release years ('your stack: S/4HANA 2023') "
+        "and repeat prominently: version applicability there is not "
+        "assessed — and even for a confirmed version tier, which support "
+        "package level actually fixes the note requires the full SAP "
+        "note.\n"
+        "6. Relay any 'hints' the tool returns verbatim — e.g. for an "
         "S/4HANA product paste: if the landscape runs HCM (SAP_HR / H4S4), "
         "the user should add SAP_HR to their list to include HR notes."
         + _PROMPT_FOOTER

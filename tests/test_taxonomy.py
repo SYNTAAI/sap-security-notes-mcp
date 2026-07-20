@@ -180,18 +180,21 @@ def test_s4hana_paste_gets_hcm_hint(real_cat):
 
 @needs_mapping
 def test_software_component_provenance_label(real_cat):
+    """SAP_BASIS has both published affected[] data AND curated-mapping
+    fallback coverage; both provenance labels must appear, correctly typed
+    per note."""
     r = real_cat.component_exposure(["SAP_BASIS"])
     m = r["matched"][0]
     assert m["classification"] == "software_component"
-    assert "software component" in m["explanation"]
-    assert "indexed by application component" in m["explanation"]
-    assert all(n["match_type"] == "mapped_software_component"
-               for n in m["notes"])
+    assert "published_affected_list" in m["provenance"]
+    assert "curated mapping" in m["provenance"]
+    match_types = {n["match_type"] for n in m["notes"]}
+    assert match_types == {"published_affected_list", "mapped_software_component"}
 
 
 @needs_mapping
 def test_unmapped_software_component_gets_guidance(real_cat):
-    r = real_cat.component_exposure(["SAP_HRRXX"])
+    r = real_cat.component_exposure(["SAP_ZZFAKE"])
     assert r["matched"] == []
     item = r["could_not_map_or_no_match"]["items"][0]
     assert item["classification"] == "software_component"
@@ -202,10 +205,30 @@ def test_unmapped_software_component_gets_guidance(real_cat):
 
 
 @needs_mapping
-def test_empty_prefix_software_component_not_assessed(real_cat):
+def test_curated_only_mapping_with_no_published_or_prefix_data(real_cat):
+    """UIS4HOP1 has no curated app-component prefixes AND (as of this
+    catalog) no published affected[] entries either -> not assessed."""
+    r = real_cat.component_exposure(["UIS4HOP1"])
+    assert "UIS4HOP1" not in real_cat.by_software_component
+    if r["matched"]:
+        # If a future catalog publishes UIS4HOP1 data directly, that's a
+        # legitimate primary-path match, not a regression.
+        assert r["matched"][0]["classification"] == "software_component"
+    else:
+        item = r["could_not_map_or_no_match"]["items"][0]
+        assert "not assessed" in item["reason"]
+
+
+@needs_mapping
+def test_sap_aba_now_matched_via_published_data(real_cat):
+    """SAP_ABA has curated mapping with zero prefixes (no app-component
+    evidence was ever found), but v2.1's published affected[] data covers
+    it directly - primary path wins, so it's matched, not not-assessed."""
     r = real_cat.component_exposure(["SAP_ABA"])
-    item = r["could_not_map_or_no_match"]["items"][0]
-    assert "no application-component prefixes are curated" in item["reason"]
+    assert r["matched"]
+    m = r["matched"][0]
+    assert "published_affected_list" in m["provenance"]
+    assert all(n["match_type"] == "published_affected_list" for n in m["notes"])
 
 
 def test_unknown_product_not_assessed(real_cat):

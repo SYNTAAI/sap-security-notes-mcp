@@ -70,12 +70,17 @@ class Catalog:
         self.by_number: dict[str, dict] = {}
         self.by_cve: dict[str, list[dict]] = {}
         self.by_component: dict[str, list[dict]] = {}
+        self.by_software_component: dict[str, list[dict]] = {}
         self.by_month: dict[str, list[dict]] = {}
         for note in self.notes:
             self.by_number[note["note_number"]] = note
             for cve in note["cve_ids"]:
                 self.by_cve.setdefault(cve.upper(), []).append(note)
-            self.by_component.setdefault(note["component"].upper(), []).append(note)
+            if note.get("component"):
+                self.by_component.setdefault(note["component"].upper(), []).append(note)
+            for aff in note.get("affected") or []:
+                key = aff["software_component"].upper()
+                self.by_software_component.setdefault(key, []).append(note)
             self.by_month.setdefault(note["release_month"], []).append(note)
 
     # ------------------------------------------------------------------ helpers
@@ -181,7 +186,8 @@ class Catalog:
         by_component: dict[str, int] = {}
         for n in notes:
             by_priority[n["priority"]] = by_priority.get(n["priority"], 0) + 1
-            by_component[n["component"]] = by_component.get(n["component"], 0) + 1
+            if n.get("component"):
+                by_component[n["component"]] = by_component.get(n["component"], 0) + 1
         top_components = sorted(
             by_component.items(), key=lambda kv: (-kv[1], kv[0])
         )[:5]
@@ -212,10 +218,10 @@ class Catalog:
         terms = [t for t in query.lower().split() if t]
         results = []
         for n in self.notes:
-            haystack = f"{n['title']} {n['component']}".lower()
+            haystack = f"{n['title']} {n.get('component') or ''}".lower()
             if terms and not all(t in haystack for t in terms):
                 continue
-            if component and not n["component"].upper().startswith(
+            if component and not (n.get("component") or "").upper().startswith(
                 component.strip().upper()
             ):
                 continue
@@ -316,15 +322,18 @@ class Catalog:
     )
 
     def classify_component_input(self, item: str) -> dict:
-        """Classify one pasted item: application_component, software_component,
-        product, or unknown."""
+        """Classify one pasted item: application_component, software_component
+        (optionally with a version, e.g. 'SAP_BASIS 758'), product, or
+        unknown."""
         text = str(item).strip()
         up = re.sub(r"\s+", " ", text.upper())
+        collapsed = re.sub(r"\s+", " ", text)  # same shape, original case
         sw = (self.mapping or {}).get("software_components", {})
+        published = self.by_software_component
 
-        if up in sw:
+        if up in sw or up in published:
             return {"input": text, "type": "software_component", "key": up,
-                    "mapped": True}
+                    "mapped": up in sw, "version": None}
 
         if up in self.by_component or APP_COMPONENT_RE.match(up):
             return {"input": text, "type": "application_component", "key": up}
@@ -337,9 +346,19 @@ class Catalog:
                 "releases": RELEASE_YEAR_RE.findall(up),
             }
 
+        if " " in up:
+            candidate, _, version = up.partition(" ")
+            if candidate in sw or candidate in published:
+                _, _, display_version = collapsed.partition(" ")
+                return {
+                    "input": text, "type": "software_component",
+                    "key": candidate, "mapped": candidate in sw,
+                    "version": display_version.strip(),
+                }
+
         if SOFTWARE_COMPONENT_RE.match(up):
             return {"input": text, "type": "software_component", "key": up,
-                    "mapped": False}
+                    "mapped": False, "version": None}
 
         if " " in up:
             return {"input": text, "type": "product", "key": None,
@@ -365,17 +384,68 @@ class Catalog:
     def _resolve_software_component(
         self, sw_key: str, since: str | None
     ) -> tuple[list[dict], list[str]]:
-        """Return (notes, effective_prefixes) for a mapped software component,
-        honoring excluded_prefixes."""
+        """Return (notes, effective_prefixes) for a mapped software component
+        via the curated app-component mapping, honoring excluded_prefixes.
+        Only considers notes that HAVE a legacy application component —
+        the mapping's whole premise is app-component prefixes."""
         entry = self.mapping["software_components"][sw_key]
         prefixes = entry.get("app_component_prefixes") or []
         excluded = entry.get("excluded_prefixes") or []
         hits = [
             n for n in self.notes
-            if any(_covers(n["component"], p) for p in prefixes)
+            if n.get("component")
+            and any(_covers(n["component"], p) for p in prefixes)
             and not any(_covers(n["component"], x) for x in excluded)
         ]
         return self._filter_since(hits, since), prefixes
+
+    def _tier_for_note(self, note: dict, sw_key: str, version: str | None):
+        """Version-aware exposure tier for one note against one software
+        component the user pasted. Exact-string match only (trim+casefold)
+        — no range logic, no version-ordering inference.
+
+        Returns (tier, label, published_versions | None).
+        """
+        aff = next(
+            (a for a in note.get("affected") or []
+             if a["software_component"].upper() == sw_key.upper()),
+            None,
+        )
+        if not version or aff is None:
+            return 3, "Component affected, version not assessed", (
+                aff["versions"] if aff else None
+            )
+        published = aff["versions"]
+        if version.strip().casefold() in {v.strip().casefold() for v in published}:
+            return 1, "Affected version confirmed", published
+        return (
+            2,
+            "Component listed, your version not in the published list",
+            published,
+        )
+
+    def _resolve_software_component_v21(
+        self, sw_key: str, version: str | None, since: str | None
+    ) -> tuple[list[dict], list[dict], list[str]]:
+        """Version-aware resolution: PRIMARY = published affected[] data
+        (exact software-component match), FALLBACK = curated app-component
+        mapping for notes the published index doesn't already cover.
+
+        Returns (primary_notes, fallback_notes, mapping_prefixes_used).
+        """
+        primary = self._filter_since(
+            list(self.by_software_component.get(sw_key.upper(), [])), since
+        )
+        primary_nums = {n["note_number"] for n in primary}
+
+        fallback: list[dict] = []
+        prefixes: list[str] = []
+        sw = (self.mapping or {}).get("software_components", {})
+        if sw_key in sw:
+            mapped_hits, prefixes = self._resolve_software_component(sw_key, since)
+            fallback = [n for n in mapped_hits
+                       if n["note_number"] not in primary_nums]
+        return primary, fallback, prefixes
 
     @staticmethod
     def _dedup(notes: list[dict]) -> list[dict]:
@@ -443,69 +513,110 @@ class Catalog:
                         ),
                     })
 
-            elif kind == "software_component" and cls["mapped"]:
-                hits, prefixes = self._resolve_software_component(
-                    cls["key"], since
+            elif kind == "software_component":
+                version = cls.get("version")
+                primary, fallback, prefixes = self._resolve_software_component_v21(
+                    cls["key"], version, since
                 )
-                explanation = (
-                    f"'{item}' is a software component; this catalog is "
-                    "indexed by application component. Resolved via curated "
-                    "mapping."
-                )
-                if not prefixes:
+                sw_known = cls["mapped"] or cls["key"] in self.by_software_component
+                if not sw_known and not primary and not fallback:
                     not_assessed.append({
                         "input": item,
                         "classification": "software_component",
                         "reason": (
+                            f"'{cls['key']}' looks like a software "
+                            "component; this catalog is indexed by "
+                            "application component and no published or "
+                            "curated data covers it — could not map, "
+                            "not assessed." + guidance_tail
+                        ),
+                    })
+                elif not primary and not fallback:
+                    reason = (
+                        f"'{cls['key']}' is a known software component, but "
+                        "no notes in this catalog match it"
+                        + (f" since {since}" if since else "") + ". "
+                    )
+                    if cls["mapped"] and not prefixes:
+                        reason = (
                             f"'{cls['key']}' is a known software component, "
                             "but no application-component prefixes are "
-                            "curated for it yet — not assessed."
-                            + guidance_tail
-                        ),
-                    })
-                elif hits:
-                    prefix_desc = ", ".join(f"{p}-*" for p in prefixes)
-                    matched.append({
-                        "input": item,
-                        "classification": "software_component",
-                        "explanation": explanation,
-                        "resolved_via": f"{cls['key']} → {prefix_desc}",
-                        "provenance": (
-                            f"Matched via curated mapping ({cls['key']} → "
-                            f"{prefix_desc}) — mapping-derived, confirm "
-                            "applicability against the full SAP note."
-                        ),
-                        "result_count": len(hits),
-                        "notes": [
-                            {**self._brief(n),
-                             "match_type": "mapped_software_component"}
-                            for n in self._sort_by_cvss(hits)
-                        ],
-                    })
-                else:
+                            "curated for it yet — not assessed. "
+                        )
                     not_assessed.append({
                         "input": item,
                         "classification": "software_component",
-                        "reason": (
-                            f"'{cls['key']}' resolved via curated mapping, "
-                            "but no notes in this catalog match its "
-                            "application-component prefixes"
-                            + (f" since {since}" if since else "")
-                            + "." + guidance_tail
-                        ),
+                        "reason": reason + guidance_tail,
                     })
+                else:
+                    note_entries = []
+                    for n in primary:
+                        tier, label, pub_versions = self._tier_for_note(
+                            n, cls["key"], version
+                        )
+                        entry = {
+                            **self._brief(n),
+                            "match_type": "published_affected_list",
+                            "tier": tier,
+                            "tier_label": label,
+                        }
+                        if pub_versions is not None:
+                            entry["published_versions"] = pub_versions
+                        note_entries.append(entry)
+                    for n in fallback:
+                        note_entries.append({
+                            **self._brief(n),
+                            "match_type": "mapped_software_component",
+                            "tier": 3,
+                            "tier_label": "Component affected, version not assessed",
+                        })
+                    note_entries.sort(
+                        key=lambda e: (e["tier"], -(e["cvss_score"] or 0))
+                    )
 
-            elif kind == "software_component":
-                not_assessed.append({
-                    "input": item,
-                    "classification": "software_component",
-                    "reason": (
-                        f"'{cls['key']}' looks like a software component; "
-                        "this catalog is indexed by application component "
-                        "and no curated mapping exists for it yet — could "
-                        "not map, not assessed." + guidance_tail
-                    ),
-                })
+                    provenance_bits = []
+                    if primary:
+                        provenance_bits.append(
+                            f"{len(primary)} matched directly on SAP's "
+                            f"published affected-software-component list "
+                            f"for '{cls['key']}' (published_affected_list)."
+                        )
+                    if fallback:
+                        prefix_desc = ", ".join(f"{p}-*" for p in prefixes)
+                        provenance_bits.append(
+                            f"{len(fallback)} matched via curated mapping "
+                            f"({cls['key']} → {prefix_desc}) for notes with "
+                            "no published affected-component data — "
+                            "mapping-derived, confirm applicability against "
+                            "the full SAP note."
+                        )
+                    entry = {
+                        "input": item,
+                        "classification": "software_component",
+                        "version_given": version,
+                        "provenance": " ".join(provenance_bits),
+                        "result_count": len(note_entries),
+                        "notes": note_entries,
+                    }
+                    if version:
+                        entry["tier_summary"] = {
+                            "1_affected_version_confirmed": sum(
+                                1 for e in note_entries if e["tier"] == 1),
+                            "2_version_not_in_published_list": sum(
+                                1 for e in note_entries if e["tier"] == 2),
+                            "3_version_not_assessed": sum(
+                                1 for e in note_entries if e["tier"] == 3),
+                        }
+                        entry["tier_2_caveat"] = (
+                            "Tier 2 is not proof of safety; published lists "
+                            "can be summarized — confirm against the full "
+                            "note."
+                        )
+                    entry["fix_caveat"] = (
+                        "Which support package level fixes each note "
+                        "requires the full SAP note."
+                    )
+                    matched.append(entry)
 
             elif kind == "product" and cls["mapped"]:
                 product = cls["key"]
@@ -688,4 +799,7 @@ class Catalog:
         }
 
     def distinct_components(self) -> list[str]:
-        return sorted({n["component"] for n in self.notes})
+        return sorted({n["component"] for n in self.notes if n.get("component")})
+
+    def distinct_software_components(self) -> list[str]:
+        return sorted(self.by_software_component)
