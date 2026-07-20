@@ -45,16 +45,32 @@ NO_AUTH = (
 
 CATALOG = Catalog()
 
-_READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False,
-                             openWorldHint=False)
+def _read_only(title: str) -> ToolAnnotations:
+    """Directory-grade annotations: every tool is a read-only, idempotent
+    query over a static public catalog."""
+    return ToolAnnotations(
+        title=title,
+        readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
+        openWorldHint=False,
+    )
 
+
+# Origin validation (SDK TransportSecurityMiddleware): requests with an
+# Origin header not listed below are rejected; absent Origin (server-to-
+# server clients) is allowed per spec.
 _TRANSPORT_SECURITY = TransportSecuritySettings(
     enable_dns_rebinding_protection=True,
     allowed_hosts=["127.0.0.1:*", "localhost:*", "[::1]:*",
                    "notes.syntaai.com", "notes.syntaai.com:*"],
     allowed_origins=["http://127.0.0.1:*", "http://localhost:*",
                      "http://[::1]:*", "https://notes.syntaai.com",
-                     "https://notes.syntaai.com:*"],
+                     "https://notes.syntaai.com:*",
+                     # Anthropic / claude.ai clients
+                     "https://claude.ai", "https://www.claude.ai",
+                     "https://claude.com", "https://www.claude.com",
+                     "https://api.anthropic.com"],
 )
 
 _INSTRUCTIONS = (
@@ -110,7 +126,7 @@ else:
 # TOOLS (10, all read-only)
 # ============================================================================
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Patch Day Summary", annotations=_read_only("Patch Day Summary"))
 def get_patch_day_summary(month: str | None = None) -> dict:
     """Summarize an SAP Security Patch Day month: counts by priority, the
     HotNews list, top components, and new vs. updated notes.
@@ -125,7 +141,7 @@ def get_patch_day_summary(month: str | None = None) -> dict:
     return CATALOG.patch_day_summary(month)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Search Security Notes", annotations=_read_only("Search Security Notes"))
 def search_notes(
     query: str,
     component: str | None = None,
@@ -143,7 +159,7 @@ def search_notes(
     return CATALOG.search(query, component, priority, min_cvss, month)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Note Details", annotations=_read_only("Note Details"))
 def get_note_details(note_number: str) -> dict:
     """Full catalog record for one SAP Security Note number.
 
@@ -154,7 +170,7 @@ def get_note_details(note_number: str) -> dict:
     return CATALOG.note_details(note_number)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Notes by Component", annotations=_read_only("Notes by Component"))
 def get_notes_by_component(component: str, since: str | None = None) -> dict:
     """Notes for an SAP application component, using exact match AND prefix
     match (e.g. 'BC-JAS' also matches 'BC-JAS-WEB' and 'BC-JAS-SEC-UME').
@@ -170,7 +186,7 @@ def get_notes_by_component(component: str, since: str | None = None) -> dict:
     return CATALOG.notes_by_component(component, since)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="HotNews Notes", annotations=_read_only("HotNews Notes"))
 def get_hot_news(since: str | None = None) -> dict:
     """All HotNews (highest-severity) notes in the catalog, ranked by CVSS.
 
@@ -182,7 +198,7 @@ def get_hot_news(since: str | None = None) -> dict:
     return CATALOG.hot_news(since)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="CVE Lookup", annotations=_read_only("CVE Lookup"))
 def lookup_cve(cve_id: str) -> dict:
     """Find the SAP Security Note(s) addressing a CVE ID.
 
@@ -193,7 +209,7 @@ def lookup_cve(cve_id: str) -> dict:
     return CATALOG.lookup_cve(cve_id)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Component Exposure Check", annotations=_read_only("Component Exposure Check"))
 def check_component_exposure(
     components: list[str], since: str | None = None
 ) -> dict:
@@ -223,7 +239,7 @@ def check_component_exposure(
     return CATALOG.component_exposure(components, since)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Actively Exploited Notes (CISA KEV)", annotations=_read_only("Actively Exploited Notes (CISA KEV)"))
 def get_exploited_notes(since: str | None = None) -> dict:
     """Notes whose CVEs appear in the CISA Known Exploited Vulnerabilities
     (KEV) catalog, with KEV date-added.
@@ -234,7 +250,7 @@ def get_exploited_notes(since: str | None = None) -> dict:
     return CATALOG.exploited_notes(since)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Compare Patch Months", annotations=_read_only("Compare Patch Months"))
 def compare_patch_months(month_a: str, month_b: str) -> dict:
     """Compare two Patch Day months: note counts, severity mix, HotNews
     delta. Months must be 'YYYY-MM' within the catalog window; anything
@@ -243,7 +259,7 @@ def compare_patch_months(month_a: str, month_b: str) -> dict:
     return CATALOG.compare_months(month_a, month_b)
 
 
-@mcp.tool(annotations=_READ_ONLY)
+@mcp.tool(title="Catalog Info", annotations=_read_only("Catalog Info"))
 def get_catalog_info() -> dict:
     """Catalog metadata: version, note count, coverage window, data
     sources, KEV snapshot info, and the null-evidence rule verbatim.
